@@ -4,9 +4,6 @@
 
 <br/>
 
-<p align="center">
-  <img src="./images/yeji-logo.png" alt="YEJI Logo" width="220" />
-</p>
 
 <br/>
 
