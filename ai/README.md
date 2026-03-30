@@ -1,88 +1,246 @@
-# 🔮 예지 (Yeji)
-
-![Project Banner](https://placeholder.com/banner-image.png)
 <div align="center">
 
-<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white">
-<img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white">
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-<img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=YEJI%20AI%20Server&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=FastAPI%20%2B%20vLLM%20%7C%20Fortune%20%26%20Saju%20Generation&descSize=16&descAlignY=56&v=2" width="100%"/>
+
+<br/>
+
+<img src="./assets/yeji-logo.png" width="80" alt="yeji"/>
+
+<br/>
+
+**AI 기반 운세/사주 생성 서버**
+
+<br/>
+
+[![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](#)
+[![vLLM](https://img.shields.io/badge/vLLM-FF6F00?style=for-the-badge&logo=pytorch&logoColor=white)](#)
+[![Pydantic](https://img.shields.io/badge/Pydantic_v2-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](#)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](#)
 
 </div>
 
----
+<br/>
 
-##  프로젝트 소개
-**'예지'**는 단순한 텍스트 기반의 운세를 넘어, **3D 인터랙티브 경험**과 **소셜 게이미피케이션**을 결합한 차세대 운세 플랫폼입니다.
+<details>
+<summary><strong>목차</strong></summary>
 
-기존 운세 서비스의 정적인 경험을 탈피하여, 사용자는 3D 공간에서 직접 타로 카드를 섞고, 관상을 분석받으며, 결과(운세)를 친구들과 '거래(저주/축복)'하는 색다른 재미를 느낄 수 있습니다.
+- [개요](#개요)
+- [핵심 기능](#핵심-기능)
+- [기술 스택](#기술-스택)
+- [프로젝트 구조](#프로젝트-구조)
+- [시작하기](#시작하기)
+- [API 엔드포인트](#api-엔드포인트)
+- [LLM Provider 시스템](#llm-provider-시스템)
+- [배포](#배포)
+- [관련 저장소](#관련-저장소)
 
-###  프로젝트 기간
-- **2026.01.05 ~ 2026.02.09 (6주)**
-
----
-
-##  핵심 기능
-
-### 1.  몰입형 3D 운세
-- **Tres.js & Three.js**를 활용한 웹 기반 3D 인터랙션 구현.
-- 사용자가 직접 카드를 셔플하고 선택하는 타로 시뮬레이션.
-- 별자리와 사주 정보가 3D 오브젝트로 시각화되는 배경 연출.
-
-### 2.  AI 기반 정밀 분석
-- **LLM (Large Language Model):** 동/서양 캐릭터(도사, 마법사) 페르소나를 반영한 사주/타로 스토리텔링.
-- **Vision AI:** 관상 및 손금 이미지를 분석하여 특징점을 추출하고 운세 데이터와 매칭.
-
-### 3.  소셜 액땜 & 축복
-- **불운 처리반 (저주):** 나쁜 운세가 나오면 캐릭터에 담아 친구에게 공유하여 액땜하기.
-- **행운 공유 (축복):** 좋은 운세는 캐릭터를 통해 친구에게 선물하고 칭호 획득.
-
-### 4.  도감 및 커스터마이징
-- 운세 분석을 도와주는 3D 캐릭터(도사, 산신령 등) 수집 및 장착 시스템.
-- 나의 운세 기록을 3D 서재(History) 형태로 시각화하여 아카이빙.
+</details>
 
 ---
 
-##  기술 스택 (Tech Stack)
+## 개요
 
-| 구분 | 기술 (Technology) |
-| :--- | :--- |
-| **Frontend** | Vue 3, TypeScript, Tres.js (Three.js), Pinia, Tailwind CSS, Vite |
-| **Backend** | Java 17, Spring Boot, Spring Security, JPA/MyBatis, Gradle |
-| **AI** | Python 3.10, FastAPI, LangChain, OpenCV/YOLO (Vision) |
-| **Database** | PostgreSQL (RDB), Redis (Cache) |
-| **Infra** | AWS (EC2, S3, RDS), Docker, Jenkins|
-| **Collaboration** | GitLab, Jira, Notion, Figma |
+YEJI AI Server는 동양 사주와 서양 타로를 결합한 운세 생성 엔진입니다. 커스텀 파인튜닝된 LLM(Qwen3 4B)을 vLLM GPU 추론 서버로 서빙하며, FastAPI 기반의 비동기 API를 제공합니다.
+
+> **모델**: `tellang/yeji-4b-instruct-v9-AWQ` (Qwen3 4B 기반, AWQ 4bit 양자화)
+> **추론**: vLLM (GPU Memory Utilization 85%, max-model-len 4096)
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
 
 ---
 
-##  프로젝트 구조 (Project Structure)
-본 프로젝트는 **Monorepo** 방식으로 관리되며, 아래와 같은 폴더 구조를 가집니다.
+## 핵심 기능
 
-```bash
-root/
-├── frontend/       # Vue.js 프론트엔드 프로젝트
-├── backend/        # Spring Boot 백엔드 프로젝트
-├── ai/             # AI 모델 서빙 및 로직 (FastAPI)
-└── README.md       # 프로젝트 메인 설명
+### 운세 생성
+- **동양 운세**: 사주팔자 기반 오늘의 운세 (연애/재물/건강/학업/직업)
+- **서양 운세**: 별자리 + 타로 기반 카테고리별 운세
+- **타로/화투**: 인터랙티브 카드 선택 기반 즉석 점술
+- **궁합 분석**: 두 사람의 동서양 통합 궁합 지수
+
+### 캐릭터 시스템
+- **티키타카 대화**: 동양/서양 캐릭터가 주고받는 유머러스한 운세 해석
+- **SSE 스트리밍**: 실시간 캐릭터 대화 스트리밍
+
+### 기술 특성
+- **LLM Provider 추상화**: vLLM, Ollama, AWS Bedrock, OpenAI 호환 인터페이스
+- **구조화된 출력**: Pydantic v2 스키마 기반 JSON 응답 검증 + 후처리기
+- **Redis 캐싱**: 운세 결과 캐싱으로 중복 생성 방지
+- **프롬프트 최적화**: 토큰 35% 절감 달성 (Phase 1 최적화)
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## 기술 스택
+
+| 구분 | 기술 |
+|:-----|:-----|
+| **Framework** | FastAPI, Python 3.11+ |
+| **LLM 추론** | vLLM (GPU 서버), guided_json 모드 |
+| **모델** | `tellang/yeji-4b-instruct-v9-AWQ` (Qwen3 4B, AWQ 4bit) |
+| **검증** | Pydantic v2, structlog |
+| **캐시** | Redis |
+| **패키지** | uv (PEP 621 기반) |
+| **테스트** | pytest, pytest-asyncio |
+| **린트** | ruff |
+| **CI/CD** | Jenkins (Docker 자동 배포) |
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## 프로젝트 구조
+
+```
+ai/src/yeji_ai/
+├── api/                          # API 엔드포인트
+│   ├── v1/fortune/               #   운세 API
+│   │   ├── eastern.py            #     동양 운세
+│   │   ├── western.py            #     서양 운세
+│   │   ├── chat.py               #     티키타카 채팅
+│   │   ├── tarot.py              #     타로
+│   │   └── hwatu.py              #     화투
+│   ├── router.py                 #   라우터
+│   └── health.py                 #   헬스체크
+├── engine/                       # 핵심 엔진
+│   ├── saju_calculator.py        #   사주 계산기
+│   ├── tikitaka_generator.py     #   티키타카 생성기
+│   └── prompts.py                #   프롬프트 템플릿
+├── providers/                    # LLM Provider
+│   ├── base.py                   #   추상 인터페이스
+│   ├── vllm.py                   #   vLLM Provider
+│   ├── ollama.py                 #   Ollama Provider
+│   ├── aws.py                    #   AWS Bedrock
+│   └── ssh_adapter.py            #   SSH 터널링
+├── models/                       # 데이터 모델
+│   ├── enums/                    #   Enum 정의
+│   ├── fortune/                  #   운세 모델
+│   └── schemas.py                #   공통 스키마
+├── services/                     # 비즈니스 로직
+│   ├── fortune_generator.py      #   운세 생성 서비스
+│   ├── eastern_fortune_service.py#   동양 운세
+│   ├── western_fortune_service.py#   서양 운세
+│   ├── tikitaka_service.py       #   티키타카
+│   └── postprocessor/            #   LLM 응답 후처리
+├── config.py                     # 설정 관리
+└── main.py                       # FastAPI 진입점
 ```
 
-##  협업 규칙 (Convention)
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
 
-###  브랜치 전략 (Git Flow)
-- **master**: 배포 가능한 상태 (Direct Push 금지)
-- **fe/develop**: 프론트엔드 통합 브랜치
-- **be/develop**: 백엔드 통합 브랜치
-- **ai/develop**: AI 통합 브랜치
-- **feat 브랜치**: `fe/feat/login`, `be/feat/api` 형식 사용
+---
 
-###  커밋 메시지 (Commit Message)
-> `type: Subject` 형식을 따릅니다.
+## 시작하기
 
-- `feat`: 새로운 기능 추가
-- `fix`: 버그 수정
-- `docs`: 문서 수정
-- `style`: 코드 포맷팅 (로직 변경 없음)
-- `refactor`: 코드 리팩토링
-- `chore`: 빌드 업무 수정, 패키지 매니저 설정 등
+### 요구사항
+
+- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (패키지 관리)
+- vLLM GPU 서버 (추론용)
+- Redis (캐싱용, 선택)
+
+### 설치
+
+```bash
+# 의존성 설치
+cd ai/
+uv sync
+
+# 환경변수 설정
+cp .env.example .env
+# VLLM_BASE_URL, VLLM_MODEL 등 수정
+
+# 개발 서버 실행
+uvicorn yeji_ai.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### 테스트
+
+```bash
+# 전체 테스트
+pytest tests/ -v
+
+# 커버리지
+pytest tests/ -v --cov=yeji_ai --cov-report=html
+
+# 린트
+ruff check src/
+ruff format src/
+```
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## API 엔드포인트
+
+| Method | Path | 설명 |
+|:------:|:-----|:-----|
+| `GET` | `/v1/health` | 헬스체크 |
+| `POST` | `/v1/fortune/eastern/analyze` | 동양 운세 생성 |
+| `POST` | `/v1/fortune/western/analyze` | 서양 운세 생성 |
+| `POST` | `/v1/fortune/eastern/analyze-both` | 동서양 통합 분석 |
+| `POST` | `/v1/fortune/tarot/reading` | 타로 카드 해석 |
+| `POST` | `/v1/fortune/hwatu/reading` | 화투 카드 해석 |
+| `POST` | `/v1/fortune/chat/tikitaka` | 티키타카 대화 (SSE) |
+| `POST` | `/v1/fortune/compatibility` | 궁합 분석 |
+
+API 문서: 서버 실행 후 `/docs` (Swagger UI) 또는 `/redoc` (ReDoc) 접속
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## LLM Provider 시스템
+
+추상화된 Provider 인터페이스로 다양한 LLM 백엔드를 지원합니다.
+
+```
+BaseProvider (추상)
+├── VLLMProvider      # 프로덕션 (GPU 추론)
+├── OllamaProvider    # 로컬 개발
+├── AWSProvider       # AWS Bedrock
+└── SSHAdapter        # SSH 터널링 래퍼
+```
+
+**프로덕션 설정:**
+```bash
+VLLM_BASE_URL=http://<GPU_SERVER>:8001
+VLLM_MODEL=tellang/yeji-4b-instruct-v9-AWQ
+```
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## 배포
+
+| 환경 | 브랜치 | 포트 | URL |
+|:-----|:------:|:----:|:----|
+| Production | `ai/main` | 8000 | `/ai/` |
+| Development | `ai/develop_v2` | 8002 | `/ai-dev/` |
+
+Jenkins Webhook 트리거로 자동 배포 (Docker 컨테이너).
+
+<p align="right">(<a href="#목차">맨 위로</a>)</p>
+
+---
+
+## 관련 저장소
+
+| 저장소 | 설명 |
+|:-------|:-----|
+| [yeji-backend](https://github.com/yeji-service/yeji-backend) | 백엔드 API 서버 (Java 21, Spring Boot 3.4) |
+| [yeji-frontend](https://github.com/yeji-service/yeji-frontend) | 프론트엔드 웹 앱 (React 19, Vite) |
+| [yeji-code-review](https://github.com/yeji-service/yeji-code-review) | 코드 리뷰 아카이브 (249건) |
+
+---
+
+<div align="center">
+
+**SSAFY 14기 A605팀** | 2026.01 - 02
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=80&section=footer&v=2" width="100%"/>
+
+</div>
