@@ -1,0 +1,325 @@
+{
+  "_meta": {
+    "description": "폴백 키워드 데이터",
+    "version": "1.0.0",
+    "last_updated": "2025-01-31"
+  },
+  "eastern": {
+    "day_master": {
+      "GAP": {
+        "hangul": "갑목(甲木)",
+        "traits": ["리더십", "진취적", "정의감", "강직함"],
+        "element": "WOOD",
+        "yin_yang": "YANG"
+      },
+      "EUL": {
+        "hangul": "을목(乙木)",
+        "traits": ["유연함", "적응력", "협조적", "섬세함"],
+        "element": "WOOD",
+        "yin_yang": "YIN"
+      },
+      "BYEONG": {
+        "hangul": "병화(丙火)",
+        "traits": ["열정적", "밝음", "표현력", "활력"],
+        "element": "FIRE",
+        "yin_yang": "YANG"
+      },
+      "JEONG": {
+        "hangul": "정화(丁火)",
+        "traits": ["섬세함", "따뜻함", "배려", "창의성"],
+        "element": "FIRE",
+        "yin_yang": "YIN"
+      },
+      "MU": {
+        "hangul": "무토(戊土)",
+        "traits": ["안정적", "신뢰감", "중재력", "듬직함"],
+        "element": "EARTH",
+        "yin_yang": "YANG"
+      },
+      "GI": {
+        "hangul": "기토(己土)",
+        "traits": ["포용력", "현실적", "실용적", "꼼꼼함"],
+        "element": "EARTH",
+        "yin_yang": "YIN"
+      },
+      "GYEONG": {
+        "hangul": "경금(庚金)",
+        "traits": ["결단력", "원칙", "추진력", "강인함"],
+        "element": "METAL",
+        "yin_yang": "YANG"
+      },
+      "SIN": {
+        "hangul": "신금(辛金)",
+        "traits": ["세련됨", "분석력", "정교함", "심미안"],
+        "element": "METAL",
+        "yin_yang": "YIN"
+      },
+      "IM": {
+        "hangul": "임수(壬水)",
+        "traits": ["지혜", "유연함", "포용력", "통찰력"],
+        "element": "WATER",
+        "yin_yang": "YANG"
+      },
+      "GYE": {
+        "hangul": "계수(癸水)",
+        "traits": ["섬세함", "직관력", "감수성", "적응력"],
+        "element": "WATER",
+        "yin_yang": "YIN"
+      }
+    },
+    "element": {
+      "WOOD": {
+        "label_ko": "목",
+        "label_hanja": "木",
+        "traits_strong": ["창의력", "성장력", "진취성"],
+        "traits_weak": ["계획성 부족", "산만함"],
+        "color": "초록",
+        "direction": "동쪽",
+        "season": "봄"
+      },
+      "FIRE": {
+        "label_ko": "화",
+        "label_hanja": "火",
+        "traits_strong": ["열정", "표현력", "리더십"],
+        "traits_weak": ["인내심 부족", "성급함"],
+        "color": "빨강",
+        "direction": "남쪽",
+        "season": "여름"
+      },
+      "EARTH": {
+        "label_ko": "토",
+        "label_hanja": "土",
+        "traits_strong": ["안정감", "신뢰", "중재력"],
+        "traits_weak": ["융통성 부족", "고집"],
+        "color": "노랑",
+        "direction": "중앙",
+        "season": "환절기"
+      },
+      "METAL": {
+        "label_ko": "금",
+        "label_hanja": "金",
+        "traits_strong": ["결단력", "추진력", "원칙"],
+        "traits_weak": ["유연성 부족", "냉정함"],
+        "color": "흰색",
+        "direction": "서쪽",
+        "season": "가을"
+      },
+      "WATER": {
+        "label_ko": "수",
+        "label_hanja": "水",
+        "traits_strong": ["지혜", "적응력", "통찰력"],
+        "traits_weak": ["결단력 부족", "우유부단"],
+        "color": "검정",
+        "direction": "북쪽",
+        "season": "겨울"
+      }
+    },
+    "yin_yang": {
+      "YANG": {
+        "label_ko": "양",
+        "label_hanja": "陽",
+        "traits": ["적극적", "외향적", "능동적"]
+      },
+      "YIN": {
+        "label_ko": "음",
+        "label_hanja": "陰",
+        "traits": ["신중함", "내향적", "수동적"]
+      },
+      "BALANCED": {
+        "label_ko": "균형",
+        "label_hanja": "均衡",
+        "traits": ["조화로움", "안정적", "유연함"]
+      }
+    },
+    "ten_god_group": {
+      "BI_GYEOP": {
+        "label_ko": "비겁",
+        "meaning": "자아, 경쟁, 형제",
+        "traits": ["독립심", "경쟁심", "자기주장"]
+      },
+      "SIK_SANG": {
+        "label_ko": "식상",
+        "meaning": "표현, 재능, 자녀",
+        "traits": ["표현력", "창의성", "재능"]
+      },
+      "JAE_SEONG": {
+        "label_ko": "재성",
+        "meaning": "재물, 현실, 아버지",
+        "traits": ["현실감각", "재물운", "실용성"]
+      },
+      "GWAN_SEONG": {
+        "label_ko": "관성",
+        "meaning": "명예, 직업, 남편",
+        "traits": ["책임감", "명예욕", "권위"]
+      },
+      "IN_SEONG": {
+        "label_ko": "인성",
+        "meaning": "학문, 어머니, 인덕",
+        "traits": ["학구열", "인덕", "지혜"]
+      }
+    }
+  },
+  "western": {
+    "zodiac": {
+      "ARIES": {
+        "label_ko": "양자리",
+        "symbol": "♈",
+        "element": "FIRE",
+        "traits": ["용감함", "열정적", "개척정신", "독립심"]
+      },
+      "TAURUS": {
+        "label_ko": "황소자리",
+        "symbol": "♉",
+        "element": "EARTH",
+        "traits": ["안정적", "인내심", "감각적", "현실적"]
+      },
+      "GEMINI": {
+        "label_ko": "쌍둥이자리",
+        "symbol": "♊",
+        "element": "AIR",
+        "traits": ["지적 호기심", "소통력", "다재다능", "유연함"]
+      },
+      "CANCER": {
+        "label_ko": "게자리",
+        "symbol": "♋",
+        "element": "WATER",
+        "traits": ["감성적", "보호본능", "가정적", "배려심"]
+      },
+      "LEO": {
+        "label_ko": "사자자리",
+        "symbol": "♌",
+        "element": "FIRE",
+        "traits": ["자신감", "카리스마", "관대함", "리더십"]
+      },
+      "VIRGO": {
+        "label_ko": "처녀자리",
+        "symbol": "♍",
+        "element": "EARTH",
+        "traits": ["분석력", "완벽주의", "실용적", "세심함"]
+      },
+      "LIBRA": {
+        "label_ko": "천칭자리",
+        "symbol": "♎",
+        "element": "AIR",
+        "traits": ["균형감각", "외교적", "심미안", "조화"]
+      },
+      "SCORPIO": {
+        "label_ko": "전갈자리",
+        "symbol": "♏",
+        "element": "WATER",
+        "traits": ["통찰력", "열정적", "집중력", "깊이"]
+      },
+      "SAGITTARIUS": {
+        "label_ko": "사수자리",
+        "symbol": "♐",
+        "element": "FIRE",
+        "traits": ["자유로움", "낙관적", "모험정신", "철학적"]
+      },
+      "CAPRICORN": {
+        "label_ko": "염소자리",
+        "symbol": "♑",
+        "element": "EARTH",
+        "traits": ["야망", "책임감", "현실적", "인내심"]
+      },
+      "AQUARIUS": {
+        "label_ko": "물병자리",
+        "symbol": "♒",
+        "element": "AIR",
+        "traits": ["독창성", "혁신적", "인도주의", "독립심"]
+      },
+      "PISCES": {
+        "label_ko": "물고기자리",
+        "symbol": "♓",
+        "element": "WATER",
+        "traits": ["상상력", "공감능력", "직관적", "예술성"]
+      }
+    },
+    "element": {
+      "FIRE": {
+        "label_ko": "불",
+        "signs": ["ARIES", "LEO", "SAGITTARIUS"],
+        "traits_strong": ["열정", "행동력", "리더십"],
+        "traits_weak": ["인내심 부족", "충동성"]
+      },
+      "EARTH": {
+        "label_ko": "흙",
+        "signs": ["TAURUS", "VIRGO", "CAPRICORN"],
+        "traits_strong": ["현실감", "안정감", "인내심"],
+        "traits_weak": ["유연성 부족", "고집"]
+      },
+      "AIR": {
+        "label_ko": "공기",
+        "signs": ["GEMINI", "LIBRA", "AQUARIUS"],
+        "traits_strong": ["지성", "소통력", "사교성"],
+        "traits_weak": ["감정 표현 부족", "우유부단"]
+      },
+      "WATER": {
+        "label_ko": "물",
+        "signs": ["CANCER", "SCORPIO", "PISCES"],
+        "traits_strong": ["감성", "직관력", "공감능력"],
+        "traits_weak": ["감정 기복", "과민함"]
+      }
+    },
+    "planet": {
+      "SUN": {
+        "label_ko": "태양",
+        "symbol": "☉",
+        "meaning": "자아, 정체성, 활력"
+      },
+      "MOON": {
+        "label_ko": "달",
+        "symbol": "☽",
+        "meaning": "감정, 무의식, 어머니"
+      },
+      "MERCURY": {
+        "label_ko": "수성",
+        "symbol": "☿",
+        "meaning": "소통, 지성, 학습"
+      },
+      "VENUS": {
+        "label_ko": "금성",
+        "symbol": "♀",
+        "meaning": "사랑, 아름다움, 가치"
+      },
+      "MARS": {
+        "label_ko": "화성",
+        "symbol": "♂",
+        "meaning": "행동, 욕망, 에너지"
+      },
+      "JUPITER": {
+        "label_ko": "목성",
+        "symbol": "♃",
+        "meaning": "행운, 확장, 철학"
+      },
+      "SATURN": {
+        "label_ko": "토성",
+        "symbol": "♄",
+        "meaning": "책임, 제한, 훈련"
+      }
+    }
+  },
+  "common": {
+    "badge_orientation": {
+      "ACTION_ORIENTED": {
+        "label_ko": "행동파",
+        "description": "적극적이고 행동력이 뛰어나요"
+      },
+      "THOUGHT_ORIENTED": {
+        "label_ko": "사고파",
+        "description": "깊이 생각하고 신중하게 판단해요"
+      },
+      "EMOTION_ORIENTED": {
+        "label_ko": "감성파",
+        "description": "감수성이 풍부하고 공감능력이 뛰어나요"
+      },
+      "SOCIAL_ORIENTED": {
+        "label_ko": "사회파",
+        "description": "소통력이 뛰어나고 관계를 중시해요"
+      },
+      "CREATIVE_ORIENTED": {
+        "label_ko": "창의파",
+        "description": "창의적이고 새로운 것을 추구해요"
+      }
+    }
+  }
+}

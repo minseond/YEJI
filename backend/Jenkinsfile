@@ -1,0 +1,116 @@
+pipeline {
+    agent any
+
+    environment {
+        MATTERMOST_WEBHOOK = credentials('mattermost-webhook')
+        DEPLOY_ENV = "${env.GIT_BRANCH?.contains('main') ? 'production' : 'development'}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'chmod +x ./gradlew'
+                sh './gradlew clean build -x test --no-daemon'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './gradlew test --no-daemon'
+            }
+            post {
+                always {
+                    junit testResults: '**/build/test-results/test/*.xml', allowEmptyResults: true
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t yeji-backend:${BUILD_NUMBER} .'
+                sh 'docker tag yeji-backend:${BUILD_NUMBER} yeji-backend:latest'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    sh '''
+                        docker stop yeji-backend-prod || true
+                        docker rm yeji-backend-prod || true
+                        docker run -d --name yeji-backend-prod                             -p 8081:8080                             --env-file /var/lib/jenkins/yeji-backend.env                             --restart unless-stopped                             yeji-backend:latest
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                def envEmoji = env.DEPLOY_ENV == 'production' ? '🚀' : '🔧'
+                def message = """░░▒▒▓▓██ ★  SUCCESS ★ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**ENV:** ${envEmoji} ${env.DEPLOY_ENV}
+
+【 BACKEND DEPLOYED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 Backend Quest",
+                    attachments: [[
+                        color: "#28A745",
+                        text: message,
+                        footer: "YEJI Backend CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        failure {
+            script {
+                def message = """░░▒▒▓▓██ ✕  FAILED  ✕ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**ENV:** ${env.DEPLOY_ENV}
+
+【 BACKEND BUILD FAILED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 Backend Quest",
+                    attachments: [[
+                        color: "#CB2431",
+                        text: message,
+                        footer: "YEJI Backend CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

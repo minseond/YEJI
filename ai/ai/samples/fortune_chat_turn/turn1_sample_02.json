@@ -1,0 +1,60 @@
+{
+  "$comment": "Turn 1 샘플 02: 서-동-서 순서 (격한 토론 케이스)",
+  "session_id": "sess_sample_002",
+  "turn_id": 1,
+  "bubbles": [
+    {
+      "bubble_id": "b001",
+      "speaker": "WEST",
+      "text": "물고기자리 태양이시군요! 감수성이 풍부하고 예술적인 영혼이에요. 별들이 당신의 창의력을 축복하고 있어요!",
+      "emotion": {
+        "code": "EXCITED",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T11:00:00Z"
+    },
+    {
+      "bubble_id": "b002",
+      "speaker": "EAST",
+      "text": "잠깐, 스텔라. 임수(壬水) 일간의 사주를 보면 그리 단순하지 않소. 물은 깊고 차갑기도 하오. 감수성이라 하였으나, 실은 냉철한 판단력이 숨어있는 사주요.",
+      "emotion": {
+        "code": "CONFIDENT",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T11:00:05Z"
+    },
+    {
+      "bubble_id": "b003",
+      "speaker": "WEST",
+      "text": "에이, 소이설은 너무 무겁게 보시는 거 아니에요? 물고기자리는 꿈과 직관의 별자리예요! 냉철함보다는 영감이 더 강하다고 별들이 말해주는데요!",
+      "emotion": {
+        "code": "PLAYFUL",
+        "intensity": 0.6
+      },
+      "timestamp": "2026-01-30T11:00:10Z"
+    }
+  ],
+  "turn_end": {
+    "type": "await_user_input",
+    "user_prompt": {
+      "prompt_id": "p002",
+      "text": "동양과 서양의 해석이 다르네요! 어느 쪽이 더 맞는 것 같으세요?",
+      "input_schema": {
+        "type": "choice",
+        "options": [
+          { "value": "east", "label": "소이설 (냉철한 판단력)" },
+          { "value": "west", "label": "스텔라 (꿈과 직관)" },
+          { "value": "both", "label": "둘 다 맞는 것 같아요" },
+          { "value": "neither", "label": "둘 다 아닌 것 같은데..." }
+        ]
+      }
+    }
+  },
+  "meta": {
+    "current_turn": 1,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "total"
+  }
+}

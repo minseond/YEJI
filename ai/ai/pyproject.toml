@@ -1,0 +1,91 @@
+[project]
+name = "yeji-ai-server"
+version = "0.4.2"
+description = "YEJI 사주/운세 AI 서버 - FastAPI + vLLM"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "YEJI Team", email = "yeji@ssafy.com" }]
+keywords = ["saju", "fortune", "ai", "fastapi", "vllm"]
+
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.6.0",
+    "httpx>=0.28.0",
+    "sse-starlette>=2.2.0",
+    "korean-lunar-calendar>=0.3.1",
+    "python-dateutil>=2.9.0",
+    "structlog>=24.4.0",
+    "rich>=14.2.0",
+    "instructor>=1.7.0",
+    "openai>=1.60.0",
+    "redis>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.28.0",
+    "ruff>=0.8.0",
+]
+vllm = [
+    "vllm>=0.6.4",
+    "torch>=2.5.0",
+    "transformers>=4.47.0",
+]
+
+[project.scripts]
+yeji-ai = "yeji_ai.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/yeji_ai"]
+
+# JSON 데이터 파일 포함 (폴백 템플릿)
+[tool.hatch.build.targets.wheel.force-include]
+"src/yeji_ai/data/fallback/eastern_templates.json" = "yeji_ai/data/fallback/eastern_templates.json"
+"src/yeji_ai/data/fallback/western_templates.json" = "yeji_ai/data/fallback/western_templates.json"
+"src/yeji_ai/data/fallback/keywords.json" = "yeji_ai/data/fallback/keywords.json"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = [
+    "E501",   # 라인 길이 (line-length로 관리)
+    "E741",   # 모호한 변수명 (O = 오(午) 지지 Enum 허용)
+    "N812",   # 소문자 모듈을 대문자로 import (상수 alias 허용)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["yeji_ai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+source = ["src/yeji_ai"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+]

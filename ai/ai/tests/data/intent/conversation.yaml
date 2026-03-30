@@ -1,0 +1,180 @@
+# 대화 보조 테스트 데이터셋
+# 인텐트 필터 Intent 분류기 평가용
+#
+# 카테고리:
+# - greeting: 인사 (10개)
+# - followup: 후속 질문 (10개)
+
+metadata:
+  category: conversation
+  description: "대화 보조 테스트 샘플 (Intent 분류기 평가용)"
+  count: 20
+  version: "1.0"
+  created: "2026-01-30"
+
+samples:
+  # ============================================================
+  # GREETING (인사) - 10개
+  # ============================================================
+  - id: "CONV_GRT_001"
+    text: "안녕"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["안녕"]
+    notes: "기본 인사 (반말)"
+
+  - id: "CONV_GRT_002"
+    text: "안녕하세요"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["안녕하세요"]
+    notes: "기본 인사 (존댓말)"
+
+  - id: "CONV_GRT_003"
+    text: "반가워"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["반가워"]
+    notes: "반가움 표현"
+
+  - id: "CONV_GRT_004"
+    text: "처음 왔어요"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["처음"]
+    notes: "첫 방문 인사"
+
+  - id: "CONV_GRT_005"
+    text: "넌 누구야?"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["누구"]
+    notes: "AI 정체성 질문"
+
+  - id: "CONV_GRT_006"
+    text: "자기소개 해줘"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["자기소개"]
+    notes: "자기소개 요청"
+
+  - id: "CONV_GRT_007"
+    text: "뭘 할 수 있어?"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["뭘 할 수 있어"]
+    notes: "기능 안내 요청"
+
+  - id: "CONV_GRT_008"
+    text: "어떤 서비스야?"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["서비스"]
+    notes: "서비스 설명 요청"
+
+  - id: "CONV_GRT_009"
+    text: "사용법 알려줘"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["사용법"]
+    notes: "사용 방법 안내 요청"
+
+  - id: "CONV_GRT_010"
+    text: "하이~"
+    guard_label: benign
+    intent_label: greeting
+    confidence: 5
+    keywords: ["하이"]
+    notes: "영어식 인사"
+
+  # ============================================================
+  # FOLLOWUP (후속 질문) - 10개
+  # ============================================================
+  - id: "CONV_FUP_001"
+    text: "더 자세히 알려줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["더", "자세히"]
+    notes: "상세 설명 요청"
+
+  - id: "CONV_FUP_002"
+    text: "그게 무슨 뜻이야?"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["그게", "뜻"]
+    notes: "이전 내용 설명 요청"
+
+  - id: "CONV_FUP_003"
+    text: "왜 그런 거야?"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["왜"]
+    notes: "이유 질문"
+
+  - id: "CONV_FUP_004"
+    text: "다른 건 없어?"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["다른"]
+    notes: "추가 정보 요청"
+
+  - id: "CONV_FUP_005"
+    text: "그래서 어떻게 해야 해?"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["그래서", "어떻게"]
+    notes: "조언 요청"
+
+  - id: "CONV_FUP_006"
+    text: "좀 더 설명해줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["좀 더", "설명"]
+    notes: "추가 설명 요청"
+
+  - id: "CONV_FUP_007"
+    text: "다시 말해줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["다시"]
+    notes: "재설명 요청"
+
+  - id: "CONV_FUP_008"
+    text: "예를 들어줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["예를 들어"]
+    notes: "예시 요청"
+
+  - id: "CONV_FUP_009"
+    text: "요약해줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["요약"]
+    notes: "요약 요청"
+
+  - id: "CONV_FUP_010"
+    text: "정리해서 알려줘"
+    guard_label: benign
+    intent_label: followup
+    confidence: 5
+    keywords: ["정리"]
+    notes: "정리 요청"

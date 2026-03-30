@@ -1,0 +1,52 @@
+
+> fusion-app@0.0.0 build
+> tsc -b && vite build
+
+src/App.tsx(32,9): error TS6133: 'navigate' is declared but its value is never read.
+src/App.tsx(35,10): error TS6133: 'currentTheme' is declared but its value is never read.
+src/App.tsx(52,50): error TS2503: Cannot find namespace 'JSX'.
+src/components/charts/WesternChart.tsx(9,31): error TS6133: 'themeColor' is declared but its value is never read.
+src/components/charts/WesternChart.tsx(40,36): error TS6133: 'entry' is declared but its value is never read.
+src/components/features/CardDivinationModal.tsx(11,1): error TS6133: 'obangBack' is declared but its value is never read.
+src/components/features/CardDivinationModal.tsx(14,1): error TS6133: 'introBackground3' is declared but its value is never read.
+src/components/features/CardDivinationModal.tsx(1398,29): error TS6133: 'onRestart' is declared but its value is never read.
+src/components/features/FaceMyself.tsx(21,32): error TS6133: 'autoAdvance' is declared but its value is never read.
+src/components/features/FaceMyself.tsx(21,53): error TS6133: 'onToggleAutoAdvance' is declared but its value is never read.
+src/components/features/FortuneTeaserModal.tsx(15,1): error TS6133: 'introBackground3' is declared but its value is never read.
+src/components/features/FortuneTeaserModal.tsx(1808,7): error TS6133: 'TalismanInventoryStage' is declared but its value is never read.
+src/components/features/FortuneTeaserModal.tsx(1950,29): error TS6133: 'onRestart' is declared but its value is never read.
+src/components/Navbar.tsx(4,69): error TS6133: 'Moon' is declared but its value is never read.
+src/components/Navbar.tsx(4,75): error TS6133: 'Sun' is declared but its value is never read.
+src/components/pages/EventDetailPage.tsx(3,59): error TS6133: 'Share2' is declared but its value is never read.
+src/components/pages/FortuneLoading.tsx(30,27): error TS6133: 'loadingProgress' is declared but its value is never read.
+src/components/pages/FortuneReadingPage.tsx(72,29): error TS6133: 'setIsTransitioning' is declared but its value is never read.
+src/components/pages/FortuneResult.tsx(3,35): error TS6133: 'useMotionValue' is declared but its value is never read.
+src/components/pages/FortuneResult.tsx(4,46): error TS6133: 'Sparkles' is declared but its value is never read.
+src/components/pages/FriendsPage.tsx(28,12): error TS6133: 'error' is declared but its value is never read.
+src/components/pages/History.tsx(3,10): error TS6133: 'ArrowLeft' is declared but its value is never read.
+src/components/pages/History.tsx(3,33): error TS6133: 'Sun' is declared but its value is never read.
+src/components/pages/History.tsx(3,95): error TS6133: 'Droplet' is declared but its value is never read.
+src/components/pages/History.tsx(3,104): error TS6133: 'Mountain' is declared but its value is never read.
+src/components/pages/History.tsx(3,114): error TS6133: 'Swords' is declared but its value is never read.
+src/components/pages/History.tsx(5,1): error TS6133: 'createPortal' is declared but its value is never read.
+src/components/pages/History.tsx(22,11): error TS6133: 'navigate' is declared but its value is never read.
+src/components/pages/Home.tsx(6,1): error TS6133: 'princessNormal' is declared but its value is never read.
+src/components/pages/Home.tsx(7,1): error TS6133: 'sunnyeoNormal' is declared but its value is never read.
+src/components/pages/Home.tsx(21,5): error TS6133: 'onStartCinematic' is declared but its value is never read.
+src/components/pages/LoginPage.tsx(162,11): error TS6133: 'handleKakaoLogin' is declared but its value is never read.
+src/components/pages/MyPage.tsx(2,18): error TS6133: 'AnimatePresence' is declared but its value is never read.
+src/components/pages/MyPage.tsx(5,19): error TS6133: 'Coins' is declared but its value is never read.
+src/components/pages/MyPage.tsx(5,36): error TS6133: 'AlertCircle' is declared but its value is never read.
+src/components/pages/MyPage.tsx(391,68): error TS2339: Property 'point' does not exist on type 'UserResponse'.
+src/components/pages/MyPage.tsx(391,105): error TS2339: Property 'point' does not exist on type 'UserResponse'.
+src/components/pages/MyPage.tsx(391,145): error TS2339: Property 'point' does not exist on type 'UserResponse'.
+src/components/pages/ShopPage.tsx(4,21): error TS6133: 'ShoppingBag' is declared but its value is never read.
+src/components/pages/ShopPage.tsx(4,74): error TS6133: 'ChevronRight' is declared but its value is never read.
+src/components/pages/TodayFortuneResult.tsx(3,39): error TS6133: 'RotateCcw' is declared but its value is never read.
+src/components/pages/TodayFortuneTalk.tsx(35,26): error TS6133: 'fortuneResult' is declared but its value is never read.
+src/components/pages/WesternResult.tsx(13,5): error TS6133: 'WEST_ELEMENTS' is declared but its value is never read.
+src/data/tarotData.ts(96,13): error TS6133: 'fileKeyFragment' is declared but its value is never read.
+vite.config.ts(21,23): error TS6133: 'res' is declared but its value is never read.
+vite.config.ts(21,28): error TS6133: 'options' is declared but its value is never read.
+vite.config.ts(30,23): error TS6133: 'res' is declared but its value is never read.
+vite.config.ts(30,28): error TS6133: 'options' is declared but its value is never read.

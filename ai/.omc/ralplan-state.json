@@ -1,0 +1,10 @@
+{
+  "active": false,
+  "mode": "ralplan",
+  "iteration": 2,
+  "max_iterations": 5,
+  "plan_path": ".omc/plans/tikitaka-conversation-quality.md",
+  "current_phase": "complete",
+  "started_at": "2026-02-01T19:35:00.000Z",
+  "task_description": "티키타카 대화 품질 개선 - 현재 동양/서양 캐릭터가 각자 긴 독백을 하는 형태에서, 실제 대화처럼 짧은 메시지를 자유롭게 주고받는 형태로 변경. 버블 수도 고정 패턴(동→서→동)이 아닌 동적으로 조절 가능하게."
+}

@@ -1,0 +1,340 @@
+# 도메인 외 테스트 데이터셋
+# 인텐트 필터 Intent 분류기 평가용
+#
+# 카테고리:
+# - out_of_domain_allowed: 허용 가능한 도메인 외 (20개)
+# - out_of_domain_rejected: 거부 대상 도메인 외 (20개)
+
+metadata:
+  category: out_of_domain
+  description: "도메인 외 테스트 샘플 (Intent 분류기 평가용)"
+  count: 40
+  version: "1.0"
+  created: "2026-01-30"
+
+samples:
+  # ============================================================
+  # OUT_OF_DOMAIN_ALLOWED (허용 가능한 도메인 외) - 20개
+  # ============================================================
+  - id: "OOD_ALW_001"
+    text: "오늘 날씨 어때?"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["날씨"]
+    notes: "일상 대화 - 날씨 질문"
+
+  - id: "OOD_ALW_002"
+    text: "지금 몇 시야?"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["몇 시"]
+    notes: "일상 대화 - 시간 질문"
+
+  - id: "OOD_ALW_003"
+    text: "오늘 뭐 먹지?"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["뭐 먹지"]
+    notes: "일상 대화 - 식사 고민"
+
+  - id: "OOD_ALW_004"
+    text: "심심해"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["심심해"]
+    notes: "일상 대화 - 심심함 표현"
+
+  - id: "OOD_ALW_005"
+    text: "재밌는 얘기해줘"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["재밌는 얘기"]
+    notes: "일상 대화 - 재미 요청"
+
+  - id: "OOD_ALW_006"
+    text: "고민이 있어"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["고민"]
+    notes: "가벼운 조언 요청"
+
+  - id: "OOD_ALW_007"
+    text: "힘들어"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["힘들어"]
+    notes: "감정 표현"
+
+  - id: "OOD_ALW_008"
+    text: "기분이 안 좋아"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["기분", "안 좋아"]
+    notes: "감정 표현"
+
+  - id: "OOD_ALW_009"
+    text: "스트레스 받아 ㅠㅠ"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["스트레스"]
+    notes: "감정 표현 (이모티콘 포함)"
+
+  - id: "OOD_ALW_010"
+    text: "ㅋㅋㅋ"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["ㅋㅋㅋ"]
+    notes: "잡담 - 웃음"
+
+  - id: "OOD_ALW_011"
+    text: "ㅎㅎ 그렇구나"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["ㅎㅎ", "그렇구나"]
+    notes: "잡담 - 리액션"
+
+  - id: "OOD_ALW_012"
+    text: "신기하다"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["신기하다"]
+    notes: "잡담 - 감탄"
+
+  - id: "OOD_ALW_013"
+    text: "오 그래?"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["오", "그래"]
+    notes: "잡담 - 반응"
+
+  - id: "OOD_ALW_014"
+    text: "재밌당~"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["재밌당"]
+    notes: "잡담 - 긍정 반응"
+
+  - id: "OOD_ALW_015"
+    text: "배고파"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["배고파"]
+    notes: "일상 표현"
+
+  - id: "OOD_ALW_016"
+    text: "졸려..."
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["졸려"]
+    notes: "일상 표현"
+
+  - id: "OOD_ALW_017"
+    text: "오늘 힘든 하루였어"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["힘든 하루"]
+    notes: "일상 대화 - 하루 공유"
+
+  - id: "OOD_ALW_018"
+    text: "잘 자~"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["잘 자"]
+    notes: "작별 인사"
+
+  - id: "OOD_ALW_019"
+    text: "고마워"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["고마워"]
+    notes: "감사 표현"
+
+  - id: "OOD_ALW_020"
+    text: "뭐하고 있어?"
+    guard_label: benign
+    intent_label: out_of_domain_allowed
+    confidence: 5
+    keywords: ["뭐하고"]
+    notes: "일상 대화 - 안부"
+
+  # ============================================================
+  # OUT_OF_DOMAIN_REJECTED (거부 대상 도메인 외) - 20개
+  # ============================================================
+  - id: "OOD_REJ_001"
+    text: "파이썬 코드 짜줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["파이썬", "코드"]
+    notes: "전문 지식 - 프로그래밍"
+
+  - id: "OOD_REJ_002"
+    text: "영어로 번역해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["영어", "번역"]
+    notes: "전문 지식 - 번역"
+
+  - id: "OOD_REJ_003"
+    text: "수학 문제 풀어줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["수학 문제"]
+    notes: "전문 지식 - 수학"
+
+  - id: "OOD_REJ_004"
+    text: "법률 상담해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["법률 상담"]
+    notes: "전문 지식 - 법률"
+
+  - id: "OOD_REJ_005"
+    text: "의료 상담해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["의료 상담"]
+    notes: "전문 지식 - 의료"
+
+  - id: "OOD_REJ_006"
+    text: "뉴스 알려줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["뉴스"]
+    notes: "정보 검색 - 뉴스"
+
+  - id: "OOD_REJ_007"
+    text: "삼성전자 주가 알려줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["삼성전자", "주가"]
+    notes: "정보 검색 - 주식 시세"
+
+  - id: "OOD_REJ_008"
+    text: "맛집 추천해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["맛집", "추천"]
+    notes: "정보 검색 - 맛집"
+
+  - id: "OOD_REJ_009"
+    text: "길 안내해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["길 안내"]
+    notes: "정보 검색 - 길찾기"
+
+  - id: "OOD_REJ_010"
+    text: "글 써줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["글 써"]
+    notes: "창작/생성 - 글쓰기"
+
+  - id: "OOD_REJ_011"
+    text: "이메일 작성해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["이메일", "작성"]
+    notes: "창작/생성 - 이메일"
+
+  - id: "OOD_REJ_012"
+    text: "리포트 써줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["리포트"]
+    notes: "창작/생성 - 리포트"
+
+  - id: "OOD_REJ_013"
+    text: "요리 레시피 알려줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["요리 레시피"]
+    notes: "정보 검색 - 레시피"
+
+  - id: "OOD_REJ_014"
+    text: "두통약 추천해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["두통약", "추천"]
+    notes: "의료 조언 - 약 추천"
+
+  - id: "OOD_REJ_015"
+    text: "병원 어디 가야 해?"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["병원"]
+    notes: "의료 조언 - 병원 추천"
+
+  - id: "OOD_REJ_016"
+    text: "이직할 회사 추천해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["회사", "추천"]
+    notes: "정보 추천 - 회사"
+
+  - id: "OOD_REJ_017"
+    text: "공무원 시험 기출문제 알려줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["기출문제"]
+    notes: "정보 검색 - 시험 문제"
+
+  - id: "OOD_REJ_018"
+    text: "자바스크립트 에러 해결해줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["자바스크립트", "에러"]
+    notes: "전문 지식 - 프로그래밍"
+
+  - id: "OOD_REJ_019"
+    text: "PPT 만들어줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["PPT"]
+    notes: "창작/생성 - 프레젠테이션"
+
+  - id: "OOD_REJ_020"
+    text: "엑셀 함수 알려줘"
+    guard_label: benign
+    intent_label: out_of_domain_rejected
+    confidence: 5
+    keywords: ["엑셀", "함수"]
+    notes: "전문 지식 - 스프레드시트"

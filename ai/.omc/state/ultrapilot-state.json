@@ -1,0 +1,16 @@
+{
+  "active": false,
+  "mode": "ultrapilot",
+  "task": "Add session parameter to create_topic_messages in /chat/turn API",
+  "workers": [
+    {"id": "w1", "status": "completed", "branch": "ai/main", "commit": "14b94b9"},
+    {"id": "w2", "status": "completed", "branch": "ai/develop", "commit": "71bddd3"}
+  ],
+  "phase": "completed",
+  "started_at": "2026-02-02T10:45:00Z",
+  "completed_at": "2026-02-02T10:50:00Z",
+  "verification": {
+    "ai/main": {"session_param_lines": [189, 557, 1454]},
+    "ai/develop": {"session_param_lines": [191, 560, 1583]}
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_comment": "서양 점성술 캐시 데이터 - generate_fortune_cache.py 스크립트로 생성됨",
+  "_schema": {
+    "key_format": "{태양별자리}_{달별자리}",
+    "example_key": "ARIES_CANCER",
+    "fields": {
+      "personality": "성격 분석 (해요체)",
+      "strength": "강점 분석 (해요체)",
+      "weakness": "약점 분석 (해요체)",
+      "advice": "종합 조언 (해요체)",
+      "summary": "한 줄 요약",
+      "message": "스텔라 캐릭터 메시지 (3-5문장, 해요체)",
+      "badges": ["배지코드1", "배지코드2"],
+      "keywords": [
+        {"code": "KEYWORD_CODE", "label": "한글", "weight": 0.9}
+      ],
+      "lucky": {
+        "day": "행운의 요일",
+        "day_code": "MON/TUE/WED/THU/FRI/SAT/SUN",
+        "color": "행운의 색상",
+        "color_code": "#HEX",
+        "number": "행운의 숫자",
+        "stone": "행운의 보석",
+        "planet": "행운의 행성"
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+# YEJI AI Server GitLab CI/CD
+# AI 브랜치 전용 파이프라인
+
+stages:
+  - lint
+  - test
+  - build
+  - deploy
+
+variables:
+  DOCKER_IMAGE: $CI_REGISTRY_IMAGE/yeji-ai
+  PYTHON_VERSION: "3.11"
+
+# ============================================================
+# 기본 설정
+# ============================================================
+default:
+  image: python:3.11-slim
+  before_script:
+    - pip install uv
+    - uv sync
+
+# ============================================================
+# Lint 단계
+# ============================================================
+lint:
+  stage: lint
+  script:
+    - uv run ruff check src/
+    - uv run ruff format --check src/
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH =~ /^ai\//
+
+# ============================================================
+# Test 단계
+# ============================================================
+test:
+  stage: test
+  script:
+    - uv run pytest tests/ -v --cov=src/yeji_ai --cov-report=xml --cov-report=term
+  coverage: '/TOTAL.*\s+(\d+%)/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH =~ /^ai\//
+
+# ============================================================
+# Build 단계
+# ============================================================
+build:
+  stage: build
+  image: docker:24
+  services:
+    - docker:24-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t $DOCKER_IMAGE:$CI_COMMIT_SHA .
+    - docker push $DOCKER_IMAGE:$CI_COMMIT_SHA
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "ai/main" ]; then
+        docker tag $DOCKER_IMAGE:$CI_COMMIT_SHA $DOCKER_IMAGE:latest
+        docker push $DOCKER_IMAGE:latest
+      fi
+  rules:
+    - if: $CI_COMMIT_BRANCH == "ai/main"
+    - if: $CI_COMMIT_BRANCH == "ai/develop"
+
+# ============================================================
+# Deploy 단계 (Lightsail)
+# ============================================================
+deploy_staging:
+  stage: deploy
+  image: amazon/aws-cli:latest
+  variables:
+    AWS_DEFAULT_REGION: ap-northeast-2
+  before_script:
+    - yum install -y jq
+  script:
+    - |
+      aws lightsail create-container-service-deployment \
+        --service-name yeji-ai-staging \
+        --containers '{
+          "yeji-ai": {
+            "image": "'$CI_REGISTRY'/'$CI_PROJECT_PATH'/yeji-ai:'$CI_COMMIT_SHA'",
+            "ports": {"8000": "HTTP"},
+            "environment": {
+              "VLLM_BASE_URL": "'$VLLM_BASE_URL'",
+              "LOG_LEVEL": "INFO"
+            }
+          }
+        }' \
+        --public-endpoint '{
+          "containerName": "yeji-ai",
+          "containerPort": 8000,
+          "healthCheck": {
+            "path": "/health",
+            "intervalSeconds": 30
+          }
+        }'
+  environment:
+    name: staging
+    url: https://yeji-ai-staging.${AWS_LIGHTSAIL_DOMAIN}
+  rules:
+    - if: $CI_COMMIT_BRANCH == "ai/develop"
+
+deploy_production:
+  stage: deploy
+  image: amazon/aws-cli:latest
+  variables:
+    AWS_DEFAULT_REGION: ap-northeast-2
+  before_script:
+    - yum install -y jq
+  script:
+    - |
+      aws lightsail create-container-service-deployment \
+        --service-name yeji-ai-prod \
+        --containers '{
+          "yeji-ai": {
+            "image": "'$CI_REGISTRY'/'$CI_PROJECT_PATH'/yeji-ai:'$CI_COMMIT_SHA'",
+            "ports": {"8000": "HTTP"},
+            "environment": {
+              "VLLM_BASE_URL": "'$VLLM_BASE_URL_PROD'",
+              "LOG_LEVEL": "WARNING"
+            }
+          }
+        }' \
+        --public-endpoint '{
+          "containerName": "yeji-ai",
+          "containerPort": 8000,
+          "healthCheck": {
+            "path": "/health",
+            "intervalSeconds": 30
+          }
+        }'
+  environment:
+    name: production
+    url: https://yeji-ai.${AWS_LIGHTSAIL_DOMAIN}
+  rules:
+    - if: $CI_COMMIT_BRANCH == "ai/main"
+  when: manual

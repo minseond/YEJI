@@ -1,0 +1,56 @@
+# YEJI AI Server - Docker Compose (로컬 개발용)
+# 프로덕션 배포는 Jenkinsfile을 통해 진행
+
+services:
+  yeji-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yeji-ai-local
+    ports:
+      - "8000:8000"
+    environment:
+      # vLLM 서버 설정 (로컬 개발 시 변경 필요)
+      - VLLM_BASE_URL=${VLLM_BASE_URL:-http://host.docker.internal:8001}
+      - VLLM_MODEL=${VLLM_MODEL:-tellang/yeji-8b-rslora-v7-AWQ}
+      - VLLM_TIMEOUT=${VLLM_TIMEOUT:-120.0}
+      # CORS 설정
+      - CORS_ORIGINS=${CORS_ORIGINS:-["http://localhost:3000"]}
+      # 로깅
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    # 리소스 제한 (로컬 개발용)
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          cpus: "0.5"
+          memory: 256M
+
+  # 개발 환경용 (소스 마운트)
+  yeji-ai-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: yeji-ai-dev
+    ports:
+      - "8002:8000"
+    environment:
+      - VLLM_BASE_URL=${VLLM_BASE_URL:-http://host.docker.internal:8001}
+      - VLLM_MODEL=${VLLM_MODEL:-tellang/yeji-8b-rslora-v7-AWQ}
+      - LOG_LEVEL=DEBUG
+    volumes:
+      # 소스 코드 마운트 (핫 리로드)
+      - ./src:/app/src:ro
+    command: ["uvicorn", "yeji_ai.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    profiles:
+      - dev

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YEJI AI API Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141937;
+            --bg-card: #1a1f3a;
+            --text-primary: #e8eaf6;
+            --text-secondary: #9fa8da;
+            --accent-prod: #00e676;
+            --accent-dev: #ffd740;
+            --accent-ultra: #448aff;
+            --border-color: #283593;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-prod), var(--accent-ultra));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .environments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .env-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .env-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        .env-card.prod {
+            --accent-color: var(--accent-prod);
+        }
+
+        .env-card.dev {
+            --accent-color: var(--accent-dev);
+        }
+
+        .env-card.ultra4 {
+            --accent-color: var(--accent-ultra);
+        }
+
+        .env-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+            border-color: var(--accent-color);
+        }
+
+        .env-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .env-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .env-badge {
+            background: var(--accent-color);
+            color: var(--bg-primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .env-info {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .env-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0.25rem 0;
+        }
+
+        .env-info strong {
+            color: var(--text-primary);
+        }
+
+        .links-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .link-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .link-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .link-text {
+            flex: 1;
+        }
+
+        .link-label {
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+        }
+
+        .link-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .link-arrow {
+            opacity: 0.5;
+            transition: opacity 0.2s ease;
+        }
+
+        .link-item:hover .link-arrow {
+            opacity: 1;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-ultra);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .environments {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            margin-right: 0.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 YEJI AI API Portal</h1>
+            <p class="subtitle">운세 생성 AI 서비스 - API 문서 및 데모</p>
+        </header>
+
+        <main class="environments">
+            <!-- Production Environment -->
+            <div class="env-card prod">
+                <div class="env-header">
+                    <h2 class="env-name">
+                        <span class="status-indicator"></span>
+                        Production
+                    </h2>
+                    <span class="env-badge">MAIN</span>
+                </div>
+                <div class="env-info">
+                    <p><strong>모델:</strong> tellang/yeji-8b-rslora-v7 (8B)</p>
+                    <p><strong>경로:</strong> /ai/</p>
+                    <p><strong>설명:</strong> 프로덕션 환경 (안정적, 고품질)</p>
+                </div>
+                <div class="links-grid">
+                    <a href="https://i14a605.p.ssafy.io/ai/docs" class="link-item" target="_blank">
+                        <span class="link-icon">📖</span>
+                        <div class="link-text">
+                            <div class="link-label">Swagger UI</div>
+                            <div class="link-desc">대화형 API 문서</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai/redoc" class="link-item" target="_blank">
+                        <span class="link-icon">📚</span>
+                        <div class="link-text">
+                            <div class="link-label">ReDoc</div>
+                            <div class="link-desc">상세 API 레퍼런스</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai/tikitaka-test" class="link-item" target="_blank">
+                        <span class="link-icon">💬</span>
+                        <div class="link-text">
+                            <div class="link-label">티키타카 데모</div>
+                            <div class="link-desc">3턴 대화형 운세 체험</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai/health" class="link-item" target="_blank">
+                        <span class="link-icon">💚</span>
+                        <div class="link-text">
+                            <div class="link-label">헬스체크</div>
+                            <div class="link-desc">서비스 상태 확인</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Development Environment -->
+            <div class="env-card dev">
+                <div class="env-header">
+                    <h2 class="env-name">
+                        <span class="status-indicator"></span>
+                        Development
+                    </h2>
+                    <span class="env-badge">DEVELOP</span>
+                </div>
+                <div class="env-info">
+                    <p><strong>모델:</strong> tellang/yeji-8b-rslora-v7 (8B)</p>
+                    <p><strong>경로:</strong> /ai-dev/</p>
+                    <p><strong>설명:</strong> 개발 환경 (신규 기능 테스트)</p>
+                </div>
+                <div class="links-grid">
+                    <a href="https://i14a605.p.ssafy.io/ai-dev/docs" class="link-item" target="_blank">
+                        <span class="link-icon">📖</span>
+                        <div class="link-text">
+                            <div class="link-label">Swagger UI</div>
+                            <div class="link-desc">대화형 API 문서</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-dev/redoc" class="link-item" target="_blank">
+                        <span class="link-icon">📚</span>
+                        <div class="link-text">
+                            <div class="link-label">ReDoc</div>
+                            <div class="link-desc">상세 API 레퍼런스</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-dev/tikitaka-test" class="link-item" target="_blank">
+                        <span class="link-icon">💬</span>
+                        <div class="link-text">
+                            <div class="link-label">티키타카 데모</div>
+                            <div class="link-desc">3턴 대화형 운세 체험</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-dev/health" class="link-item" target="_blank">
+                        <span class="link-icon">💛</span>
+                        <div class="link-text">
+                            <div class="link-label">헬스체크</div>
+                            <div class="link-desc">서비스 상태 확인</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ultra4 Environment -->
+            <div class="env-card ultra4">
+                <div class="env-header">
+                    <h2 class="env-name">
+                        <span class="status-indicator"></span>
+                        Ultra4
+                    </h2>
+                    <span class="env-badge">GPT-5-mini</span>
+                </div>
+                <div class="env-info">
+                    <p><strong>Chat:</strong> GPT-5-mini (OpenAI)</p>
+                    <p><strong>Fortune:</strong> tellang/yeji-8b-rslora-v7 (AWS vLLM)</p>
+                    <p><strong>경로:</strong> /ai-ultra4/</p>
+                    <p><strong>설명:</strong> GPT-5-mini 채팅 + 8B 운세 분석</p>
+                </div>
+                <div class="links-grid">
+                    <a href="https://i14a605.p.ssafy.io/ai-ultra4/docs" class="link-item" target="_blank">
+                        <span class="link-icon">📖</span>
+                        <div class="link-text">
+                            <div class="link-label">Swagger UI</div>
+                            <div class="link-desc">대화형 API 문서</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-ultra4/redoc" class="link-item" target="_blank">
+                        <span class="link-icon">📚</span>
+                        <div class="link-text">
+                            <div class="link-label">ReDoc</div>
+                            <div class="link-desc">상세 API 레퍼런스</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-ultra4/tikitaka-test" class="link-item" target="_blank">
+                        <span class="link-icon">💬</span>
+                        <div class="link-text">
+                            <div class="link-label">티키타카 데모</div>
+                            <div class="link-desc">3턴 대화형 운세 체험</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://i14a605.p.ssafy.io/ai-ultra4/health" class="link-item" target="_blank">
+                        <span class="link-icon">💙</span>
+                        <div class="link-text">
+                            <div class="link-label">헬스체크</div>
+                            <div class="link-desc">서비스 상태 확인</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://github.com/your-org/yeji-ai-server" target="_blank">GitHub</a>
+                <a href="https://i14a605.p.ssafy.io/ai/docs" target="_blank">API 문서</a>
+                <a href="mailto:support@yeji.ai">문의하기</a>
+            </div>
+            <p>&copy; 2025 SSAFY YEJI Team. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

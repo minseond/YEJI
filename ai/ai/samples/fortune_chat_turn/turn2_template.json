@@ -1,0 +1,61 @@
+{
+  "$comment": "Turn 2 템플릿: 연애운 대결 (user_input_ref로 사용자 선택 응답)",
+  "session_id": "sess_sample_001",
+  "turn_id": 2,
+  "bubbles": [
+    {
+      "bubble_id": "b004",
+      "speaker": "EAST",
+      "text": "연애운이라... 귀하의 사주에서 도화살이 보이오. 이성의 눈길을 끄는 매력이 있으나, 바람둥이 기운도 조심해야 하오.",
+      "emotion": {
+        "code": "THOUGHTFUL",
+        "intensity": 0.6
+      },
+      "user_input_ref": "p001",
+      "timestamp": "2026-01-30T10:31:00Z"
+    },
+    {
+      "bubble_id": "b005",
+      "speaker": "WEST",
+      "text": "바람둥이요? 소이설, 좀 심하시네요! 금성이 좋은 위치에 있어서 로맨틱하고 매력적인 거예요. 새로운 만남이 올 수도 있어요!",
+      "emotion": {
+        "code": "PLAYFUL",
+        "intensity": 0.7
+      },
+      "user_input_ref": "p001",
+      "timestamp": "2026-01-30T10:31:05Z"
+    },
+    {
+      "bubble_id": "b006",
+      "speaker": "EAST",
+      "text": "흠, 스텔라는 역시 낙관적이구려. 하지만 동양의 관점에서는 조심할 것도 알려줘야 하지 않겠소? 수성 역행 기간이니 오해가 생기기 쉽소.",
+      "emotion": {
+        "code": "CONCERNED",
+        "intensity": 0.5
+      },
+      "timestamp": "2026-01-30T10:31:10Z"
+    }
+  ],
+  "turn_end": {
+    "type": "await_user_input",
+    "user_prompt": {
+      "prompt_id": "p004",
+      "text": "소이설은 조심하라 하고, 스텔라는 기대하라 하네요. 연애에 대해 더 구체적으로 물어보실래요?",
+      "input_schema": {
+        "type": "text",
+        "placeholder": "예: 이번 달에 고백해도 될까요?",
+        "validation": {
+          "required": false,
+          "max_length": 200
+        }
+      }
+    }
+  },
+  "meta": {
+    "current_turn": 2,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "love"
+  }
+}

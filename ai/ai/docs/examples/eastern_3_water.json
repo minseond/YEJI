@@ -1,0 +1,137 @@
+{
+  "category": "western",
+  "chart": {
+    "summary": "This is a strong and dynamic water year, with multiple sources of壬 (water) that influence the day and month. The presence of甲木 (甲) in the hour adds a creative and initiating energy, while辛金 (辛) and亥/子 (水) elements provide support and stimulation. The辰土 (辰) in the hour contains 木, 金, 土, making it a complex and mixed foundation. The overall flow is one of water driving growth, but with the potential for conflict due to the multiple elements competing for dominance.",
+    "year": {
+      "gan": "壬",
+      "gan_code": "JA",
+      "ji": "申",
+      "ji_code": "JEONG_JAE",
+      "element_code": "WATER",
+      "ten_god_code": "DAY_MASTER"
+    },
+    "month": {
+      "gan": "辛",
+      "gan_code": "GAP",
+      "ji": "亥",
+      "ji_code": "IN",
+      "element_code": "METAL",
+      "ten_god_code": "SANG_GWAN"
+    },
+    "day": {
+      "gan": "壬",
+      "gan_code": "JA",
+      "ji": "子",
+      "ji_code": "JA",
+      "element_code": "WATER",
+      "ten_god1": "DAY_MASTER",
+      "ten_god2": "SANG_GWAN"
+    },
+    "hour": {
+      "gan": "甲",
+      "gan_code": "GAP",
+      "ji": "辰",
+      "ji_code": "JEONG_JAE",
+      "element_code": "WOOD",
+      "ten_god_code": "SANG_GWAN"
+    }
+  },
+  "stats": {
+    "five_elements": {
+      "summary": "Water and Wood are the dominant elements, with Water being the most prominent. The distribution is 37.5% Water, 25% Wood, 12.5% each of Metal and Earth, and 12.5% Fire. The strong Water supports the Wood, creating a nurturing environment, while the Metal and Earth provide structure and challenges. The balance is slightly tipped towards Water, which could lead to stagnation if not managed.",
+      "elements": [
+        {
+          "code": "WATER",
+          "label": "물",
+          "value": 4,
+          "percent": 37.5
+        },
+        {
+          "code": "WOOD",
+          "label": "나무",
+          "value": 2,
+          "percent": 25
+        },
+        {
+          "code": "METAL",
+          "label": "금속",
+          "value": 2,
+          "percent": 12.5
+        },
+        {
+          "code": "EARTH",
+          "label": "흙",
+          "value": 2,
+          "percent": 12.5
+        },
+        {
+          "code": "FIRE",
+          "label": "불",
+          "value": 1,
+          "percent": 6.25
+        }
+      ]
+    },
+    "yin_yang": {
+      "summary": "The year is predominantly yin, with 55% yin and 45% yang. This indicates a time of introspection, emotional sensitivity, and internal growth. External actions may be slower to materialize, and patience will be key.",
+      "yin": 55,
+      "yang": 45,
+      "balance": "STRONG_YIN"
+    },
+    "ten_gods": {
+      "summary": "The combination of DAY_MASTER and SANG_GWAN ten gods in the year and month/day respectively suggests a powerful leadership energy and a focus on public duty or responsibility. The gods are distributed such that the day master (壬) and the month (辛) create a dynamic tension, while the hour (甲辰) provides a grounding force. This configuration is ideal for those in leadership or creative positions who need to balance vision with practicality.",
+      "gods": [
+        {
+          "code": "DAY_MASTER",
+          "label": "일간 주도",
+          "value": 2,
+          "percent": 33.33
+        },
+        {
+          "code": "SANG_GWAN",
+          "label": "상관",
+          "value": 2,
+          "percent": 33.33
+        },
+        {
+          "code": "JEONG_JAE",
+          "label": "정재",
+          "value": 1,
+          "percent": 16.67
+        },
+        {
+          "code": "IN",
+          "label": "인간",
+          "value": 1,
+          "percent": 16.67
+        }
+      ]
+    },
+    "strength": "Water and Wood's combined energy is strong, making for excellent communication, learning, and nurturing abilities. The leadership and responsibility aspects (DAY_MASTER, SANG_GWAN) provide a solid foundation for achieving goals.",
+    "weakness": "The dominance of Water and the yin balance may lead to emotional sensitivity, indecision, and a lack of physical energy. The mixed elements in the hour (辰) can cause internal conflicts and distractions. Balance and discipline are necessary to maintain stability."
+  },
+  "summary": "This year is one of strong water and wood energies, with a prominent yin balance. The combination of leadership (DAY_MASTER) and responsibility (SANG_GWAN) makes it a year for achieving significant progress, but with the need for emotional management and physical grounding. The mixed hour (辰) adds complexity, requiring careful navigation.",
+  "message": "Focus on maintaining emotional equilibrium and physical health. Use your strong water and wood energies to foster growth and communication, but be mindful of the internal conflicts that may arise. Balance is key to achieving your goals this year.",
+  "ui_hints": {
+    "badges": [
+      "WATER_STRONG",
+      "YIN_DOMINANT",
+      "MULTI_ELEMENT_CONFLICT"
+    ],
+    "recommend_chart": "RADAR",
+    "highlight": {
+      "day_master": "day",
+      "strong_element": "WATER",
+      "weak_element": "FIRE"
+    }
+  },
+  "lucky": {
+    "color": "검정",
+    "color_code": "#000000",
+    "number": "4,8",
+    "item": "물",
+    "direction": "북쪽",
+    "direction_code": "N",
+    "place": "수많은 물이 있는 장소"
+  }
+}

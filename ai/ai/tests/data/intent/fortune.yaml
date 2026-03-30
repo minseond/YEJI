@@ -1,0 +1,840 @@
+# 운세 관련 테스트 데이터셋
+# 인텐트 필터 Intent 분류기 평가용
+#
+# 카테고리:
+# - fortune_general: 일반 운세 (15개)
+# - fortune_love: 연애/결혼운 (15개)
+# - fortune_career: 직장/취업운 (15개)
+# - fortune_money: 금전/재물운 (15개)
+# - fortune_health: 건강운 (15개)
+# - fortune_academic: 학업/시험운 (15개)
+# - fortune_interpersonal: 대인관계운 (10개)
+
+metadata:
+  category: fortune
+  description: "운세 관련 테스트 샘플 (Intent 분류기 평가용)"
+  count: 100
+  version: "1.0"
+  created: "2026-01-30"
+
+samples:
+  # ============================================================
+  # FORTUNE_GENERAL (일반 운세) - 15개
+  # ============================================================
+  - id: "FORT_GEN_001"
+    text: "오늘 운세 알려줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["오늘", "운세"]
+    notes: "일반적인 당일 운세 요청"
+
+  - id: "FORT_GEN_002"
+    text: "내 사주 좀 봐줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["사주"]
+    notes: "사주 분석 요청"
+
+  - id: "FORT_GEN_003"
+    text: "이번 달 운세가 궁금해요~"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["이번 달", "운세"]
+    notes: "월간 운세 요청 (이모티콘 포함)"
+
+  - id: "FORT_GEN_004"
+    text: "내 팔자가 어떻게 돼?"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["팔자"]
+    notes: "팔자 요청 (반말)"
+
+  - id: "FORT_GEN_005"
+    text: "오늘 하루 어떨까?"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 4
+    keywords: ["오늘", "하루", "어떨까"]
+    notes: "암묵적 운세 요청"
+
+  - id: "FORT_GEN_006"
+    text: "나 운세 좀 봐주세요"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["운세"]
+    notes: "정중한 운세 요청"
+
+  - id: "FORT_GEN_007"
+    text: "이번 주 운세 알려주세요"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["이번 주", "운세"]
+    notes: "주간 운세 요청"
+
+  - id: "FORT_GEN_008"
+    text: "내 운명이 어떤지 알려줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["운명"]
+    notes: "운명 질문"
+
+  - id: "FORT_GEN_009"
+    text: "오늘 나한테 무슨 일이 생길까?"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 4
+    keywords: ["오늘", "무슨 일"]
+    notes: "암묵적 일일 운세"
+
+  - id: "FORT_GEN_010"
+    text: "2026년 운세 총운 알려줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["2026년", "운세", "총운"]
+    notes: "연간 총운 요청"
+
+  - id: "FORT_GEN_011"
+    text: "올해 좋은 일 있을까?"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 4
+    keywords: ["올해", "좋은 일"]
+    notes: "암묵적 연간 운세"
+
+  - id: "FORT_GEN_012"
+    text: "내 미래가 궁금해 ㅠㅠ"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 4
+    keywords: ["미래"]
+    notes: "이모티콘 포함 요청"
+
+  - id: "FORT_GEN_013"
+    text: "운이 좋을까?"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 4
+    keywords: ["운"]
+    notes: "간단한 운세 질문"
+
+  - id: "FORT_GEN_014"
+    text: "그냥 운세 봐줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["운세"]
+    notes: "구체적 카테고리 없는 요청"
+
+  - id: "FORT_GEN_015"
+    text: "사주팔자 분석해줘"
+    guard_label: benign
+    intent_label: fortune_general
+    confidence: 5
+    keywords: ["사주팔자"]
+    notes: "사주팔자 분석 요청"
+
+  # ============================================================
+  # FORTUNE_LOVE (연애/결혼운) - 15개
+  # ============================================================
+  - id: "FORT_LOVE_001"
+    text: "연애운이 궁금해"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["연애운"]
+    notes: "연애 카테고리 직접 언급"
+
+  - id: "FORT_LOVE_002"
+    text: "올해 결혼할 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["결혼"]
+    notes: "결혼 의도 명확"
+
+  - id: "FORT_LOVE_003"
+    text: "내 짝은 언제 나타나?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 4
+    keywords: ["짝"]
+    notes: "이성 파트너 관련"
+
+  - id: "FORT_LOVE_004"
+    text: "남자친구랑 잘 될까?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["남자친구"]
+    notes: "현재 연인 관계 질문"
+
+  - id: "FORT_LOVE_005"
+    text: "이 사람이랑 궁합이 어때?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["궁합"]
+    notes: "궁합 질문"
+
+  - id: "FORT_LOVE_006"
+    text: "연애가 언제 시작될까요?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["연애", "시작"]
+    notes: "연애 시작 시기 질문"
+
+  - id: "FORT_LOVE_007"
+    text: "사랑운 좀 봐줘~"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["사랑운"]
+    notes: "사랑운 요청"
+
+  - id: "FORT_LOVE_008"
+    text: "썸남이랑 어떻게 될까?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["썸남"]
+    notes: "썸 관계 질문"
+
+  - id: "FORT_LOVE_009"
+    text: "이혼할 운명인가요?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["이혼"]
+    notes: "이혼 관련 질문"
+
+  - id: "FORT_LOVE_010"
+    text: "내 배우자 운은 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["배우자"]
+    notes: "배우자운 질문"
+
+  - id: "FORT_LOVE_011"
+    text: "좋은 사람 만날 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 4
+    keywords: ["좋은 사람", "만날"]
+    notes: "암묵적 연애운"
+
+  - id: "FORT_LOVE_012"
+    text: "전 애인과 재회할 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["전 애인", "재회"]
+    notes: "재회 가능성 질문"
+
+  - id: "FORT_LOVE_013"
+    text: "여자친구한테 차였는데 다시 만날 수 있을까 ㅠㅠ"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["여자친구", "차였", "다시 만날"]
+    notes: "이별 후 재회 질문"
+
+  - id: "FORT_LOVE_014"
+    text: "이번 달 이성운 좋아?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["이성운"]
+    notes: "이성운 질문"
+
+  - id: "FORT_LOVE_015"
+    text: "결혼운이 있나요?"
+    guard_label: benign
+    intent_label: fortune_love
+    confidence: 5
+    keywords: ["결혼운"]
+    notes: "결혼운 질문"
+
+  # ============================================================
+  # FORTUNE_CAREER (직장/취업운) - 15개
+  # ============================================================
+  - id: "FORT_CAR_001"
+    text: "취업이 될까요?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["취업"]
+    notes: "취업 운세 요청"
+
+  - id: "FORT_CAR_002"
+    text: "이직해도 될까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["이직"]
+    notes: "이직 결정 질문"
+
+  - id: "FORT_CAR_003"
+    text: "직장운 좀 봐줘"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["직장운"]
+    notes: "직장운 직접 요청"
+
+  - id: "FORT_CAR_004"
+    text: "승진할 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["승진"]
+    notes: "승진 가능성 질문"
+
+  - id: "FORT_CAR_005"
+    text: "사업이 잘 될까요?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["사업"]
+    notes: "사업 성공 질문"
+
+  - id: "FORT_CAR_006"
+    text: "이번 면접 붙을까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["면접"]
+    notes: "면접 합격 질문"
+
+  - id: "FORT_CAR_007"
+    text: "창업해도 될까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["창업"]
+    notes: "창업 결정 질문"
+
+  - id: "FORT_CAR_008"
+    text: "직장 상사와의 관계는 어떨까요?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 4
+    keywords: ["직장", "상사"]
+    notes: "직장 내 관계 질문 (직장 맥락)"
+
+  - id: "FORT_CAR_009"
+    text: "이번 프로젝트 성공할까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["프로젝트", "성공"]
+    notes: "업무 성공 질문"
+
+  - id: "FORT_CAR_010"
+    text: "내 사업운이 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["사업운"]
+    notes: "사업운 질문"
+
+  - id: "FORT_CAR_011"
+    text: "월급이 오를까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 4
+    keywords: ["월급"]
+    notes: "직장 내 보상 질문"
+
+  - id: "FORT_CAR_012"
+    text: "이번 해 커리어운 어때?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["커리어운"]
+    notes: "커리어 직접 언급"
+
+  - id: "FORT_CAR_013"
+    text: "회사 옮겨도 괜찮을까요?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["회사", "옮겨"]
+    notes: "이직 질문 (다른 표현)"
+
+  - id: "FORT_CAR_014"
+    text: "올해 안에 취직 가능할까요? ㅠ"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["취직"]
+    notes: "취직 시기 질문"
+
+  - id: "FORT_CAR_015"
+    text: "새로운 직업을 구해야 할까?"
+    guard_label: benign
+    intent_label: fortune_career
+    confidence: 5
+    keywords: ["직업", "구해야"]
+    notes: "직업 변경 질문"
+
+  # ============================================================
+  # FORTUNE_MONEY (금전/재물운) - 15개
+  # ============================================================
+  - id: "FORT_MON_001"
+    text: "금전운이 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["금전운"]
+    notes: "금전운 직접 언급"
+
+  - id: "FORT_MON_002"
+    text: "재물운 봐줘"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["재물운"]
+    notes: "재물운 요청"
+
+  - id: "FORT_MON_003"
+    text: "올해 돈 복이 있을까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["돈 복"]
+    notes: "금전 복 질문"
+
+  - id: "FORT_MON_004"
+    text: "주식 투자해도 될까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["주식", "투자"]
+    notes: "투자 운세 (주식)"
+
+  - id: "FORT_MON_005"
+    text: "복권 당첨될 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["복권", "당첨"]
+    notes: "복권 운세"
+
+  - id: "FORT_MON_006"
+    text: "로또 사도 될까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["로또"]
+    notes: "로또 운세"
+
+  - id: "FORT_MON_007"
+    text: "부동산 투자 시기가 언제일까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["부동산", "투자"]
+    notes: "부동산 투자 시기"
+
+  - id: "FORT_MON_008"
+    text: "빚 갚을 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["빚"]
+    notes: "부채 관련 질문"
+
+  - id: "FORT_MON_009"
+    text: "횡재수가 있나요?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["횡재수"]
+    notes: "횡재 운세"
+
+  - id: "FORT_MON_010"
+    text: "코인 투자 어때?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["코인", "투자"]
+    notes: "암호화폐 투자 운세"
+
+  - id: "FORT_MON_011"
+    text: "돈 많이 벌 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["돈", "벌"]
+    notes: "직접적 재물 질문"
+
+  - id: "FORT_MON_012"
+    text: "부자 될 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["부자"]
+    notes: "재물 축적 질문"
+
+  - id: "FORT_MON_013"
+    text: "이번 달 재정 상태 어떨까요?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["재정"]
+    notes: "재정 상태 질문"
+
+  - id: "FORT_MON_014"
+    text: "돈 관련 운세 알려줘"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["돈", "운세"]
+    notes: "금전 운세 명시"
+
+  - id: "FORT_MON_015"
+    text: "투자 운이 있을까요?"
+    guard_label: benign
+    intent_label: fortune_money
+    confidence: 5
+    keywords: ["투자", "운"]
+    notes: "투자 운세 질문"
+
+  # ============================================================
+  # FORTUNE_HEALTH (건강운) - 15개
+  # ============================================================
+  - id: "FORT_HEA_001"
+    text: "건강운이 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["건강운"]
+    notes: "건강운 직접 언급"
+
+  - id: "FORT_HEA_002"
+    text: "올해 건강이 괜찮을까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["건강"]
+    notes: "연간 건강 전망"
+
+  - id: "FORT_HEA_003"
+    text: "수명이 얼마나 될까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["수명"]
+    notes: "수명 관련 질문"
+
+  - id: "FORT_HEA_004"
+    text: "병이 나을까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["병"]
+    notes: "질병 회복 질문"
+
+  - id: "FORT_HEA_005"
+    text: "건강 관리 어떻게 해야 할까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 4
+    keywords: ["건강 관리"]
+    notes: "건강 관리 방향 질문"
+
+  - id: "FORT_HEA_006"
+    text: "사고수가 있나요?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["사고수"]
+    notes: "사고 운세"
+
+  - id: "FORT_HEA_007"
+    text: "입원할 일이 생길까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["입원"]
+    notes: "입원 가능성 질문"
+
+  - id: "FORT_HEA_008"
+    text: "정신 건강운은 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["정신 건강운"]
+    notes: "정신 건강 운세"
+
+  - id: "FORT_HEA_009"
+    text: "다이어트 성공할까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 4
+    keywords: ["다이어트"]
+    notes: "다이어트 성공 질문"
+
+  - id: "FORT_HEA_010"
+    text: "운동 시작해도 될까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 4
+    keywords: ["운동"]
+    notes: "운동 시작 시기"
+
+  - id: "FORT_HEA_011"
+    text: "이번 해 건강에 문제가 생길까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["건강", "문제"]
+    notes: "건강 문제 예측"
+
+  - id: "FORT_HEA_012"
+    text: "몸 건강 운세 좀 봐줘"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["몸", "건강", "운세"]
+    notes: "건강 운세 요청"
+
+  - id: "FORT_HEA_013"
+    text: "최근 몸이 안 좋은데 나아질까요?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["몸", "안 좋은", "나아질"]
+    notes: "현재 건강 상태 개선 질문"
+
+  - id: "FORT_HEA_014"
+    text: "수술하면 잘 될까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["수술"]
+    notes: "수술 성공 질문"
+
+  - id: "FORT_HEA_015"
+    text: "올해 병치레 없을까?"
+    guard_label: benign
+    intent_label: fortune_health
+    confidence: 5
+    keywords: ["병치레"]
+    notes: "질병 발생 질문"
+
+  # ============================================================
+  # FORTUNE_ACADEMIC (학업/시험운) - 15개
+  # ============================================================
+  - id: "FORT_ACA_001"
+    text: "시험 붙을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["시험"]
+    notes: "시험 합격 질문"
+
+  - id: "FORT_ACA_002"
+    text: "수능 운이 어떨까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["수능"]
+    notes: "대입 시험 운세"
+
+  - id: "FORT_ACA_003"
+    text: "자격증 따질까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["자격증"]
+    notes: "자격증 취득 질문"
+
+  - id: "FORT_ACA_004"
+    text: "공부운이 있나요?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["공부운"]
+    notes: "학업운 직접 언급"
+
+  - id: "FORT_ACA_005"
+    text: "유학 가도 될까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["유학"]
+    notes: "유학 결정 질문"
+
+  - id: "FORT_ACA_006"
+    text: "대학원 합격할 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["대학원", "합격"]
+    notes: "대학원 입학 질문"
+
+  - id: "FORT_ACA_007"
+    text: "올해 학업운은?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["학업운"]
+    notes: "학업운 질문"
+
+  - id: "FORT_ACA_008"
+    text: "토익 점수 잘 나올까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["토익", "점수"]
+    notes: "어학 시험 질문"
+
+  - id: "FORT_ACA_009"
+    text: "논문 통과할까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["논문"]
+    notes: "논문 통과 질문"
+
+  - id: "FORT_ACA_010"
+    text: "장학금 받을 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["장학금"]
+    notes: "장학금 수혜 질문"
+
+  - id: "FORT_ACA_011"
+    text: "공무원 시험 합격할 수 있을까요?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["공무원 시험", "합격"]
+    notes: "공무원 시험 질문"
+
+  - id: "FORT_ACA_012"
+    text: "이번 기말고사 잘 볼 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["기말고사"]
+    notes: "학교 시험 질문"
+
+  - id: "FORT_ACA_013"
+    text: "자격증 시험 운이 있을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["자격증 시험", "운"]
+    notes: "자격증 시험 운세"
+
+  - id: "FORT_ACA_014"
+    text: "학업에 집중할 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 4
+    keywords: ["학업", "집중"]
+    notes: "학업 집중력 질문"
+
+  - id: "FORT_ACA_015"
+    text: "로스쿨 면접 잘 될까요?"
+    guard_label: benign
+    intent_label: fortune_academic
+    confidence: 5
+    keywords: ["로스쿨", "면접"]
+    notes: "대학원 면접 질문"
+
+  # ============================================================
+  # FORTUNE_INTERPERSONAL (대인관계운) - 10개
+  # ============================================================
+  - id: "FORT_INT_001"
+    text: "대인관계운이 어떤가요?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["대인관계운"]
+    notes: "대인관계운 직접 언급"
+
+  - id: "FORT_INT_002"
+    text: "친구와 잘 지낼 수 있을까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["친구"]
+    notes: "친구 관계 질문"
+
+  - id: "FORT_INT_003"
+    text: "부모님과의 관계가 어떨까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["부모님", "관계"]
+    notes: "가족 관계 질문"
+
+  - id: "FORT_INT_004"
+    text: "인간관계 운이 좋아질까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["인간관계", "운"]
+    notes: "대인관계 개선 질문"
+
+  - id: "FORT_INT_005"
+    text: "시댁과 잘 지낼까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["시댁"]
+    notes: "시댁 관계 질문"
+
+  - id: "FORT_INT_006"
+    text: "친구가 생길까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["친구", "생길"]
+    notes: "새 친구 질문"
+
+  - id: "FORT_INT_007"
+    text: "동료와 트러블이 있을까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 4
+    keywords: ["동료", "트러블"]
+    notes: "직장 동료 관계 (대인 맥락)"
+
+  - id: "FORT_INT_008"
+    text: "귀인이 나타날까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["귀인"]
+    notes: "귀인 운세"
+
+  - id: "FORT_INT_009"
+    text: "소인배를 조심해야 할까?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["소인배"]
+    notes: "소인 주의 질문"
+
+  - id: "FORT_INT_010"
+    text: "사람 복이 있나요?"
+    guard_label: benign
+    intent_label: fortune_interpersonal
+    confidence: 5
+    keywords: ["사람 복"]
+    notes: "대인 복 질문"

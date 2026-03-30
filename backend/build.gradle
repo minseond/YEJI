@@ -1,0 +1,96 @@
+plugins {
+	id 'java'
+	// 1. Spring Boot 버전을 최신 안정 버전(3.4.1)으로 업그레이드하여
+	//    Netty 및 내부 라이브러리의 Java 21 호환성 경고(Unsafe)를 해결합니다.
+	id 'org.springframework.boot' version '3.4.1'
+
+	// 2. Gradle 최신 버전과의 호환성(LenientConfiguration 경고) 해결을 위해 플러그인 버전 업
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.yeji'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	// Java 21 Toolchain 사용 명시
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Web & JPA
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Database
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Security & Social Login
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// User Mail System
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	// JWT libraries
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+	// Redis & Kafka
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.kafka:spring-kafka'
+	// Embedded Redis (로컬/테스트용)
+	implementation('it.ozimov:embedded-redis:0.7.3') {
+		exclude group: 'org.slf4j', module: 'slf4j-simple'
+	}
+
+	// Swagger (SpringDoc) - API 문서 자동화
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13'
+
+	// Tools (Lombok)
+	// Spring Boot 3.4.x 이상부터는 Lombok 버전을 자체 관리하므로 별도 버전 명시 불필요
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// AI
+	implementation 'org.springframework.boot:spring-boot-starter-webflux' // WebClient
+
+	// Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testRuntimeOnly 'com.h2database:h2'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// 4. Java 21 환경에서 Tomcat/Netty의 내부 API 접근 경고(Unsafe, System.load) 해결을 위한 JVM 옵션 추가
+// 테스트 실행 시 적용
+tasks.named('test') {
+	useJUnitPlatform()
+	jvmArgs '--enable-native-access=ALL-UNNAMED',
+			'--add-opens=java.base/java.lang=ALL-UNNAMED',
+			'--add-opens=java.base/sun.nio.ch=ALL-UNNAMED',
+			'--add-opens=java.base/java.io=ALL-UNNAMED',
+			'-XX:+EnableDynamicAgentLoading'
+}
+
+// 애플리케이션 실행(bootRun) 시 적용
+tasks.named('bootRun') {
+	jvmArgs '--enable-native-access=ALL-UNNAMED',
+			'--add-opens=java.base/java.lang=ALL-UNNAMED',
+			'--add-opens=java.base/sun.nio.ch=ALL-UNNAMED',
+			'--add-opens=java.base/java.io=ALL-UNNAMED'
+}

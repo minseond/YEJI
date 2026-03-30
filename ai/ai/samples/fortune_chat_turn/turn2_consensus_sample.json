@@ -1,0 +1,71 @@
+{
+  "$comment": "Turn 2 샘플: 의외의 의견 일치 케이스 (20~30% 확률로 발생)",
+  "session_id": "sess_sample_consensus",
+  "turn_id": 2,
+  "bubbles": [
+    {
+      "bubble_id": "b004",
+      "speaker": "EAST",
+      "text": "금전운이라... 귀하의 사주에서 편재가 강하오. 투자나 부업에서 횡재수가 보이오.",
+      "emotion": {
+        "code": "THOUGHTFUL",
+        "intensity": 0.7
+      },
+      "user_input_ref": "p001",
+      "timestamp": "2026-01-30T10:31:00Z"
+    },
+    {
+      "bubble_id": "b005",
+      "speaker": "WEST",
+      "text": "어머, 소이설! 저도 똑같이 봤어요! 목성이 2하우스에 있어서 금전 행운이 따르는 시기예요!",
+      "emotion": {
+        "code": "SURPRISED",
+        "intensity": 0.8
+      },
+      "user_input_ref": "p001",
+      "timestamp": "2026-01-30T10:31:05Z"
+    },
+    {
+      "bubble_id": "b006",
+      "speaker": "EAST",
+      "text": "허, 이건 드문 일이오. 동양과 서양이 같은 곳을 가리키고 있구려. 귀하의 금전운은 확실히 좋소!",
+      "emotion": {
+        "code": "CONFIDENT",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T10:31:10Z"
+    },
+    {
+      "bubble_id": "b007",
+      "speaker": "WEST",
+      "text": "맞아요! 소이설이랑 의견 일치하다니, 이건 정말 믿어도 되는 거예요! 투자 기회가 오면 놓치지 마세요!",
+      "emotion": {
+        "code": "EXCITED",
+        "intensity": 0.8
+      },
+      "timestamp": "2026-01-30T10:31:15Z"
+    }
+  ],
+  "turn_end": {
+    "type": "await_user_input",
+    "user_prompt": {
+      "prompt_id": "p005",
+      "text": "둘 다 금전운이 좋다고 하네요! 더 구체적으로 궁금한 게 있으세요?",
+      "input_schema": {
+        "type": "text",
+        "placeholder": "예: 주식 투자해도 될까요?",
+        "validation": {
+          "required": false,
+          "max_length": 200
+        }
+      }
+    }
+  },
+  "meta": {
+    "current_turn": 2,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "wealth"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$comment": "Turn 1 샘플 03: 동-서-동-서 순서 (치열한 대결 후 약간의 인정)",
+  "session_id": "sess_sample_003",
+  "turn_id": 1,
+  "bubbles": [
+    {
+      "bubble_id": "b001",
+      "speaker": "EAST",
+      "text": "귀하는 갑목(甲木) 일간이오. 큰 나무처럼 곧고 우직한 기운이 있으나, 때로는 융통성이 부족할 수 있소.",
+      "emotion": {
+        "code": "THOUGHTFUL",
+        "intensity": 0.6
+      },
+      "timestamp": "2026-01-30T14:00:00Z"
+    },
+    {
+      "bubble_id": "b002",
+      "speaker": "WEST",
+      "text": "융통성이 부족하다고요? 사자자리 태양인데요! 카리스마와 창의력이 넘치는 분이에요. 소이설, 너무 보수적으로 보시는 거 아니에요?",
+      "emotion": {
+        "code": "PLAYFUL",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T14:00:05Z"
+    },
+    {
+      "bubble_id": "b003",
+      "speaker": "EAST",
+      "text": "허, 점성술은 겉모습만 보는 법이구려. 사주의 깊은 이치를 알면 그런 얕은 해석은 하지 않을 텐데...",
+      "emotion": {
+        "code": "CONFIDENT",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T14:00:10Z"
+    },
+    {
+      "bubble_id": "b004",
+      "speaker": "WEST",
+      "text": "얕은 해석이라뇨! 흥, 그래도 사자자리와 갑목이 모두 '성장과 리더십'을 가리키는 건 인정하시죠? 결국 우리 둘 다 이 분의 잠재력을 보고 있는 거예요!",
+      "emotion": {
+        "code": "EXCITED",
+        "intensity": 0.6
+      },
+      "timestamp": "2026-01-30T14:00:15Z"
+    }
+  ],
+  "turn_end": {
+    "type": "await_user_input",
+    "user_prompt": {
+      "prompt_id": "p003",
+      "text": "소이설과 스텔라가 티격태격하네요! 어떤 주제로 더 대결시켜 볼까요?",
+      "input_schema": {
+        "type": "choice",
+        "options": [
+          { "value": "love", "label": "연애운 대결!" },
+          { "value": "wealth", "label": "금전운 대결!" },
+          { "value": "career", "label": "직장운 대결!" },
+          { "value": "health", "label": "건강운 대결!" }
+        ]
+      }
+    }
+  },
+  "meta": {
+    "current_turn": 1,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "total"
+  }
+}

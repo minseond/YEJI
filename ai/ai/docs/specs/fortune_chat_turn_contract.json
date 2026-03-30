@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fortune Chat Turn Contract",
+  "description": "동/서양 티키타카 운세 채팅의 턴 단위 JSON 계약",
+  "version": "1.0.0",
+  "definitions": {
+    "Speaker": {
+      "type": "string",
+      "enum": ["EAST", "WEST"],
+      "description": "발화 캐릭터 (EAST=소이설, WEST=스텔라)"
+    },
+    "EmotionCode": {
+      "type": "string",
+      "enum": [
+        "NEUTRAL",
+        "WARM",
+        "EXCITED",
+        "THOUGHTFUL",
+        "ENCOURAGING",
+        "PLAYFUL",
+        "MYSTERIOUS",
+        "SURPRISED",
+        "CONCERNED",
+        "CONFIDENT",
+        "GENTLE",
+        "CURIOUS"
+      ],
+      "description": "감정 코드 (emotion_codebook.md 참조)"
+    },
+    "Emotion": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/EmotionCode"
+        },
+        "intensity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "감정 강도 (0=약함, 1=강함)"
+        }
+      },
+      "required": ["code", "intensity"]
+    },
+    "Bubble": {
+      "type": "object",
+      "properties": {
+        "bubble_id": {
+          "type": "string",
+          "description": "버블 고유 ID (예: b001)"
+        },
+        "speaker": {
+          "$ref": "#/definitions/Speaker"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "description": "발화 내용"
+        },
+        "emotion": {
+          "$ref": "#/definitions/Emotion"
+        },
+        "user_input_ref": {
+          "type": "string",
+          "nullable": true,
+          "description": "이전 턴 user_prompt.prompt_id 참조 (Turn 2+ 에서 사용자 입력에 대한 응답임을 표시)"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 타임스탬프"
+        }
+      },
+      "required": ["bubble_id", "speaker", "text", "emotion", "timestamp"]
+    },
+    "InputSchema": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["text", "choice", "date", "datetime"],
+          "description": "입력 타입"
+        },
+        "placeholder": {
+          "type": "string",
+          "nullable": true,
+          "description": "입력 필드 플레이스홀더"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": ["value", "label"]
+          },
+          "nullable": true,
+          "description": "choice 타입일 때 선택지"
+        },
+        "validation": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "pattern": {
+              "type": "string",
+              "nullable": true
+            },
+            "min_length": {
+              "type": "integer",
+              "nullable": true
+            },
+            "max_length": {
+              "type": "integer",
+              "nullable": true
+            }
+          },
+          "nullable": true
+        }
+      },
+      "required": ["type"]
+    },
+    "UserPrompt": {
+      "type": "object",
+      "properties": {
+        "prompt_id": {
+          "type": "string",
+          "description": "프롬프트 고유 ID (예: p001)"
+        },
+        "text": {
+          "type": "string",
+          "description": "사용자에게 보여줄 안내 문구"
+        },
+        "input_schema": {
+          "$ref": "#/definitions/InputSchema"
+        }
+      },
+      "required": ["prompt_id", "text", "input_schema"]
+    },
+    "SummaryItem": {
+      "type": "object",
+      "properties": {
+        "speaker": {
+          "$ref": "#/definitions/Speaker"
+        },
+        "key_point": {
+          "type": "string",
+          "description": "핵심 포인트"
+        }
+      },
+      "required": ["speaker", "key_point"]
+    },
+    "UpgradeHook": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "업그레이드 훅 노출 여부"
+        },
+        "message": {
+          "type": "string",
+          "nullable": true,
+          "description": "업그레이드 유도 문구"
+        },
+        "cta_label": {
+          "type": "string",
+          "nullable": true,
+          "description": "CTA 버튼 라벨"
+        },
+        "cta_action": {
+          "type": "string",
+          "nullable": true,
+          "description": "CTA 액션 (예: upgrade_premium)"
+        }
+      },
+      "required": ["enabled"]
+    },
+    "Closure": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SummaryItem"
+          },
+          "minItems": 1,
+          "description": "세션 요약 (동/서양 각각 핵심 포인트)"
+        },
+        "next_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "다음 단계 제안 (예: '연애운 상세 보기', '오늘의 조언')"
+        },
+        "upgrade_hook": {
+          "$ref": "#/definitions/UpgradeHook"
+        },
+        "end_marker": {
+          "type": "string",
+          "const": "END_SESSION",
+          "description": "세션 종료 마커"
+        }
+      },
+      "required": ["summary", "next_steps", "upgrade_hook", "end_marker"]
+    },
+    "TurnEndAwaitUserInput": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "await_user_input"
+        },
+        "user_prompt": {
+          "$ref": "#/definitions/UserPrompt"
+        }
+      },
+      "required": ["type", "user_prompt"]
+    },
+    "TurnEndCompleted": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "completed"
+        },
+        "closure": {
+          "$ref": "#/definitions/Closure"
+        }
+      },
+      "required": ["type", "closure"]
+    },
+    "TurnEnd": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/TurnEndAwaitUserInput"
+        },
+        {
+          "$ref": "#/definitions/TurnEndCompleted"
+        }
+      ],
+      "description": "턴 종료 타입: await_user_input(사용자 입력 대기) 또는 completed(세션 완료)"
+    },
+    "Meta": {
+      "type": "object",
+      "properties": {
+        "current_turn": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "현재 턴 번호"
+        },
+        "base_turns": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 3,
+          "description": "기본 제공 턴 수"
+        },
+        "max_turns": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "최대 가능 턴 수 (유료 확장 시)"
+        },
+        "is_premium": {
+          "type": "boolean",
+          "default": false,
+          "description": "프리미엄 사용자 여부"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["total", "love", "wealth", "career", "health"],
+          "description": "운세 카테고리"
+        }
+      },
+      "required": ["current_turn", "base_turns", "max_turns", "category"]
+    }
+  },
+  "TurnRequest": {
+    "type": "object",
+    "properties": {
+      "session_id": {
+        "type": "string",
+        "nullable": true,
+        "description": "세션 ID (신규 세션은 null)"
+      },
+      "turn_id": {
+        "type": "integer",
+        "nullable": true,
+        "description": "응답할 턴 ID (신규 세션은 null)"
+      },
+      "user_input": {
+        "type": "object",
+        "properties": {
+          "prompt_id": {
+            "type": "string",
+            "description": "응답 대상 프롬프트 ID"
+          },
+          "value": {
+            "type": "string",
+            "description": "사용자 입력 값"
+          }
+        },
+        "nullable": true,
+        "description": "사용자 입력 (Turn 2+ 에서 필수)"
+      },
+      "birth_info": {
+        "type": "object",
+        "properties": {
+          "birth_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "생년월일 (YYYY-MM-DD)"
+          },
+          "birth_time": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "nullable": true,
+            "description": "출생시간 (HH:MM)"
+          },
+          "birth_place": {
+            "type": "string",
+            "nullable": true,
+            "description": "출생지"
+          }
+        },
+        "required": ["birth_date"],
+        "nullable": true,
+        "description": "생년월일 정보 (Turn 1에서 필수)"
+      }
+    }
+  },
+  "TurnResponse": {
+    "type": "object",
+    "properties": {
+      "session_id": {
+        "type": "string",
+        "description": "세션 고유 ID"
+      },
+      "turn_id": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "턴 고유 ID"
+      },
+      "bubbles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Bubble"
+        },
+        "minItems": 1,
+        "description": "버블 목록 (최소 1개, EAST/WEST 혼합 순서 자유)"
+      },
+      "turn_end": {
+        "$ref": "#/definitions/TurnEnd"
+      },
+      "meta": {
+        "$ref": "#/definitions/Meta"
+      }
+    },
+    "required": ["session_id", "turn_id", "bubbles", "turn_end", "meta"]
+  }
+}

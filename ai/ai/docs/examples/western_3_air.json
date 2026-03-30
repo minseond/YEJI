@@ -1,0 +1,69 @@
+{
+  "category": "general",
+  "chart": {
+    "summary": "이번 주는 당신에게 매우 역동적이고 창의적인 에너지가 흐르고 있습니다. 대인관계와 감정 표현이 활발하며, 새로운 아이디어가 샘솟는 시기입니다.",
+    "sun": {
+      "sign_code": "LIBRA",
+      "house_number": 1,
+      "summary": "자신의 중심을 잡고 균형을 추구하며, 타인과의 조화에 관심이 집중됩니다. 대인관계에서 설득력과 매력을 발휘합니다."
+    },
+    "moon": {
+      "sign_code": "GEMINI",
+      "house_number": 2,
+      "summary": "감정의 기복이 있지만, 호기심과 학습욕구가 강해지고 소통 능력이 향상됩니다. 직관이 예민해져 작은 변화도 놓치지 않습니다."
+    },
+    "rising": {
+      "sign_code": "AQUARIUS",
+      "house_number": 3,
+      "summary": "새로운 시작과 확장을 암시합니다. 높은 사고력과 개방적인 태도로 주변 상황을 주도할 수 있습니다."
+    },
+    "planets": [
+      {
+        "planet_code": "VENUS",
+        "sign_code": "LIBRA",
+        "house_number": 4,
+        "degree": 20,
+        "minute": 0,
+        "is_retrograde": false
+      }
+    ]
+  },
+  "stats": {
+    "elements": {
+      "summary": "공기(Air)의 에너지가 지배하여 사고와 소통, 창의성이 극대화됩니다. 불(Fire)과 물(Water)의 조화로 열정과 감성이 함께 작용합니다."
+    },
+    "modality": {
+      "summary": "공기의 원소가 강하게 작용하여 지적 활동과 네트워킹이 유리한 시기입니다. 새로운 계획을 세우고 실행에 옮기기 좋은 흐름입니다."
+    },
+    "aspects": {
+      "summary": "대형 공기의 트리오(Grand Air Trine)가 형성되어, 커뮤니케이션 능력과 사고 확장이 극대화됩니다. 주변과의 협력이 원활하게 이루어지고, 창의적인 프로젝트에 강한 힘을 줍니다."
+    },
+    "strength": "사고의 유연성과 소통 능력이 최고조에 달해 있습니다. 새로운 인맥을 넓히고 아이디어를 실현하는 데 능합니다.",
+    "weakness": "감정의 과잉이나 지나친 분산에 주의해야 합니다. 실무적인 디테일은 놓치기 쉬우니 마무리 점검이 필요합니다."
+  },
+  "summary": "전반적으로 매우 긍정적인 흐름입니다. 사고력과 소통 능력이 최고조에 달해 있어 새로운 기회를 잡기 좋습니다. 다만 감정 관리와 실무의 디테일을 챙기면 더 큰 성과를 얻을 수 있습니다.",
+  "message": "오늘은 새로운 제안이나 협업을 받아보세요. 당신의 설득력과 창의성이 빛을 발할 것입니다.",
+  "ui_hints": {
+    "badges": [
+      "AIR_TRINE",
+      "VENUS_STRONG",
+      "COMMUNICATION_SKILLS"
+    ],
+    "recommend_chart": "WHEEL",
+    "highlight": {
+      "sun_sign": "LIBRA",
+      "moon_sign": "GEMINI",
+      "rising_sign": "AQUARIUS",
+      "dominant_planet": "MARS"
+    }
+  },
+  "lucky": {
+    "day": "화요일",
+    "day_code": "TUE",
+    "color": "노란색",
+    "color_code": "#FFFF00",
+    "number": "20",
+    "stone": "소량의 물고기 석류",
+    "planet": "JUPITER"
+  }
+}

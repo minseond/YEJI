@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>티키타카 채팅 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .version-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-family: monospace;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .form-section {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .form-section.hidden {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .form-group label.checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .checkbox-description {
+            color: #666;
+            font-size: 12px;
+            margin-top: 6px;
+            line-height: 1.5;
+            padding-left: 28px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .test-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .test-button:active {
+            transform: translateY(0);
+        }
+
+        .test-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            padding: 30px;
+            display: none;
+        }
+
+        .results-section.show {
+            display: block;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .results-header h2 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        .session-info {
+            font-size: 12px;
+            color: #888;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            color: #666;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .tab-button:hover {
+            background: #e0e0e0;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .chat-container {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            scroll-behavior: smooth;
+        }
+
+        .json-container {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+        }
+
+        .json-container pre {
+            margin: 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #d4d4d4;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .chat-bubble {
+            margin-bottom: 20px;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bubble-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            gap: 8px;
+        }
+
+        .character-emoji {
+            font-size: 24px;
+        }
+
+        .character-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .bubble-content {
+            padding: 16px 20px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+            line-height: 1.6;
+            font-size: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .eastern-bubble .bubble-content {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            color: #2d3436;
+            margin-left: 32px;
+        }
+
+        .western-bubble .bubble-content {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            margin-left: auto;
+            margin-right: 32px;
+        }
+
+        .user-bubble .bubble-header {
+            justify-content: flex-end;
+        }
+
+        .user-bubble .bubble-content {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2e7d32;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .error-message {
+            padding: 16px;
+            background: #ff6b6b;
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .info-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .reset-button {
+            width: 100%;
+            padding: 12px;
+            background: #e0e0e0;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.2s ease;
+        }
+
+        .reset-button:hover {
+            background: #d0d0d0;
+        }
+
+        /* 채팅 입력창 스타일 */
+        .chat-input-container {
+            display: none;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-top: 2px solid #e0e0e0;
+            margin-top: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .chat-input-container.show {
+            display: flex;
+        }
+
+        .chat-input-container input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input-container input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        .chat-input-container input::placeholder {
+            color: #aaa;
+        }
+
+        .send-button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .send-button:active {
+            transform: translateY(0);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 16px 20px;
+            background: #f0f0f0;
+            border-radius: 18px;
+            max-width: 100px;
+            margin: 10px 0 10px 32px;
+        }
+
+        .typing-indicator.show {
+            display: block;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: #888;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingBounce {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .conversation-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .conversation-divider::before,
+        .conversation-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .conversation-divider span {
+            padding: 0 15px;
+            background: #f8f9fa;
+        }
+
+        .hint-text {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin-top: 15px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 8px;
+        }
+
+        .hint-text strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="version-badge" id="version-badge">v0.0.0</div>
+            <h1>티키타카 채팅 테스트</h1>
+            <p>동양 운세와 서양 타로의 대화를 확인하세요</p>
+        </div>
+
+        <div class="form-section" id="form-section">
+            <div class="form-group">
+                <label for="birth-date">생년월일 *</label>
+                <input type="date" id="birth-date" value="1998-05-15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birth-time">출생시간 (선택)</label>
+                <input type="time" id="birth-time" value="14:30">
+                <p class="info-text">출생시간을 모르면 비워두세요</p>
+            </div>
+
+            <div class="form-group">
+                <label for="birth-location">출생지역 (선택)</label>
+                <input type="text" id="birth-location" placeholder="예: 서울" value="서울">
+                <p class="info-text">출생지역을 모르면 비워두세요</p>
+            </div>
+
+            <div class="form-group">
+                <label for="category">운세 카테고리 *</label>
+                <select id="category" required>
+                    <option value="GENERAL" selected>🔮 종합운</option>
+                    <option value="LOVE">💕 연애운</option>
+                    <option value="MONEY">💰 재물운</option>
+                    <option value="CAREER">💼 직장/사업운</option>
+                    <option value="HEALTH">🏥 건강운</option>
+                    <option value="STUDY">📚 학업운</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="preAnalyze" checked>
+                    사전 분석 수행 (권장)
+                </label>
+                <div class="checkbox-description">
+                    ✅ 체크 시: /fortune/eastern, /fortune/western 먼저 호출 후 결과 전달<br>
+                    ⚡ 해제 시: /chat/greeting에서 자동 분석
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="useSSE">
+                    SSE 스트리밍 사용
+                </label>
+                <div class="checkbox-description">
+                    ✅ 체크 시: 버블 단위 실시간 스트리밍 (stream=true)<br>
+                    ⚡ 해제 시: 전체 응답 한 번에 받기 (stream=false)
+                </div>
+            </div>
+
+            <div class="character-grid">
+                <div class="form-group">
+                    <label for="eastern-character">동양 캐릭터 *</label>
+                    <select id="eastern-character" required>
+                        <option value="">선택하세요</option>
+                        <option value="SOISEOL" selected>소이설</option>
+                        <option value="CHEONGWOON">청운</option>
+                        <option value="HWARIN">화린</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="western-character">서양 캐릭터 *</label>
+                    <select id="western-character" required>
+                        <option value="">선택하세요</option>
+                        <option value="STELLA" selected>스텔라</option>
+                        <option value="KYLE">카일</option>
+                        <option value="ELARIA">엘라리아</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="test-button" id="test-button">티키타카 시작하기</button>
+        </div>
+
+        <div class="results-section" id="results-section">
+            <div class="results-header">
+                <h2>대화 내용</h2>
+                <span class="session-info" id="session-info"></span>
+            </div>
+
+            <!-- 탭 버튼 -->
+            <div class="tab-buttons">
+                <button class="tab-button active" id="tab-chat" onclick="switchTab('chat')">대화</button>
+                <button class="tab-button" id="tab-json" onclick="switchTab('json')">JSON 원문</button>
+            </div>
+
+            <!-- 대화 탭 -->
+            <div class="tab-content active" id="content-chat">
+                <div class="chat-container" id="chat-container"></div>
+            </div>
+
+            <!-- JSON 탭 -->
+            <div class="tab-content" id="content-json">
+                <div class="json-container">
+                    <pre id="json-content">응답 데이터가 여기에 표시됩니다.</pre>
+                </div>
+            </div>
+
+            <!-- 타이핑 인디케이터 -->
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- 채팅 입력창 (3턴 후 활성화) -->
+            <div class="chat-input-container" id="chat-input-container">
+                <input type="text" id="user-input" placeholder="궁금한 점을 물어보세요... (예: 연애운 더 자세히 알려줘)">
+                <button class="send-button" id="send-button">
+                    <span>전송</span>
+                </button>
+            </div>
+
+            <div class="hint-text" id="hint-text" style="display: none;">
+                <strong>TIP:</strong> 연애운, 재물운, 건강운 등 궁금한 부분을 자유롭게 질문해보세요!
+            </div>
+
+            <button class="reset-button" id="reset-button">처음부터 다시하기</button>
+        </div>
+    </div>
+
+    <script>
+        // 버전 정보 로드
+        async function loadVersionInfo() {
+            try {
+                const response = await fetch(getApiBaseUrl() + '/health');
+                const data = await response.json();
+                const badge = document.getElementById('version-badge');
+                const version = data.version || '0.2.0';
+                const commit = data.git_commit ? data.git_commit.substring(0, 7) : '';
+                badge.textContent = commit ? `v${version} (${commit})` : `v${version}`;
+            } catch (e) {
+                console.log('버전 정보 로드 실패:', e);
+            }
+        }
+
+        // 탭 전환 함수
+        function switchTab(tab) {
+            // 버튼 활성화 상태 변경
+            document.getElementById('tab-chat').classList.toggle('active', tab === 'chat');
+            document.getElementById('tab-json').classList.toggle('active', tab === 'json');
+
+            // 콘텐츠 표시 상태 변경
+            document.getElementById('content-chat').classList.toggle('active', tab === 'chat');
+            document.getElementById('content-json').classList.toggle('active', tab === 'json');
+        }
+
+        // JSON 데이터 저장용 변수
+        let lastResponseData = null;
+
+        // 페이지 로드 시 버전 정보 로드
+        document.addEventListener('DOMContentLoaded', loadVersionInfo);
+
+        // 캐릭터 정보 매핑
+        const characterInfo = {
+            'SOISEOL': { emoji: '', name: '소이설' },
+            'CHEONGWOON': { emoji: '', name: '청운' },
+            'HWARIN': { emoji: '', name: '화린' },
+            'STELLA': { emoji: '', name: '스텔라' },
+            'KYLE': { emoji: '', name: '카일' },
+            'ELARIA': { emoji: '', name: '엘라리아' }
+        };
+
+        // 상태 관리
+        let currentSessionId = null;
+        let currentEasternChar = null;
+        let currentWesternChar = null;
+        let savedBirthDate = null;
+        let savedBirthTime = null;
+        let savedBirthLocation = null;
+        let isWaitingResponse = false;
+
+        // DOM 요소
+        const testButton = document.getElementById('test-button');
+        const resetButton = document.getElementById('reset-button');
+        const formSection = document.getElementById('form-section');
+        const resultsSection = document.getElementById('results-section');
+        const chatContainer = document.getElementById('chat-container');
+        const chatInputContainer = document.getElementById('chat-input-container');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const typingIndicator = document.getElementById('typing-indicator');
+        const sessionInfo = document.getElementById('session-info');
+        const hintText = document.getElementById('hint-text');
+
+        // API 기본 URL
+        function getApiBaseUrl() {
+            const origin = window.location.origin;
+            const pathname = window.location.pathname;
+            // /tikitaka-test 경로를 제거하고 기본 URL 반환
+            return origin + pathname.replace('/tikitaka-test', '');
+        }
+
+        // 테스트 버튼 클릭 - 그리팅 시작
+        testButton.addEventListener('click', async () => {
+            savedBirthDate = document.getElementById('birth-date').value;
+            savedBirthTime = document.getElementById('birth-time').value;
+            savedBirthLocation = document.getElementById('birth-location').value;
+            currentEasternChar = document.getElementById('eastern-character').value;
+            currentWesternChar = document.getElementById('western-character').value;
+            const selectedCategory = document.getElementById('category').value;
+            const preAnalyze = document.getElementById('preAnalyze').checked;
+
+            // 필수 값 검증
+            if (!savedBirthDate || !currentEasternChar || !currentWesternChar) {
+                alert('생년월일과 캐릭터를 모두 선택해주세요.');
+                return;
+            }
+
+            // 요청 데이터 구성 (/chat/greeting API용)
+            let requestData = {
+                birth_date: savedBirthDate,
+                category: selectedCategory,
+                char1_code: currentEasternChar,
+                char2_code: currentWesternChar
+            };
+
+            if (savedBirthTime) {
+                requestData.birth_time = savedBirthTime;
+            }
+
+            // 카테고리 저장 (후속 turn에서 사용)
+            window.savedCategory = selectedCategory;
+
+            // UI 상태 변경
+            testButton.disabled = true;
+            testButton.textContent = '생성 중...';
+            resultsSection.classList.add('show');
+            formSection.classList.add('hidden');
+
+            try {
+                // 사전 분석 수행 시
+                if (preAnalyze) {
+                    chatContainer.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div style="margin-top: 10px; color: #666;">사전 분석 중...</div></div>';
+
+                    // 동양/서양 분석 병렬 호출
+                    const [easternRes, westernRes] = await Promise.all([
+                        fetch(getApiBaseUrl() + '/v1/fortune/eastern', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                birth_date: savedBirthDate,
+                                birth_time: savedBirthTime,
+                                category: selectedCategory
+                            })
+                        }),
+                        fetch(getApiBaseUrl() + '/v1/fortune/western', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                birth_date: savedBirthDate,
+                                birth_time: savedBirthTime,
+                                category: selectedCategory
+                            })
+                        })
+                    ]);
+
+                    if (!easternRes.ok || !westernRes.ok) {
+                        throw new Error('사전 분석 실패');
+                    }
+
+                    const easternData = await easternRes.json();
+                    const westernData = await westernRes.json();
+
+                    // 분석 결과 전달
+                    requestData.eastern_fortune_data = easternData;
+                    requestData.western_fortune_data = westernData;
+
+                    chatContainer.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div style="margin-top: 10px; color: #666;">그리팅 생성 중...</div></div>';
+                } else {
+                    chatContainer.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div style="margin-top: 10px; color: #666;">그리팅 생성 중...</div></div>';
+                }
+
+                // SSE 토글 확인
+                const useSSE = document.getElementById('useSSE').checked;
+                const apiUrl = getApiBaseUrl() + `/v1/fortune/chat/turn/start?stream=${useSSE}`;
+
+                if (useSSE) {
+                    // SSE 스트리밍 모드
+                    chatContainer.innerHTML = ''; // 로딩 제거, 버블 스트리밍 시작
+                    await streamBubbles(apiUrl, requestData, (completeData) => {
+                        lastResponseData = completeData;
+                        updateJsonDisplay();
+                    });
+                } else {
+                    // Non-streaming 모드
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestData)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.detail || `서버 오류: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    lastResponseData = data;
+                    updateJsonDisplay();
+
+                    // 세션 ID 저장
+                    currentSessionId = data.session_id || null;
+                    if (currentSessionId) {
+                        sessionInfo.textContent = `세션: ${currentSessionId.substring(0, 8)}... | 📦 일괄`;
+                    }
+
+                    // 그리팅 메시지 표시
+                    displayTurnResults(data);
+                }
+
+                // 입력창 활성화
+                setTimeout(() => {
+                    enableChatInput();
+                }, 500);
+
+            } catch (error) {
+                console.error('API 호출 오류:', error);
+                chatContainer.innerHTML = `
+                    <div class="error-message">
+                        <strong>오류 발생:</strong><br>
+                        ${error.message}
+                    </div>
+                `;
+                formSection.classList.remove('hidden');
+            } finally {
+                testButton.disabled = false;
+                testButton.textContent = '티키타카 시작하기';
+            }
+        });
+
+        // /chat/turn 응답 표시 (TurnResponse 형식)
+        function displayTurnResults(data) {
+            chatContainer.innerHTML = '';
+
+            if (!data.messages || data.messages.length === 0) {
+                chatContainer.innerHTML = '<div class="error-message">대화 내용이 없습니다.</div>';
+                return;
+            }
+
+            // 각 메시지 표시
+            data.messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    const charCode = msg.character;
+                    const charInfo = characterInfo[charCode] || { emoji: '', name: charCode };
+                    const isEastern = charCode === currentEasternChar;
+                    const bubbleClass = isEastern ? 'eastern-bubble' : 'western-bubble';
+
+                    addCharacterBubble(charInfo.emoji, charInfo.name, msg.content, bubbleClass);
+                }, index * 300);
+            });
+
+            // 다음 질문 제안 표시
+            if (data.suggested_question) {
+                setTimeout(() => {
+                    const suggestionDiv = document.createElement('div');
+                    suggestionDiv.className = 'hint-text';
+                    suggestionDiv.innerHTML = `<strong>💡 제안:</strong> "${data.suggested_question}"`;
+                    suggestionDiv.style.cursor = 'pointer';
+                    suggestionDiv.onclick = () => {
+                        userInput.value = data.suggested_question;
+                        userInput.focus();
+                    };
+                    chatContainer.appendChild(suggestionDiv);
+                    scrollToBottom();
+                }, data.messages.length * 300 + 200);
+            }
+        }
+
+        // 레거시 3턴 대화 표시 (이전 호환용)
+        function displayChatResults(data) {
+            chatContainer.innerHTML = '';
+
+            if (!data.bubbles || data.bubbles.length === 0) {
+                chatContainer.innerHTML = '<div class="error-message">대화 내용이 없습니다.</div>';
+                return;
+            }
+
+            // 서버에서 받은 캐릭터 정보 사용
+            const serverChars = data.characters || {};
+
+            // 각 버블 표시
+            data.bubbles.forEach((bubble, index) => {
+                setTimeout(() => {
+                    const charCode = bubble.character;
+                    const charInfo = serverChars[charCode] || characterInfo[charCode] || { emoji: '', name: charCode };
+                    const isEastern = charCode === currentEasternChar;
+                    const bubbleClass = isEastern ? 'eastern-bubble' : 'western-bubble';
+
+                    addCharacterBubble(charInfo.emoji, charInfo.name, bubble.text, bubbleClass);
+                }, index * 300);
+            });
+        }
+
+        // 캐릭터 메시지 버블 추가
+        function addCharacterBubble(emoji, name, message, bubbleClass) {
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${bubbleClass}`;
+
+            bubble.innerHTML = `
+                <div class="bubble-header">
+                    <span class="character-emoji">${emoji}</span>
+                    <span class="character-name">${name}</span>
+                </div>
+                <div class="bubble-content">${escapeHtml(message)}</div>
+            `;
+
+            chatContainer.appendChild(bubble);
+            scrollToBottom();
+            return bubble;
+        }
+
+        // SSE 스트리밍으로 버블 생성 (버블 단위로 하나씩 출력)
+        async function streamBubbles(url, requestData, onComplete) {
+            return new Promise((resolve, reject) => {
+                // POST with SSE using fetch
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder();
+                    let buffer = '';
+                    let sessionId = null;
+
+                    function processSSE(text) {
+                        const lines = text.split('\n');
+                        for (const line of lines) {
+                            if (line.startsWith('data:')) {
+                                try {
+                                    const data = JSON.parse(line.substring(5).trim());
+                                    handleSSEEvent(data);
+                                } catch (e) {
+                                    // JSON 파싱 실패 무시
+                                    console.log('SSE parse error:', line);
+                                }
+                            }
+                        }
+                    }
+
+                    function handleSSEEvent(data) {
+                        const eventType = data.event;
+
+                        switch (eventType) {
+                            case 'session':
+                                sessionId = data.session_id;
+                                if (sessionId) {
+                                    currentSessionId = sessionId;
+                                    sessionInfo.textContent = `세션: ${sessionId.substring(0, 8)}... | 🔄 스트리밍`;
+                                }
+                                break;
+
+                            case 'bubble':
+                                // 버블 전체가 한 번에 옴
+                                const bubbleData = data.data;
+                                if (bubbleData) {
+                                    const charCode = bubbleData.character;
+                                    const charInfo = characterInfo[charCode] || { emoji: '❓', name: charCode };
+                                    const isEastern = charCode === currentEasternChar;
+                                    const bubbleClass = isEastern ? 'eastern-bubble' : 'western-bubble';
+
+                                    const bubble = document.createElement('div');
+                                    bubble.className = `chat-bubble ${bubbleClass}`;
+                                    bubble.innerHTML = `
+                                        <div class="bubble-header">
+                                            <span class="character-emoji">${charInfo.emoji}</span>
+                                            <span class="character-name">${charInfo.name}</span>
+                                        </div>
+                                        <div class="bubble-content">${escapeHtml(bubbleData.content)}</div>
+                                    `;
+                                    chatContainer.appendChild(bubble);
+                                    scrollToBottom();
+                                }
+                                break;
+
+                            case 'complete':
+                                // 스트리밍 완료
+                                if (onComplete) onComplete(data.data || data);
+                                break;
+
+                            case 'error':
+                                console.error('SSE Error:', data);
+                                break;
+                        }
+                    }
+
+                    function read() {
+                        reader.read().then(({ done, value }) => {
+                            if (done) {
+                                resolve(sessionId);
+                                return;
+                            }
+
+                            buffer += decoder.decode(value, { stream: true });
+                            const parts = buffer.split('\n\n');
+                            buffer = parts.pop() || '';
+
+                            for (const part of parts) {
+                                if (part.trim()) {
+                                    processSSE(part);
+                                }
+                            }
+
+                            read();
+                        }).catch(reject);
+                    }
+
+                    read();
+                }).catch(reject);
+            });
+        }
+
+        // 사용자 메시지 버블 추가
+        function addUserBubble(message) {
+            const bubble = document.createElement('div');
+            bubble.className = 'chat-bubble user-bubble';
+
+            bubble.innerHTML = `
+                <div class="bubble-header">
+                    <span class="character-name">나</span>
+                    <span class="character-emoji"></span>
+                </div>
+                <div class="bubble-content">${escapeHtml(message)}</div>
+            `;
+
+            chatContainer.appendChild(bubble);
+            scrollToBottom();
+        }
+
+        // 대화 구분선 추가
+        function addConversationDivider(text) {
+            const divider = document.createElement('div');
+            divider.className = 'conversation-divider';
+            divider.innerHTML = `<span>${text}</span>`;
+            chatContainer.appendChild(divider);
+            scrollToBottom();
+        }
+
+        // 채팅 입력창 활성화
+        function enableChatInput() {
+            chatInputContainer.classList.add('show');
+            hintText.style.display = 'block';
+            addConversationDivider('추가 질문을 해보세요');
+            userInput.focus();
+        }
+
+        // 메시지 전송 (/chat/turn API 사용)
+        async function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message || isWaitingResponse) return;
+
+            // 사용자 메시지 표시
+            addUserBubble(message);
+            userInput.value = '';
+
+            // 상태 변경
+            isWaitingResponse = true;
+            sendButton.disabled = true;
+            userInput.disabled = true;
+            showTypingIndicator();
+
+            try {
+                // SSE 토글 확인
+                const useSSE = document.getElementById('useSSE').checked;
+                const apiUrl = getApiBaseUrl() + `/v1/fortune/chat/turn/continue?stream=${useSSE}`;
+
+                const requestData = {
+                    session_id: currentSessionId,
+                    message: message
+                };
+
+                hideTypingIndicator();
+
+                if (useSSE) {
+                    // SSE 스트리밍으로 버블 출력
+                    await streamBubbles(apiUrl, requestData, (completeData) => {
+                        lastResponseData = completeData;
+                        updateJsonDisplay();
+                    });
+                } else {
+                    // Non-streaming 모드
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestData)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.detail || `서버 오류: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    lastResponseData = data;
+                    updateJsonDisplay();
+
+                    // 응답 메시지 표시
+                    if (data.messages && data.messages.length > 0) {
+                        data.messages.forEach((msg, index) => {
+                            setTimeout(() => {
+                                const charInfo = characterInfo[msg.character] || { emoji: '❓', name: msg.character };
+                                const isEastern = msg.character === currentEasternChar;
+                                const bubbleClass = isEastern ? 'eastern-bubble' : 'western-bubble';
+                                addCharacterBubble(charInfo.emoji, charInfo.name, msg.content, bubbleClass);
+                            }, index * 200);
+                        });
+                    }
+                }
+
+            } catch (error) {
+                console.error('채팅 API 오류:', error);
+                hideTypingIndicator();
+
+                const errorBubble = document.createElement('div');
+                errorBubble.className = 'error-message';
+                errorBubble.style.margin = '10px 0';
+                errorBubble.innerHTML = `<strong>오류:</strong> ${error.message}`;
+                chatContainer.appendChild(errorBubble);
+                scrollToBottom();
+            } finally {
+                isWaitingResponse = false;
+                sendButton.disabled = false;
+                userInput.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        // 전송 버튼 클릭
+        sendButton.addEventListener('click', sendMessage);
+
+        // Enter 키로 전송
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // 타이핑 인디케이터 표시/숨김
+        function showTypingIndicator() {
+            typingIndicator.classList.add('show');
+            scrollToBottom();
+        }
+
+        function hideTypingIndicator() {
+            typingIndicator.classList.remove('show');
+        }
+
+        // JSON 표시 업데이트
+        function updateJsonDisplay() {
+            const jsonContent = document.getElementById('json-content');
+            if (lastResponseData) {
+                jsonContent.textContent = JSON.stringify(lastResponseData, null, 2);
+            } else {
+                jsonContent.textContent = '응답 데이터가 여기에 표시됩니다.';
+            }
+        }
+
+        // 스크롤 하단으로
+        function scrollToBottom() {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // HTML 이스케이프
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 리셋 버튼
+        resetButton.addEventListener('click', () => {
+            // 상태 초기화
+            currentSessionId = null;
+            currentEasternChar = null;
+            currentWesternChar = null;
+            savedBirthDate = null;
+            savedBirthTime = null;
+            savedBirthLocation = null;
+            isWaitingResponse = false;
+
+            // UI 초기화
+            resultsSection.classList.remove('show');
+            formSection.classList.remove('hidden');
+            chatContainer.innerHTML = '';
+            chatInputContainer.classList.remove('show');
+            hintText.style.display = 'none';
+            sessionInfo.textContent = '';
+            userInput.value = '';
+            lastResponseData = null;
+            updateJsonDisplay();
+
+            // 탭을 대화로 리셋
+            switchTab('chat');
+
+            // 폼 값 유지 (사용자 편의)
+        });
+    </script>
+</body>
+</html>

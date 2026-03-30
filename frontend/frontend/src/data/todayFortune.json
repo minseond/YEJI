@@ -1,0 +1,142 @@
+[
+    {
+        "id": "total",
+        "topic": "총운",
+        "east": {
+            "type": "일진 (日辰)",
+            "score": 88,
+            "summary": "안정적인 흐름 속에 작은 변화가 싹트는 날입니다.",
+            "keywords": [
+                "정인",
+                "안정",
+                "문서운"
+            ],
+            "description": "오늘은 당신에게 '정인(正印)'의 기운이 들어와 마음이 편안하고 학문이나 문서와 관련된 일이 길한 날입니다. 흐르는 물처럼 유연하게 대처하면 큰 탈 없이 평온한 하루를 보낼 수 있습니다. 다만 지나치게 안주하기보다 다가올 변화를 미리 준비하는 지혜가 필요합니다.",
+            "luckyItem": "다이어리"
+        },
+        "west": {
+            "type": "General (Sun)",
+            "score": 92,
+            "summary": "The Sun illuminates your path with clarity and vitality.",
+            "keywords": [
+                "Vitality",
+                "Clarity",
+                "Confidence"
+            ],
+            "description": "The Sun is in a harmonious aspect with your sign today, bringing a surge of energy and clarity. It's a perfect day to showcase your true self and take the lead. Your confidence will be your greatest asset, drawing positive opportunities towards you like a magnet.",
+            "luckyItem": "Gold Accessory"
+        }
+    },
+    {
+        "id": "love",
+        "topic": "애정운",
+        "east": {
+            "type": "애정운 (도화)",
+            "score": 95,
+            "summary": "도화살이 발동하여 매력이 넘쳐흐르는 날입니다.",
+            "keywords": [
+                "도화살",
+                "인기",
+                "매력"
+            ],
+            "description": "오늘은 당신의 매력이 돋보이는 '도화(桃花)'의 날입니다. 가만히 있어도 주변 사람들의 시선을 끌게 되며, 새로운 인연을 만나기에 최적의 시기입니다. 연인이 있다면 상대방에게 사랑받는 느낌을 강하게 받을 수 있습니다. 적극적으로 당신의 감정을 표현해보세요.",
+            "luckyItem": "향수"
+        },
+        "west": {
+            "type": "Love (Venus)",
+            "score": 85,
+            "summary": "Venus smiles upon you, fostering deep connections.",
+            "keywords": [
+                "Romance",
+                "Harmony",
+                "Attraction"
+            ],
+            "description": "With Venus influencing your chart, your aura is practically glowing with romantic potential. It's a day for deep conversations and heartfelt connections. If you are single, an unexpected encounter could spark something special. Trust your heart's intuition.",
+            "luckyItem": "Rose Quartz"
+        }
+    },
+    {
+        "id": "wealth",
+        "topic": "재물운",
+        "east": {
+            "type": "재물운 (편재)",
+            "score": 78,
+            "summary": "큰 돈이 오갈 수는 있으나 신중함이 필요한 '편재'의 날입니다.",
+            "keywords": [
+                "편재",
+                "투자",
+                "지출주의"
+            ],
+            "description": "예상치 못한 수익(편재)의 기운이 있지만, 동시에 지출의 기운도 강합니다. 돈이 들어오는 만큼 나갈 구멍도 생기는 형국이니, 충동적인 소비보다는 미래를 위한 투자나 저축에 집중하는 것이 좋습니다. 사업가에게는 활발한 거래가 일어날 수 있는 날입니다.",
+            "luckyItem": "노란색 지갑"
+        },
+        "west": {
+            "type": "Wealth (Jupiter)",
+            "score": 82,
+            "summary": "Jupiter expands your financial horizons, but check the details.",
+            "keywords": [
+                "Expansion",
+                "Opportunity",
+                "Prudence"
+            ],
+            "description": "Jupiter brings an expansive energy to your financial sector, suggesting growth and new opportunities. However, Mercury might be playing tricks, so read the fine print before signing any contracts. It's a good day for planning long-term wealth strategies rather than quick wins.",
+            "luckyItem": "Green Notebook"
+        }
+    },
+    {
+        "id": "career",
+        "topic": "직업운",
+        "east": {
+            "type": "직업운 (관운)",
+            "score": 90,
+            "summary": "관운이 들어와 승진이나 명예를 얻을 수 있는 길일입니다.",
+            "keywords": [
+                "정관",
+                "승진",
+                "명예"
+            ],
+            "description": "바르고 곧은 '정관(正官)'의 기운이 당신을 비추고 있습니다. 직장에서 능력을 인정받거나 중요한 책임을 맡게 될 수 있습니다. 윗사람의 눈에 들기 좋은 날이니, 성실한 태도로 임하면 큰 성과가 따를 것입니다. 면접이나 시험운도 매우 좋습니다.",
+            "luckyItem": "손목시계"
+        },
+        "west": {
+            "type": "Career (Saturn)",
+            "score": 88,
+            "summary": "Saturn rewards your hard work and discipline today.",
+            "keywords": [
+                "Discipline",
+                "Achievement",
+                "Structure"
+            ],
+            "description": "Saturn's influence brings a serious tone, but it's one of reward for past efforts. Your dedication is finally being noticed by those in authority. It's not a day for shortcuts; steady, disciplined progress will build a foundation for lasting success.",
+            "luckyItem": "Planner"
+        }
+    },
+    {
+        "id": "health",
+        "topic": "건강운",
+        "east": {
+            "type": "건강운 (식신)",
+            "score": 65,
+            "summary": "식복은 있으나 과식을 주의하고 휴식이 필요한 날입니다.",
+            "keywords": [
+                "식신",
+                "휴식",
+                "소화기"
+            ],
+            "description": "먹을 복을 뜻하는 '식신'이 강하게 들어와 입맛이 좋고 모임이 많을 수 있습니다. 하지만 과식으로 인해 위장에 탈이 날 수 있으니 주의하세요. 전체적인 에너지는 나쁘지 않으나, 무리한 활동보다는 가벼운 산책과 충분한 수면이 보약이 되는 하루입니다.",
+            "luckyItem": "따뜻한 차"
+        },
+        "west": {
+            "type": "Health (Moon)",
+            "score": 70,
+            "summary": "The Moon affects your biorhythms; listen to your body.",
+            "keywords": [
+                "Balance",
+                "Rest",
+                "Hydration"
+            ],
+            "description": "Your energy levels might fluctuate today as the Moon transits. You may feel a bit more sensitive or tired than usual. It's a signal to slow down and prioritize self-care. Hydration and meditation will help restore your emotional and physical balance.",
+            "luckyItem": "Water Bottle"
+        }
+    }
+]

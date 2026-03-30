@@ -1,0 +1,90 @@
+{
+  "category": "eastern",
+  "chart": {
+    "summary": "병화(丙火)의 강한 에너지가 주를 이루는 사주로, 외향적이고 결단력이 있으며 추진력이 강합니다.",
+    "year": {
+      "gan": "丙",
+      "gan_code": "BYEONG",
+      "ji": "午",
+      "ji_code": "O",
+      "element_code": "1",
+      "ten_god_code": "BYEONG"
+    },
+    "month": {
+      "gan": "甲",
+      "gan_code": "EUL",
+      "ji": "午",
+      "ji_code": "O",
+      "element_code": "1",
+      "ten_god_code": "EUL"
+    },
+    "day": {
+      "gan": "丙",
+      "gan_code": "BYEONG",
+      "ji": "寅",
+      "ji_code": "IN",
+      "element_code": "1",
+      "ten_god_code": "BYEONG"
+    },
+    "hour": {
+      "gan": "戊",
+      "gan_code": "MU",
+      "ji": "戌",
+      "ji_code": "SUL",
+      "element_code": "3",
+      "ten_god_code": "MU"
+    }
+  },
+  "stats": {
+    "five_elements": {
+      "summary": "화(火)가 매우 강하고 토(土)도 존재하여 열정과 현실감이 공존합니다. 목(木)은 일부 보조하고 금(金)과 수(水)는 약합니다.",
+      "elements": [
+        "火",
+        "土",
+        "木",
+        "金",
+        "水"
+      ],
+      "strong": "火",
+      "weak": "金, Water"
+    },
+    "yin_yang": {
+      "summary": "양(陽)의 기운이 지배적이며, 활동적이며 외향적인 성향이 강합니다.",
+      "yin": 40,
+      "yang": 60,
+      "balance": "STRONG_YANG"
+    },
+    "ten_gods": {
+      "summary": "본인(日干 丙)을 극하는 금(金)의 기운이 약하고, 생하는 목(木)은 편재(偏財) 성향으로 재물과 기회를 끌어오기보다 본인 주도의 성과를 내기 쉽습니다. 관(官)과 인(印)의 기운은 상대적으로 약합니다.",
+      "gods": [
+        {
+          "code": "BYEONG",
+          "label": "丙",
+          "group_code": "BYEONG",
+          "value": 2,
+          "percent": 40
+        },
+        {
+          "code": "MU",
+          "label": "戊",
+          "group_code": "MU",
+          "value": 1,
+          "percent": 20
+        }
+      ],
+      "dominant": "BYEONG"
+    }
+  },
+  "ui_hints": {
+    "badges": [
+      "FIRE_STRONG",
+      "ACTION_ORIENTED",
+      "YANG_DOMINANT",
+      "BYEONG_DOMINANT"
+    ]
+  },
+  "lucky": {
+    "elements": "금(金)과 수(水)",
+    "suggestions": "검정·회색 계열의 옷, 서쪽(西) 또는 북쪽(北)의 특정 시간대에 산책, 금속 재질의 액세서리로 균형 보완"
+  }
+}

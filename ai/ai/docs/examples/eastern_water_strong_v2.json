@@ -1,0 +1,130 @@
+{
+  "category": "eastern",
+  "chart": {
+    "summary": "일간(壬)을 중심으로 수(水)가 강조되나, 오행의 불(火)과 토(土)가 불균형합니다.",
+    "year": {
+      "gan": "申",
+      "gan_code": "SIN",
+      "ji": "申",
+      "ji_code": "SHIN",
+      "element_code": "METAL",
+      "ten_god_code": "JEONG_GWAN"
+    },
+    "month": {
+      "gan": "亥",
+      "gan_code": "HAE",
+      "ji": "亥",
+      "ji_code": "HAE",
+      "element_code": "WATER",
+      "ten_god_code": "JEONG_GWAN"
+    },
+    "day": {
+      "gan": "壬",
+      "gan_code": "IM",
+      "ji": "子",
+      "ji_code": "JA",
+      "element_code": "WATER",
+      "ten_god3": "DAY_MASTER"
+    },
+    "hour": {
+      "gan": "甲",
+      "gan_code": "GAP",
+      "ji": "辰",
+      "ji_code": "JIN",
+      "element_code": "WOOD",
+      "ten_god_code": "JEONG_GWAN"
+    }
+  },
+  "stats": {
+    "five_elements": {
+      "summary": "수(水)와 금(金)이 우세하고 목(木)과 토(土)가 일부 보완되어 화(火)가 약합니다.",
+      "elements": [
+        {
+          "code": "WOOD",
+          "label": "목",
+          "value": 1,
+          "percent": 14.3
+        },
+        {
+          "code": "FIRE",
+          "label": "화",
+          "value": 0,
+          "percent": 0.0
+        },
+        {
+          "code": "EARTH",
+          "label": "토",
+          "value": 1,
+          "percent": 14.3
+        },
+        {
+          "code": "METAL",
+          "label": "금",
+          "value": 2,
+          "percent": 28.6
+        },
+        {
+          "code": "WATER",
+          "label": "수",
+          "value": 3,
+          "percent": 42.9
+        }
+      ],
+      "strong": "WATER",
+      "weak": "FIRE"
+    },
+    "yin_yang": {
+      "summary": "수(水)가 강해 전체적으로 음(陰) 기운이 우세합니다.",
+      "yin": 60.0,
+      "yang": 40.0,
+      "balance": "STRONG_YIN"
+    },
+    "ten_gods": {
+      "summary": "비겁(比肩)과 편관(偏官) 성향이 혼재하여 자기주장과 책임감이 강합니다.",
+      "gods": [
+        {
+          "code": "BI_GYEON",
+          "label": "비견",
+          "group_code": "BI_GYEOP",
+          "value": 2,
+          "percent": 28.6
+        },
+        {
+          "code": "JEONG_GWAN",
+          "label": "정관",
+          "group_code": "JEONG_GWAN",
+          "value": 1,
+          "percent": 14.3
+        }
+      ],
+      "dominant": "BI_GYEOP"
+    },
+    "strength": "강한 통찰력과 책임감으로 주도적 역할 가능",
+    "weakness": "열정과 활력(화) 부족으로 창의적 발현이 제한될 수 있음"
+  },
+  "summary": "강한 수기(水氣)와 금기(金氣)의 조합으로 현실적 실행력과 책임감이 돋보입니다.",
+  "message": "열정(火)과 활력을 보완하면 더 큰 성과를 얻을 수 있습니다.",
+  "ui_hints": {
+    "badges": [
+      "WATER_STRONG",
+      "FIRE_WEAK",
+      "METAL_STRONG",
+      "RESPONSIBILITY"
+    ],
+    "recommend_chart": "RADAR",
+    "highlight": {
+      "day_master": "day",
+      "strong_element": "WATER",
+      "weak_element": "FIRE"
+    }
+  },
+  "lucky": {
+    "color": "주황색",
+    "color_code": "#FFA500",
+    "number": "3, 8",
+    "item": "파란색 액세서리",
+    "direction": "남쪽",
+    "direction_code": "S",
+    "place": "해변, 물가"
+  }
+}

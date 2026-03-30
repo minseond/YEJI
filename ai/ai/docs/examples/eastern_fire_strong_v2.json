@@ -1,0 +1,38 @@
+{
+  "category": "eastern",
+  "chart": {
+    "summary": "일간(丙)을 중심으로 화(火)가 강조되며, 목(木)이 조력자 역할을 합니다.",
+    "year": {
+      "gan": "丙",
+      "gan_code": "BYEONG",
+      "ji": "午",
+      "ji_code": "O",
+      "element_code": "FIRE",
+      "ten_god_code": "SANG_GWAN"
+    },
+    "month": {
+      "gan": "甲",
+      "gan_code": "GAP",
+      "ji": "午",
+      "ji_code": "O",
+      "element_code": "WOOD",
+      "ten_god in_code": "SANG_GWAN"
+    },
+    "day": {
+      "gan": "丙",
+      "gan_code": "BYEONG",
+      "ji": "寅",
+      "ji_code": "IN",
+      "element_code": "FIRE",
+      "ten_god_code": "DAY_MASTER"
+    },
+    "hour": {
+      "gan": "戊",
+      "gan_code": "MU",
+      "ji": "戌",
+      "ji_code": "SUL",
+      "element_code": "EARTH",
+      "ten_god_code": "JEONG_GWAN"
+    }
+  }
+}

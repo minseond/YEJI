@@ -1,0 +1,714 @@
+{
+  "version": "1.0",
+  "description": "하오체 변환 테스트 케이스 (100개 샘플)",
+  "categories": {
+    "해요체_종결": 30,
+    "습니다체_종결": 25,
+    "복합_어미": 15,
+    "불규칙_동사": 10,
+    "연결_어미": 10,
+    "엣지_케이스": 10
+  },
+  "test_cases": [
+    {
+      "id": 1,
+      "category": "해요체_종결",
+      "input": "오늘 운세는 좋아요.",
+      "expected": "오늘 운세는 좋소.",
+      "pattern": "~아요 → ~소"
+    },
+    {
+      "id": 2,
+      "category": "해요체_종결",
+      "input": "당신의 미래는 밝아요.",
+      "expected": "당신의 미래는 밝소.",
+      "pattern": "~아요 → ~소"
+    },
+    {
+      "id": 3,
+      "category": "해요체_종결",
+      "input": "운세를 확인해요.",
+      "expected": "운세를 확인하오.",
+      "pattern": "~해요 → ~하오"
+    },
+    {
+      "id": 4,
+      "category": "해요체_종결",
+      "input": "오늘은 좋은 날이에요.",
+      "expected": "오늘은 좋은 날이오.",
+      "pattern": "~이에요 → ~이오"
+    },
+    {
+      "id": 5,
+      "category": "해요체_종결",
+      "input": "행운이 있어요.",
+      "expected": "행운이 있소.",
+      "pattern": "~있어요 → ~있소"
+    },
+    {
+      "id": 6,
+      "category": "해요체_종결",
+      "input": "걱정이 없어요.",
+      "expected": "걱정이 없소.",
+      "pattern": "~없어요 → ~없소"
+    },
+    {
+      "id": 7,
+      "category": "해요체_종결",
+      "input": "미래를 봐요.",
+      "expected": "미래를 보시오.",
+      "pattern": "~봐요 → ~보시오"
+    },
+    {
+      "id": 8,
+      "category": "해요체_종결",
+      "input": "친구가 와요.",
+      "expected": "친구가 오시오.",
+      "pattern": "~와요 → ~오시오"
+    },
+    {
+      "id": 9,
+      "category": "해요체_종결",
+      "input": "집에 가요.",
+      "expected": "집에 가시오.",
+      "pattern": "~가요 → ~가시오"
+    },
+    {
+      "id": 10,
+      "category": "해요체_종결",
+      "input": "일을 시작해요.",
+      "expected": "일을 시작하오.",
+      "pattern": "~해요 → ~하오"
+    },
+    {
+      "id": 11,
+      "category": "해요체_종결",
+      "input": "책을 읽어요.",
+      "expected": "책을 읽소.",
+      "pattern": "~어요 → ~소"
+    },
+    {
+      "id": 12,
+      "category": "해요체_종결",
+      "input": "물을 마셔요.",
+      "expected": "물을 마시오.",
+      "pattern": "~셔요 → ~시오"
+    },
+    {
+      "id": 13,
+      "category": "해요체_종결",
+      "input": "새로운 시작이에요.",
+      "expected": "새로운 시작이오.",
+      "pattern": "~이에요 → ~이오"
+    },
+    {
+      "id": 14,
+      "category": "해요체_종결",
+      "input": "힘이 나요.",
+      "expected": "힘이 나오.",
+      "pattern": "~나요 → ~나오"
+    },
+    {
+      "id": 15,
+      "category": "해요체_종결",
+      "input": "기분이 좋아요.",
+      "expected": "기분이 좋소.",
+      "pattern": "~아요 → ~소"
+    },
+    {
+      "id": 16,
+      "category": "해요체_종결",
+      "input": "사랑이 와요.",
+      "expected": "사랑이 오시오.",
+      "pattern": "~와요 → ~오시오"
+    },
+    {
+      "id": 17,
+      "category": "해요체_종결",
+      "input": "꿈을 이뤄요.",
+      "expected": "꿈을 이루오.",
+      "pattern": "~뤄요 → ~루오"
+    },
+    {
+      "id": 18,
+      "category": "해요체_종결",
+      "input": "노력이 필요해요.",
+      "expected": "노력이 필요하오.",
+      "pattern": "~해요 → ~하오"
+    },
+    {
+      "id": 19,
+      "category": "해요체_종결",
+      "input": "운이 따라요.",
+      "expected": "운이 따르오.",
+      "pattern": "~라요 → ~르오"
+    },
+    {
+      "id": 20,
+      "category": "해요체_종결",
+      "input": "기회가 많아요.",
+      "expected": "기회가 많소.",
+      "pattern": "~아요 → ~소"
+    },
+    {
+      "id": 21,
+      "category": "해요체_종결",
+      "input": "건강이 중요해요.",
+      "expected": "건강이 중요하오.",
+      "pattern": "~해요 → ~하오"
+    },
+    {
+      "id": 22,
+      "category": "해요체_종결",
+      "input": "재물운이 있어요.",
+      "expected": "재물운이 있소.",
+      "pattern": "~있어요 → ~있소"
+    },
+    {
+      "id": 23,
+      "category": "해요체_종결",
+      "input": "문제가 생겨요.",
+      "expected": "문제가 생기오.",
+      "pattern": "~겨요 → ~기오"
+    },
+    {
+      "id": 24,
+      "category": "해요체_종결",
+      "input": "답을 찾아요.",
+      "expected": "답을 찾소.",
+      "pattern": "~아요 → ~소"
+    },
+    {
+      "id": 25,
+      "category": "해요체_종결",
+      "input": "길이 보여요.",
+      "expected": "길이 보이오.",
+      "pattern": "~여요 → ~이오"
+    },
+    {
+      "id": 26,
+      "category": "해요체_종결",
+      "input": "희망이 있어요.",
+      "expected": "희망이 있소.",
+      "pattern": "~있어요 → ~있소"
+    },
+    {
+      "id": 27,
+      "category": "해요체_종결",
+      "input": "시간이 걸려요.",
+      "expected": "시간이 걸리오.",
+      "pattern": "~려요 → ~리오"
+    },
+    {
+      "id": 28,
+      "category": "해요체_종결",
+      "input": "변화가 와요.",
+      "expected": "변화가 오시오.",
+      "pattern": "~와요 → ~오시오"
+    },
+    {
+      "id": 29,
+      "category": "해요체_종결",
+      "input": "성공이 가까워요.",
+      "expected": "성공이 가깝소.",
+      "pattern": "~워요 → ~소"
+    },
+    {
+      "id": 30,
+      "category": "해요체_종결",
+      "input": "인연이 만들어져요.",
+      "expected": "인연이 만들어지오.",
+      "pattern": "~져요 → ~지오"
+    },
+    {
+      "id": 31,
+      "category": "습니다체_종결",
+      "input": "운세를 확인합니다.",
+      "expected": "운세를 확인하오.",
+      "pattern": "~합니다 → ~하오"
+    },
+    {
+      "id": 32,
+      "category": "습니다체_종결",
+      "input": "행운이 있습니다.",
+      "expected": "행운이 있소.",
+      "pattern": "~있습니다 → ~있소"
+    },
+    {
+      "id": 33,
+      "category": "습니다체_종결",
+      "input": "오늘은 좋은 날입니다.",
+      "expected": "오늘은 좋은 날이오.",
+      "pattern": "~입니다 → ~이오"
+    },
+    {
+      "id": 34,
+      "category": "습니다체_종결",
+      "input": "성공하게 됩니다.",
+      "expected": "성공하게 되오.",
+      "pattern": "~됩니다 → ~되오"
+    },
+    {
+      "id": 35,
+      "category": "습니다체_종결",
+      "input": "좋은 결과가 나오겠습니다.",
+      "expected": "좋은 결과가 나오겠소.",
+      "pattern": "~겠습니다 → ~겠소"
+    },
+    {
+      "id": 36,
+      "category": "습니다체_종결",
+      "input": "미래가 밝습니다.",
+      "expected": "미래가 밝소.",
+      "pattern": "~습니다 → ~소"
+    },
+    {
+      "id": 37,
+      "category": "습니다체_종결",
+      "input": "기회가 옵니다.",
+      "expected": "기회가 오오.",
+      "pattern": "~옵니다 → ~오오"
+    },
+    {
+      "id": 38,
+      "category": "습니다체_종결",
+      "input": "길이 열립니다.",
+      "expected": "길이 열리오.",
+      "pattern": "~립니다 → ~리오"
+    },
+    {
+      "id": 39,
+      "category": "습니다체_종결",
+      "input": "운이 따릅니다.",
+      "expected": "운이 따르오.",
+      "pattern": "~릅니다 → ~르오"
+    },
+    {
+      "id": 40,
+      "category": "습니다체_종결",
+      "input": "행복이 찾아옵니다.",
+      "expected": "행복이 찾아오오.",
+      "pattern": "~옵니다 → ~오오"
+    },
+    {
+      "id": 41,
+      "category": "습니다체_종결",
+      "input": "사랑이 시작됩니다.",
+      "expected": "사랑이 시작되오.",
+      "pattern": "~됩니다 → ~되오"
+    },
+    {
+      "id": 42,
+      "category": "습니다체_종결",
+      "input": "문제가 해결됩니다.",
+      "expected": "문제가 해결되오.",
+      "pattern": "~됩니다 → ~되오"
+    },
+    {
+      "id": 43,
+      "category": "습니다체_종결",
+      "input": "건강이 좋습니다.",
+      "expected": "건강이 좋소.",
+      "pattern": "~습니다 → ~소"
+    },
+    {
+      "id": 44,
+      "category": "습니다체_종결",
+      "input": "재물이 늘어납니다.",
+      "expected": "재물이 늘어나오.",
+      "pattern": "~납니다 → ~나오"
+    },
+    {
+      "id": 45,
+      "category": "습니다체_종결",
+      "input": "관계가 깊어집니다.",
+      "expected": "관계가 깊어지오.",
+      "pattern": "~집니다 → ~지오"
+    },
+    {
+      "id": 46,
+      "category": "습니다체_종결",
+      "input": "노력이 필요합니다.",
+      "expected": "노력이 필요하오.",
+      "pattern": "~합니다 → ~하오"
+    },
+    {
+      "id": 47,
+      "category": "습니다체_종결",
+      "input": "시간이 걸립니다.",
+      "expected": "시간이 걸리오.",
+      "pattern": "~립니다 → ~리오"
+    },
+    {
+      "id": 48,
+      "category": "습니다체_종결",
+      "input": "변화가 필요합니다.",
+      "expected": "변화가 필요하오.",
+      "pattern": "~합니다 → ~하오"
+    },
+    {
+      "id": 49,
+      "category": "습니다체_종결",
+      "input": "기대가 됩니다.",
+      "expected": "기대가 되오.",
+      "pattern": "~됩니다 → ~되오"
+    },
+    {
+      "id": 50,
+      "category": "습니다체_종결",
+      "input": "인연이 만들어집니다.",
+      "expected": "인연이 만들어지오.",
+      "pattern": "~집니다 → ~지오"
+    },
+    {
+      "id": 51,
+      "category": "습니다체_종결",
+      "input": "희망이 보입니다.",
+      "expected": "희망이 보이오.",
+      "pattern": "~입니다 → ~이오"
+    },
+    {
+      "id": 52,
+      "category": "습니다체_종결",
+      "input": "성공이 가깝습니다.",
+      "expected": "성공이 가깝소.",
+      "pattern": "~습니다 → ~소"
+    },
+    {
+      "id": 53,
+      "category": "습니다체_종결",
+      "input": "답이 나옵니다.",
+      "expected": "답이 나오오.",
+      "pattern": "~옵니다 → ~오오"
+    },
+    {
+      "id": 54,
+      "category": "습니다체_종결",
+      "input": "길이 펼쳐집니다.",
+      "expected": "길이 펼쳐지오.",
+      "pattern": "~집니다 → ~지오"
+    },
+    {
+      "id": 55,
+      "category": "습니다체_종결",
+      "input": "운명이 바뀝니다.",
+      "expected": "운명이 바뀌오.",
+      "pattern": "~뀝니다 → ~뀌오"
+    },
+    {
+      "id": 56,
+      "category": "복합_어미",
+      "input": "노력하고 있어요.",
+      "expected": "노력하고 있소.",
+      "pattern": "~하고 있어요 → ~하고 있소"
+    },
+    {
+      "id": 57,
+      "category": "복합_어미",
+      "input": "성공할 수 있어요.",
+      "expected": "성공할 수 있소.",
+      "pattern": "~할 수 있어요 → ~할 수 있소"
+    },
+    {
+      "id": 58,
+      "category": "복합_어미",
+      "input": "사랑하고 싶어요.",
+      "expected": "사랑하고 싶소.",
+      "pattern": "~하고 싶어요 → ~하고 싶소"
+    },
+    {
+      "id": 59,
+      "category": "복합_어미",
+      "input": "행복할 거예요.",
+      "expected": "행복할 것이오.",
+      "pattern": "~할 거예요 → ~할 것이오"
+    },
+    {
+      "id": 60,
+      "category": "복합_어미",
+      "input": "변화가 있을 거예요.",
+      "expected": "변화가 있을 것이오.",
+      "pattern": "~있을 거예요 → ~있을 것이오"
+    },
+    {
+      "id": 61,
+      "category": "복합_어미",
+      "input": "기다리고 있어요.",
+      "expected": "기다리고 있소.",
+      "pattern": "~하고 있어요 → ~하고 있소"
+    },
+    {
+      "id": 62,
+      "category": "복합_어미",
+      "input": "만날 수 있어요.",
+      "expected": "만날 수 있소.",
+      "pattern": "~할 수 있어요 → ~할 수 있소"
+    },
+    {
+      "id": 63,
+      "category": "복합_어미",
+      "input": "도전하고 싶어요.",
+      "expected": "도전하고 싶소.",
+      "pattern": "~하고 싶어요 → ~하고 싶소"
+    },
+    {
+      "id": 64,
+      "category": "복합_어미",
+      "input": "좋아질 거예요.",
+      "expected": "좋아질 것이오.",
+      "pattern": "~할 거예요 → ~할 것이오"
+    },
+    {
+      "id": 65,
+      "category": "복합_어미",
+      "input": "계속하고 있어요.",
+      "expected": "계속하고 있소.",
+      "pattern": "~하고 있어요 → ~하고 있소"
+    },
+    {
+      "id": 66,
+      "category": "복합_어미",
+      "input": "이해할 수 있어요.",
+      "expected": "이해할 수 있소.",
+      "pattern": "~할 수 있어요 → ~할 수 있소"
+    },
+    {
+      "id": 67,
+      "category": "복합_어미",
+      "input": "시작하고 싶어요.",
+      "expected": "시작하고 싶소.",
+      "pattern": "~하고 싶어요 → ~하고 싶소"
+    },
+    {
+      "id": 68,
+      "category": "복합_어미",
+      "input": "나아질 거예요.",
+      "expected": "나아질 것이오.",
+      "pattern": "~할 거예요 → ~할 것이오"
+    },
+    {
+      "id": 69,
+      "category": "복합_어미",
+      "input": "준비하고 있어요.",
+      "expected": "준비하고 있소.",
+      "pattern": "~하고 있어요 → ~하고 있소"
+    },
+    {
+      "id": 70,
+      "category": "복합_어미",
+      "input": "극복할 수 있어요.",
+      "expected": "극복할 수 있소.",
+      "pattern": "~할 수 있어요 → ~할 수 있소"
+    },
+    {
+      "id": 71,
+      "category": "불규칙_동사",
+      "input": "상황이 어려워요.",
+      "expected": "상황이 어렵소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 72,
+      "category": "불규칙_동사",
+      "input": "문제가 쉬워요.",
+      "expected": "문제가 쉽소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 73,
+      "category": "불규칙_동사",
+      "input": "날씨가 더워요.",
+      "expected": "날씨가 덥소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 74,
+      "category": "불규칙_동사",
+      "input": "겨울이 추워요.",
+      "expected": "겨울이 춥소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 75,
+      "category": "불규칙_동사",
+      "input": "몸이 아파요.",
+      "expected": "몸이 아프오.",
+      "pattern": "~파요 → ~프오 (ㅂ불규칙)"
+    },
+    {
+      "id": 76,
+      "category": "불규칙_동사",
+      "input": "마음이 무거워요.",
+      "expected": "마음이 무겁소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 77,
+      "category": "불규칙_동사",
+      "input": "길이 가까워요.",
+      "expected": "길이 가깝소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 78,
+      "category": "불규칙_동사",
+      "input": "공기가 차가워요.",
+      "expected": "공기가 차갑소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 79,
+      "category": "불규칙_동사",
+      "input": "봄이 따뜻해요.",
+      "expected": "봄이 따뜻하오.",
+      "pattern": "~해요 → ~하오"
+    },
+    {
+      "id": 80,
+      "category": "불규칙_동사",
+      "input": "느낌이 새로워요.",
+      "expected": "느낌이 새롭소.",
+      "pattern": "~워요 → ~소 (ㅂ불규칙)"
+    },
+    {
+      "id": 81,
+      "category": "연결_어미",
+      "input": "노력하는데요.",
+      "expected": "노력하는데.",
+      "pattern": "~는데요 → ~는데"
+    },
+    {
+      "id": 82,
+      "category": "연결_어미",
+      "input": "어렵지만요.",
+      "expected": "어렵지만.",
+      "pattern": "~지만요 → ~지만"
+    },
+    {
+      "id": 83,
+      "category": "연결_어미",
+      "input": "기다려서요.",
+      "expected": "기다려서.",
+      "pattern": "~서요 → ~서"
+    },
+    {
+      "id": 84,
+      "category": "연결_어미",
+      "input": "생각하고요.",
+      "expected": "생각하고.",
+      "pattern": "~고요 → ~고"
+    },
+    {
+      "id": 85,
+      "category": "연결_어미",
+      "input": "준비하면서요.",
+      "expected": "준비하면서.",
+      "pattern": "~면서요 → ~면서"
+    },
+    {
+      "id": 86,
+      "category": "연결_어미",
+      "input": "계속되는데요.",
+      "expected": "계속되는데.",
+      "pattern": "~는데요 → ~는데"
+    },
+    {
+      "id": 87,
+      "category": "연결_어미",
+      "input": "좋지만요.",
+      "expected": "좋지만.",
+      "pattern": "~지만요 → ~지만"
+    },
+    {
+      "id": 88,
+      "category": "연결_어미",
+      "input": "믿어서요.",
+      "expected": "믿어서.",
+      "pattern": "~서요 → ~서"
+    },
+    {
+      "id": 89,
+      "category": "연결_어미",
+      "input": "시작하고요.",
+      "expected": "시작하고.",
+      "pattern": "~고요 → ~고"
+    },
+    {
+      "id": 90,
+      "category": "연결_어미",
+      "input": "변화하면서요.",
+      "expected": "변화하면서.",
+      "pattern": "~면서요 → ~면서"
+    },
+    {
+      "id": 91,
+      "category": "엣지_케이스",
+      "input": "운세가 좋소.",
+      "expected": "운세가 좋소.",
+      "pattern": "기존 하오체 유지"
+    },
+    {
+      "id": 92,
+      "category": "엣지_케이스",
+      "input": "성공하시오.",
+      "expected": "성공하시오.",
+      "pattern": "기존 하오체 유지"
+    },
+    {
+      "id": 93,
+      "category": "엣지_케이스",
+      "input": "그렇게 해.",
+      "expected": "그렇게 하오.",
+      "pattern": "반말 → 하오체"
+    },
+    {
+      "id": 94,
+      "category": "엣지_케이스",
+      "input": "좋아.",
+      "expected": "좋소.",
+      "pattern": "반말 → 하오체"
+    },
+    {
+      "id": 95,
+      "category": "엣지_케이스",
+      "input": "이건 좋은 징조야.",
+      "expected": "이건 좋은 징조이오.",
+      "pattern": "~야 → ~이오"
+    },
+    {
+      "id": 96,
+      "category": "엣지_케이스",
+      "input": "운세를 확인해.",
+      "expected": "운세를 확인하오.",
+      "pattern": "반말 → 하오체"
+    },
+    {
+      "id": 97,
+      "category": "엣지_케이스",
+      "input": "",
+      "expected": "",
+      "pattern": "빈 문자열 처리"
+    },
+    {
+      "id": 98,
+      "category": "엣지_케이스",
+      "input": "좋은 하루!",
+      "expected": "좋은 하루!",
+      "pattern": "종결어미 없음 유지"
+    },
+    {
+      "id": 99,
+      "category": "엣지_케이스",
+      "input": "행운과 건강.",
+      "expected": "행운과 건강.",
+      "pattern": "명사형 종결 유지"
+    },
+    {
+      "id": 100,
+      "category": "엣지_케이스",
+      "input": "오늘 운세: 매우 좋음",
+      "expected": "오늘 운세: 매우 좋음",
+      "pattern": "특수 형식 유지"
+    }
+  ]
+}

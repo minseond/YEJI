@@ -1,0 +1,41 @@
+{
+  "active": false,
+  "mode": "ultrapilot",
+  "started_at": "2026-02-04T06:45:00Z",
+  "completed_at": "2026-02-04T06:50:00Z",
+  "task_summary": "화투 응답 개선 + 화투/타로 서머리 2배",
+  "workers": [
+    {
+      "id": "w1",
+      "status": "completed",
+      "files": ["models/fortune/hwatu.py"],
+      "task": "화투 모델 개선 (새 필드 + Summary + Lucky)"
+    },
+    {
+      "id": "w2",
+      "status": "completed",
+      "files": ["prompts/hwatu_prompts.py"],
+      "task": "화투 프롬프트 개선 (서머리 2배, 새 필드)"
+    },
+    {
+      "id": "w3",
+      "status": "completed",
+      "files": ["services/hwatu_service.py"],
+      "task": "화투 서비스 개선 (파싱 로직)"
+    },
+    {
+      "id": "w4",
+      "status": "completed",
+      "files": ["prompts/tarot_prompts.py"],
+      "task": "타로 프롬프트 서머리 2배"
+    }
+  ],
+  "shared_files": [],
+  "phase": "completed",
+  "validation": {
+    "tests": "5 passed",
+    "lint": "passed",
+    "imports": "verified"
+  },
+  "no_push": true
+}

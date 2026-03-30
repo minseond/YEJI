@@ -1,0 +1,94 @@
+{
+  "category": "eastern",
+  "chart": {
+    "summary": "비견(比肩)과 식신(食神)의 기운이 강해 자립심과 창의성이 돋보입니다. 다만 재성(財星)의 흐름이 약해 재물 관리에서 보완이 필요합니다.",
+    "year": {
+      "gan": "己",
+      "gan_code": "GI",
+      "ji": "卯",
+      "ji_code": "MYO",
+      "element_code": "WOOD",
+      "ten_god_code": "JEONG_IN"
+    },
+    "month": {
+      "gan": "丁",
+      "gan_code": "JEONG",
+      "ji": "卯",
+      "ji_code": "MYO",
+      "element_code": "WOOD",
+      "ten_god_code": "JEONG_IN"
+    },
+    "day": {
+      "gan": "甲",
+      "gan_code": "EUL",
+      "ji": "子",
+      "ji_code": "JA",
+      "element_code": "WOOD",
+      "ten_god_code": "JEONG_IN"
+    },
+    "hour": {
+      "gan": "辛",
+      "gan_code": "SIN",
+      "ji": "未",
+      "ji_code": "MI",
+      "element_code": "EARTH",
+      "ten_god_code": "JEONG_GWAN"
+    }
+  },
+  "stats": {
+    "five_elements": {
+      "summary": "목(木)이 75%로 강하고 흙(土)과 금(金)이 각각 10%로 약합니다. 물(水)과 불(火)은 소량 포함되어 균형을 맞춰야 합니다.",
+      "elements": [
+        "WOOD",
+        "WOOD",
+        "WOOD",
+        "EARTH",
+        "EARTH"
+      ],
+      "strong": "WOOD",
+      "weak": "SIN, MI"
+    },
+    "yin_yang": {
+      "summary": "양(陽)이 우세해 활동적이고 외향적인 성향이 강합니다.",
+      "yin": 40,
+      "yang": 60,
+      "balance": "SLIGHT_YANG"
+    },
+    "ten_gods": {
+      "summary": "비견(比肩)과 인성(印星)의 기운이 강해 자기 주도적이고 학문·창작 분야에 유리합니다. 관성(官星)과 재성(財星)은 약한 편입니다.",
+      "gods": [
+        {
+          "code": "JEONG_IN",
+          "label": "비견/인성",
+          "group_code": "IN_SEONG",
+          "value": 75,
+          "percent": "75%"
+        },
+        {
+          "code": "JEONG_GWAN",
+          "label": "관성",
+          "group_code": "GWAN_SEONG",
+          "value": 10,
+          "percent": "10%"
+        },
+        {
+          "code": "SIN_GYE",
+          "label": "금/금속",
+          "group_code": "METAL",
+          "value": 10,
+          "percent": "10%"
+        }
+      ],
+      "dominant": "JEONG_IN (비견/인성)"
+    }
+  },
+  "ui_hints": {
+    "badges": [
+      "CREATIVE_ORIENTED",
+      "THOUGHT_ORIENTED",
+      "EARTH_WEAK",
+      "IN_SEONG_DOMINANT"
+    ]
+  },
+  "lucky": "환경 보완: 목(木)을 강화하고 흙(土)과 금(금)을 보완하세요. 초록색 계열의 옷과 동쪽 방향으로의 활동, 산과 숲 근처 이주가 기운을 보완합니다. 재물 관리는 보수적으로, 소액의 투자보다 실무 능력을 키우는 데 집중하세요."
+}

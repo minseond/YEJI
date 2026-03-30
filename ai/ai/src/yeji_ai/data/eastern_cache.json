@@ -1,0 +1,25 @@
+{
+  "_comment": "동양 사주 캐시 데이터 - generate_fortune_cache.py 스크립트로 생성됨",
+  "_schema": {
+    "key_format": "{일간}_{강한오행}_{음양}",
+    "example_key": "GAP_WOOD_YANG",
+    "fields": {
+      "personality": "성격 분석 (하오체)",
+      "strength": "강점 분석 (하오체)",
+      "weakness": "약점 분석 (하오체)",
+      "advice": "종합 조언 (하오체)",
+      "summary": "한 줄 요약",
+      "message": "소이설 캐릭터 메시지 (3-5문장, 하오체)",
+      "badges": ["배지코드1", "배지코드2"],
+      "lucky": {
+        "color": "행운의 색상",
+        "color_code": "#HEX",
+        "number": "행운의 숫자",
+        "item": "행운의 아이템",
+        "direction": "행운의 방향",
+        "direction_code": "N/NE/E/SE/S/SW/W/NW",
+        "place": "행운의 장소"
+      }
+    }
+  }
+}

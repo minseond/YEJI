@@ -1,0 +1,91 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python 캐시 및 바이트코드
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 가상환경
+.venv/
+venv/
+ENV/
+env/
+
+# 패키지 빌드
+.eggs/
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# 테스트 및 커버리지
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# 린트 및 타입체크
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# IDE 및 에디터
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# 문서 (프로덕션 이미지에서 제외)
+docs/
+*.md
+!README.md
+
+# 테스트 (프로덕션 이미지에서 제외)
+tests/
+test_*.py
+*_test.py
+conftest.py
+
+# CI/CD 설정
+.gitlab-ci.yml
+.github/
+Jenkinsfile
+
+# Docker 관련 (재귀 방지)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# 환경 설정 (보안)
+.env
+.env.*
+.env.local
+!.env.example
+
+# 로그 및 임시 파일
+*.log
+*.tmp
+*.temp
+*.bak
+
+# OS 파일
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# 기타
+*.sqlite3
+*.db
+node_modules/
+npm-debug.log

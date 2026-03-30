@@ -1,0 +1,97 @@
+{
+  "category": "eastern",
+  "chart": {
+    "summary": "壬水 일간은 지혜와 통찰력이 뛰어나며 유연하게 상황을 흘려보내는 성향입니다. 동주하는 辛申·壬子의 금수 조합은 내면의 깊이와 외부 활동의 가능성을 동시에 주지만, 火의 부재로 표현력과 추진력이 약해질 수 있습니다.",
+    "year": {
+      "gan": "壬",
+      "gan_code": 8,
+      "ji": "申",
+      "ji_code": 7,
+      "element_code": 4,
+      "ten_god_code": 8
+    },
+    "month": {
+      "gan": "辛",
+      "gan_code": 7,
+      "ji": "亥",
+      "ji_code": 8,
+      "element_code": 4,
+      "ten_god_code": 7
+    },
+    "day": {
+      "gan": "壬",
+      "gan_code": 8,
+      "ji": "子",
+      "ji_code": 8,
+      "element_code": 4,
+      "ten_god_code": 8
+    },
+    "hour": {
+      "gan": "甲",
+      "gan_code": 0,
+      "ji": "辰",
+      "ji_code": 1,
+      "element_code": 2,
+      "ten_god_code": 2
+    }
+  },
+  "stats": {
+    "five_elements": {
+      "summary": "수(壬)와 금(辛)이 우세하여 물과 금의 성질이 강합니다. 화(火)가 전혀 없어 식신(食神)의 표현력과 활동성이 부족한 상태입니다.",
+      "elements": [
+        "水",
+        "金",
+        "火",
+        "土",
+        "木"
+      ],
+      "strong": [
+        "水",
+        "金"
+      ],
+      "weak": [
+        "火"
+      ]
+    },
+    "yin_yang": {
+      "summary": "陰陽의 균형이 크게 흐트러져 있어 감정의 내향성과 현실의 외향성이 충돌할 수 있습니다.",
+      "yin": 70,
+      "yang": 30,
+      "balance": "YIN_DOMINANT"
+    },
+    "ten_gods": {
+      "summary": "壬水 일간에 대한 十神 배치를 분석하면, 같은 수와 금의 기운이 강해 관(官)보다는 인(印) 또는 편관의 압박을 받는 구조입니다. 주변의 금기운이 일간을 제약하여 판단이 급해질 수 있습니다.",
+      "gods": [
+        {
+          "code": 8,
+          "label": "壬",
+          "group_code": "水",
+          "value": 3,
+          "percent": 30
+        },
+        {
+          "code": 7,
+          "label": "辛",
+          "group_code": "金",
+          "value": 2,
+          "percent": 20
+        }
+      ],
+      "dominant": "金"
+    }
+  },
+  "ui_hints": {
+    "badges": [
+      "水_STRONG",
+      "陰_DOMINANT",
+      "금_우세",
+      "火_부족"
+    ]
+  },
+  "lucky": {
+    "recommendations": [
+      "추천: 화(火)의 에너지를 보강하세요. 자주 화를 써는 활동(요리, 등산 등)이나 빨간색/주황색 소품, 南쪽(남쪽) 방향으로 에너지를 채우면 좋습니다.",
+      "방해: 금(金)과 수(水)의 기운이 강해 협업이나 의사결정에서 감정 기복과 냉정함이 문제될 수 있으니 표현력 훈련(말하기, 글쓰기)을 병행하세요."
+    ]
+  }
+}

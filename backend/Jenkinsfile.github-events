@@ -1,0 +1,204 @@
+pipeline {
+    agent any
+
+    triggers {
+        GenericTrigger(
+            genericVariables: [
+                [key: 'action', value: '$.action'],
+                [key: 'pr_title', value: '$.pull_request.title'],
+                [key: 'pr_number', value: '$.pull_request.number'],
+                [key: 'pr_url', value: '$.pull_request.html_url'],
+                [key: 'pr_user', value: '$.pull_request.user.login'],
+                [key: 'pr_state', value: '$.pull_request.state'],
+                [key: 'pr_merged', value: '$.pull_request.merged'],
+                [key: 'repo_name', value: '$.repository.full_name'],
+                [key: 'sender', value: '$.sender.login'],
+                [key: 'review_state', value: '$.review.state'],
+                [key: 'review_body', value: '$.review.body'],
+                [key: 'comment_body', value: '$.comment.body'],
+                [key: 'issue_title', value: '$.issue.title'],
+                [key: 'issue_number', value: '$.issue.number']
+            ],
+            causeString: 'GitHub Event: $action',
+            token: 'yeji-backend-events',
+            printContributedVariables: true,
+            printPostContent: true,
+            silentResponse: false
+        )
+    }
+
+    environment {
+        MATTERMOST_WEBHOOK = credentials('mattermost-webhook')
+    }
+
+    stages {
+        stage('Process GitHub Event') {
+            steps {
+                script {
+                    def message = ""
+                    def color = "#0366D6"
+                    def header = ""
+                    def statusMsg = ""
+
+                    // PR 이벤트
+                    if (env.pr_number && env.pr_title) {
+                        switch(env.action) {
+                            case 'opened':
+                                header = "░░▒▒▓▓██ ◆  NEW PR  ◆ ██▓▓▒▒░░"
+                                color = "#28A745"
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${env.pr_title}
+**HERO:** @${env.pr_user}
+**ZONE:** ${env.repo_name}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+▶ [**VIEW QUEST**](${env.pr_url})"""
+                                break
+                            case 'closed':
+                                if (env.pr_merged == 'true') {
+                                    header = "░░▒▒▓▓██ ★  MERGED  ★ ██▓▓▒▒░░"
+                                    color = "#6F42C1"
+                                    statusMsg = "【 QUEST COMPLETE! 】"
+                                } else {
+                                    header = "░░▒▒▓▓██ ✕  CLOSED  ✕ ██▓▓▒▒░░"
+                                    color = "#CB2431"
+                                    statusMsg = "【 QUEST FAILED 】"
+                                }
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${env.pr_title}
+**HERO:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+${statusMsg}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🏆 [**VIEW QUEST**](${env.pr_url})"""
+                                break
+                            case 'review_requested':
+                                header = "░░▒▒▓▓██ ◎  REVIEW  ◎ ██▓▓▒▒░░"
+                                color = "#DBAB09"
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${env.pr_title}
+**FROM:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+【 REVIEWER NEEDED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+👀 [**VIEW QUEST**](${env.pr_url})"""
+                                break
+                            default:
+                                echo "PR action '${env.action}' - 알림 생략"
+                                return
+                        }
+                    }
+                    // PR 리뷰 이벤트
+                    else if (env.review_state) {
+                        def prNum = env.pr_number ?: '?'
+                        def prTitle = env.pr_title ?: '(Unknown Quest)'
+                        def prUrl = env.pr_url ?: ''
+
+                        switch(env.review_state) {
+                            case 'approved':
+                                header = "░░▒▒▓▓██ ✓ APPROVED ✓ ██▓▓▒▒░░"
+                                color = "#28A745"
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${prTitle}
+**SAGE:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+【 LGTM! SHIP IT! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+✅ [**VIEW QUEST**](${prUrl})"""
+                                break
+                            case 'changes_requested':
+                                header = "░░▒▒▓▓██ ⚠  CHANGES ⚠ ██▓▓▒▒░░"
+                                color = "#DBAB09"
+                                def reviewBody = env.review_body?.take(50) ?: ''
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${prTitle}
+**SAGE:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+**MSG:** ${reviewBody}${env.review_body?.length() > 50 ? '...' : ''}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ [**VIEW QUEST**](${prUrl})"""
+                                break
+                            case 'commented':
+                                header = "░░▒▒▓▓██ ◇  COMMENT ◇ ██▓▓▒▒░░"
+                                color = "#0366D6"
+                                def commentText = env.review_body?.take(50) ?: ''
+                                message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**QUEST:** ${prTitle}
+**FROM:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+**MSG:** ${commentText}${env.review_body?.length() > 50 ? '...' : ''}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💬 [**VIEW QUEST**](${prUrl})"""
+                                break
+                            default:
+                                echo "Review state '${env.review_state}' - 알림 생략"
+                                return
+                        }
+                    }
+                    // Issue 코멘트 (PR 코멘트 포함)
+                    else if (env.comment_body && env.action == 'created') {
+                        header = "░░▒▒▓▓██ ◇  COMMENT ◇ ██▓▓▒▒░░"
+                        color = "#0366D6"
+                        def targetType = env.pr_number ? "PR" : "ISSUE"
+                        def targetNumber = env.pr_number ?: env.issue_number
+                        def targetTitle = env.pr_title ?: env.issue_title ?: '(Unknown)'
+                        def commentText = env.comment_body?.take(80) ?: ''
+                        message = """${header}
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**${targetType}:** ${targetTitle}
+**FROM:** @${env.sender}
+**ZONE:** ${env.repo_name}
+
+**MSG:** ${commentText}${env.comment_body?.length() > 80 ? '...' : ''}
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💬 [**VIEW QUEST**](https://github.com/${env.repo_name})"""
+                    }
+                    else {
+                        echo "Unknown event type - 알림 생략"
+                        return
+                    }
+
+                    // Mattermost로 알림 전송
+                    if (message) {
+                        def payload = groovy.json.JsonOutput.toJson([
+                            username: "🎮 GitHub Quest",
+                            attachments: [[
+                                color: color,
+                                text: message,
+                                footer: "YEJI Backend"
+                            ]]
+                        ])
+
+                        writeFile file: 'mm_payload.json', text: payload
+                        sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                        sh "rm -f mm_payload.json"
+                    }
+                }
+            }
+        }
+    }
+}

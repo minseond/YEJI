@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Summary - YEJI AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141937;
+            --bg-card: #1a1f3a;
+            --text-primary: #e8eaf6;
+            --text-secondary: #9fa8da;
+            --accent: #7c4dff;
+            --accent-glow: rgba(124, 77, 255, 0.3);
+            --success: #00e676;
+            --warning: #ffd740;
+            --error: #ff5252;
+            --border-color: #283593;
+            --eastern: #ff9800;
+            --western: #2196f3;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--eastern), var(--western));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent), #651fff);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result-header-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .result-header-card.eastern {
+            border-color: var(--eastern);
+        }
+
+        .result-header-card.western {
+            border-color: var(--western);
+        }
+
+        .result-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .result-type {
+            font-size: 0.85rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .result-type.eastern {
+            background: rgba(255, 152, 0, 0.2);
+            color: var(--eastern);
+        }
+
+        .result-type.western {
+            background: rgba(33, 150, 243, 0.2);
+            color: var(--western);
+        }
+
+        .score {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .score.eastern {
+            color: var(--eastern);
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .score.western {
+            color: var(--western);
+        }
+
+        .keyword {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .details-section {
+            margin-top: 1rem;
+        }
+
+        .detail-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid var(--accent);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .detail-item:hover {
+            transform: translateX(5px);
+            background: rgba(124, 77, 255, 0.1);
+        }
+
+        .detail-item.eastern {
+            border-left-color: var(--eastern);
+        }
+
+        .detail-item.western {
+            border-left-color: var(--western);
+        }
+
+        .detail-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-icon {
+            font-size: 1.2rem;
+        }
+
+        .detail-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .result.error .result-header-card {
+            border-color: var(--error);
+        }
+
+        .error-text {
+            color: var(--error);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            display: inline-block;
+            width: 30%;
+            height: 1px;
+            background: var(--border-color);
+            vertical-align: middle;
+            margin: 0 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Quick Summary</h1>
+            <p class="subtitle">운세 분석 결과를 점수, 키워드, 항목별로 요약합니다</p>
+        </header>
+
+        <div class="card">
+            <div class="input-group">
+                <label for="fortuneId">Fortune ID *</label>
+                <input
+                    type="text"
+                    id="fortuneId"
+                    placeholder="예: east_abc123 (분석 후 받은 ID 입력)"
+                >
+            </div>
+
+            <div class="section-divider">또는 새로 분석하기</div>
+
+            <div class="input-group">
+                <label for="name">이름</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="예쁜 이름 알려주세요 🌸"
+                    value="테스트유저"
+                >
+            </div>
+
+            <div class="row-3">
+                <div class="input-group">
+                    <label for="birthDate">생년월일</label>
+                    <input
+                        type="date"
+                        id="birthDate"
+                        placeholder="2000-03-15"
+                        value="2000-03-15"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="birthTime">태어난 시간</label>
+                    <input
+                        type="time"
+                        id="birthTime"
+                        placeholder="14:30"
+                        value="14:30"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="gender">성별</label>
+                    <select id="gender">
+                        <option value="M">남자</option>
+                        <option value="F">여자</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row-3">
+                <div class="input-group">
+                    <label for="fortuneType">운세 타입 *</label>
+                    <select id="fortuneType">
+                        <option value="eastern">동양 사주 (Eastern)</option>
+                        <option value="western">서양 점성술 (Western)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="category">카테고리 *</label>
+                    <select id="category">
+                        <option value="GENERAL">종합운</option>
+                        <option value="LOVE">애정운</option>
+                        <option value="MONEY">재물운</option>
+                        <option value="CAREER">직장운</option>
+                        <option value="HEALTH">건강운</option>
+                        <option value="STUDY">학업운</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="persona">페르소나</label>
+                    <select id="persona">
+                        <option value="">중립적 말투</option>
+                        <option value="SOISEOL">소이설 (하오체)</option>
+                        <option value="STELLA">스텔라 (해요체)</option>
+                        <option value="CHEONGWOON">청운 (시적 하오체)</option>
+                        <option value="HWARIN">화린 (나른한 해요체)</option>
+                        <option value="KYLE">카일 (반말+존댓말)</option>
+                        <option value="ELARIA">엘라리아 (우아한 해요체)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="submitBtn" onclick="getSummary()">
+                요약 조회
+            </button>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>운세를 분석하고 요약하고 있습니다...</p>
+            </div>
+
+            <div class="result" id="result">
+                <div class="result-header-card" id="resultHeaderCard">
+                    <div class="result-top">
+                        <span class="result-type" id="resultType">동양 사주</span>
+                        <span class="score" id="resultScore">木旺 火弱</span>
+                    </div>
+                    <div class="keyword" id="resultKeyword">재물운 상승기</div>
+                </div>
+
+                <div class="details-section" id="detailsSection">
+                    <!-- 항목별 서머리가 여기에 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                <a href="/ai/docs" target="_blank">API 문서</a> |
+                <a href="/ai/api-portal" target="_blank">API Portal</a> |
+                <a href="/ai/simple-test" target="_blank">Simple Q&A</a>
+            </p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 SSAFY YEJI Team</p>
+        </footer>
+    </div>
+
+    <script>
+        // API 기본 URL (현재 환경에 맞게 자동 설정)
+        const API_BASE = window.location.pathname.includes('ai-dev')
+            ? '/ai-dev'
+            : '/ai';
+
+        // 항목별 아이콘 매핑
+        const sectionIcons = {
+            'yin_yang': '☯️',
+            'five_elements': '🔥',
+            'ten_gods': '⭐',
+            'elements': '🌍',
+            'modality': '🔄',
+            'sun_sign': '☀️',
+            'general': '🔮',
+        };
+
+        async function getSummary() {
+            const fortuneId = document.getElementById('fortuneId').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const birthDate = document.getElementById('birthDate').value;
+            const birthTime = document.getElementById('birthTime').value;
+            const gender = document.getElementById('gender').value;
+            const fortuneType = document.getElementById('fortuneType').value;
+            const category = document.getElementById('category').value;
+            const persona = document.getElementById('persona').value;
+
+            // fortune_id가 없고 생년월일도 없으면 에러
+            if (!fortuneId && !birthDate) {
+                alert('Fortune ID를 입력하거나 생년월일을 입력해주세요.');
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+
+            // UI 상태 변경
+            btn.disabled = true;
+            loading.classList.add('show');
+            result.classList.remove('show');
+
+            try {
+                let finalFortuneId = fortuneId;
+
+                // fortune_id가 없으면 먼저 분석 API 호출
+                if (!fortuneId && birthDate) {
+                    const analyzeEndpoint = fortuneType === 'eastern'
+                        ? `${API_BASE}/v1/fortune/eastern`
+                        : `${API_BASE}/v1/fortune/western`;
+
+                    const analyzeBody = {
+                        birth_date: birthDate,
+                        birth_time: birthTime || null,
+                        gender: gender,
+                        name: name || "테스트유저",  // 필수 필드
+                    };
+
+                    const analyzeResponse = await fetch(analyzeEndpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(analyzeBody),
+                    });
+
+                    if (!analyzeResponse.ok) {
+                        const errorData = await analyzeResponse.json();
+                        throw new Error(errorData.detail || '운세 분석 실패');
+                    }
+
+                    const analyzeData = await analyzeResponse.json();
+                    // 분석 결과에서 ID 추출 (data 객체 안에 fortune_key가 있음)
+                    const data = analyzeData.data || analyzeData;
+                    finalFortuneId = data.fortune_key || analyzeData.fortune_key || analyzeData.fortune_id || analyzeData.id || `temp_${Date.now()}`;
+                }
+
+                // Quick Summary API 호출
+                const response = await fetch(`${API_BASE}/v1/fortune/quick-summary`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        fortune_id: finalFortuneId,
+                        fortune_type: fortuneType,
+                        category: category,
+                        ...(persona && { persona: persona }),
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.detail || '요청 처리 실패');
+                }
+
+                // 결과 표시
+                displayResult(data);
+
+            } catch (error) {
+                displayError(error.message);
+            } finally {
+                btn.disabled = false;
+                loading.classList.remove('show');
+            }
+        }
+
+        function displayResult(data) {
+            const result = document.getElementById('result');
+            const headerCard = document.getElementById('resultHeaderCard');
+            const resultType = document.getElementById('resultType');
+            const resultScore = document.getElementById('resultScore');
+            const resultKeyword = document.getElementById('resultKeyword');
+            const detailsSection = document.getElementById('detailsSection');
+
+            // 타입별 스타일 적용
+            headerCard.className = `result-header-card ${data.fortune_type}`;
+            resultType.className = `result-type ${data.fortune_type}`;
+            resultScore.className = `score ${data.fortune_type}`;
+
+            // 헤더 데이터 표시
+            resultType.textContent = data.fortune_type === 'eastern' ? '동양 사주' : '서양 점성술';
+            resultScore.textContent = data.score;
+            resultKeyword.textContent = data.keyword;
+
+            // 항목별 서머리 표시
+            detailsSection.innerHTML = '';
+            if (data.details && data.details.length > 0) {
+                data.details.forEach(detail => {
+                    const icon = sectionIcons[detail.section] || '📊';
+                    const detailHtml = `
+                        <div class="detail-item ${data.fortune_type}">
+                            <div class="detail-title">
+                                <span class="detail-icon">${icon}</span>
+                                ${detail.title}
+                            </div>
+                            <div class="detail-description">${detail.description}</div>
+                        </div>
+                    `;
+                    detailsSection.innerHTML += detailHtml;
+                });
+            }
+
+            result.classList.add('show');
+        }
+
+        function displayError(message) {
+            const result = document.getElementById('result');
+            const headerCard = document.getElementById('resultHeaderCard');
+            const resultType = document.getElementById('resultType');
+            const resultScore = document.getElementById('resultScore');
+            const resultKeyword = document.getElementById('resultKeyword');
+            const detailsSection = document.getElementById('detailsSection');
+
+            headerCard.className = 'result-header-card';
+            headerCard.style.borderColor = 'var(--error)';
+            resultType.textContent = '오류';
+            resultType.className = 'result-type';
+            resultType.style.background = 'rgba(255, 82, 82, 0.2)';
+            resultType.style.color = 'var(--error)';
+            resultScore.textContent = '❌';
+            resultScore.className = 'score';
+            resultScore.style.color = 'var(--error)';
+            resultKeyword.textContent = message;
+            resultKeyword.className = 'keyword error-text';
+            detailsSection.innerHTML = '';
+
+            result.classList.add('show');
+        }
+
+        // Enter 키로 전송
+        document.getElementById('fortuneId').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                getSummary();
+            }
+        });
+    </script>
+</body>
+</html>

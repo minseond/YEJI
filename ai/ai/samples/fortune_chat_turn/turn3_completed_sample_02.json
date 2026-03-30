@@ -1,0 +1,62 @@
+{
+  "$comment": "Turn 3 완료 샘플 02: 대결 무승부 + 업그레이드 훅 비활성화 (Premium 사용자)",
+  "session_id": "sess_sample_premium",
+  "turn_id": 3,
+  "bubbles": [
+    {
+      "bubble_id": "b007",
+      "speaker": "EAST",
+      "text": "오늘 스텔라와 많이 부딪혔으나... 귀하를 위한 마음은 진심이었소. 동양과 서양, 서로 다른 길이지만 결국 같은 곳을 가리키고 있소.",
+      "emotion": {
+        "code": "WARM",
+        "intensity": 0.7
+      },
+      "user_input_ref": "p004",
+      "timestamp": "2026-01-30T15:00:00Z"
+    },
+    {
+      "bubble_id": "b008",
+      "speaker": "WEST",
+      "text": "소이설, 오늘 재미있었어요! 다음에 또 대결해요! 그리고 당신, 언제든 다시 와주세요. 별들은 항상 당신 편이에요!",
+      "emotion": {
+        "code": "EXCITED",
+        "intensity": 0.8
+      },
+      "timestamp": "2026-01-30T15:00:05Z"
+    }
+  ],
+  "turn_end": {
+    "type": "completed",
+    "closure": {
+      "summary": [
+        {
+          "speaker": "EAST",
+          "key_point": "갑목 일간으로 곧은 성품, 리더십 잠재력이 크나 유연성 필요"
+        },
+        {
+          "speaker": "WEST",
+          "key_point": "사자자리 태양으로 카리스마와 창의력이 빛남, 자기표현에 좋은 시기"
+        }
+      ],
+      "next_steps": [
+        "오늘의 행운 색상 확인하기",
+        "월간 운세 상세 보기",
+        "다른 주제로 다시 대결하기"
+      ],
+      "upgrade_hook": {
+        "enabled": false,
+        "message": null,
+        "cta_label": null,
+        "cta_action": null
+      },
+      "end_marker": "END_SESSION"
+    }
+  },
+  "meta": {
+    "current_turn": 3,
+    "base_turns": 3,
+    "max_turns": 30,
+    "is_premium": true,
+    "category": "total"
+  }
+}

@@ -1,0 +1,229 @@
+pipeline {
+    agent any
+
+    triggers {
+        // 5분마다 SCM 변경 확인 (ai/develop, ai/main 모든 브랜치)
+        pollSCM('H/5 * * * *')
+    }
+
+    environment {
+        MATTERMOST_WEBHOOK = credentials('mattermost-webhook')
+        OPENAI_API_KEY = credentials('openai-api-key')
+        // 브랜치별 환경 결정: main=production, ultra4=ultra4, 그 외=development
+        DEPLOY_ENV = "${env.GIT_BRANCH?.contains('main') ? 'production' : (env.GIT_BRANCH?.contains('ultra4') ? 'ultra4' : 'development')}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                dir('ai') {
+                    script {
+                        // pyproject.toml에서 기본 버전 읽기
+                        def baseVersion = sh(
+                            script: "grep '^version' pyproject.toml | cut -d'\"' -f2",
+                            returnStdout: true
+                        ).trim()
+
+                        // 빌드 넘버를 포함한 전체 버전 생성 (예: 0.2.1.42)
+                        def fullVersion = "${baseVersion}.${BUILD_NUMBER}"
+
+                        // 환경변수로 저장 (post 섹션에서 사용)
+                        env.APP_VERSION = fullVersion
+
+                        echo "Building version: ${fullVersion}"
+                    }
+
+                    // Docker 빌드 (버전 정보 주입, 캐시 비활성화)
+                    sh '''
+                        docker build --no-cache \
+                            --build-arg GIT_COMMIT=${GIT_COMMIT} \
+                            --build-arg APP_VERSION=${APP_VERSION} \
+                            -t yeji-ai:${BUILD_NUMBER} .
+                    '''
+                    sh 'docker tag yeji-ai:${BUILD_NUMBER} yeji-ai:latest'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // ============================================================
+                    // 모델 설정 (환경변수로 오버라이드 가능, 없으면 기본값 사용)
+                    // Jenkins: Manage Jenkins > Configure System > Global properties
+                    // ============================================================
+                    def modelProd = env.VLLM_MODEL_PROD ?: 'tellang/yeji-8b-rslora-v7'
+                    def modelDev = env.VLLM_MODEL_DEV ?: 'tellang/yeji-8b-rslora-v7'
+                    def modelUltra4 = env.VLLM_MODEL_ULTRA4 ?: 'tellang/yeji-4b-rslora-v8-AWQ'
+
+                    // vLLM 서버 URL (환경변수로 오버라이드 가능)
+                    def vllmUrlAws = env.VLLM_URL_AWS ?: 'http://13.125.68.166:8001'
+                    def vllmUrlUltra4 = env.VLLM_URL_ULTRA4 ?: 'http://100.114.13.51:8001'
+
+                    // 환경별 설정
+                    def config = [:]
+
+                    switch(env.DEPLOY_ENV) {
+                        case 'production':
+                            config = [
+                                port: '8000',
+                                containerName: 'yeji-ai-prod',
+                                imageTag: 'prod',
+                                rootPath: '/ai',
+                                vllmBaseUrl: vllmUrlAws,
+                                vllmModel: modelProd,
+                                modelSize: 'GPT-5-mini (chat) + 8B (fortune)',
+                                useGpt5mini: true  // GPT-5-mini 채팅 활성화
+                            ]
+                            break
+                        case 'ultra4':
+                            config = [
+                                port: '8003',
+                                containerName: 'yeji-ai-ultra4',
+                                imageTag: 'ultra4',
+                                rootPath: '/ai-ultra4',
+                                vllmBaseUrl: vllmUrlUltra4,
+                                vllmModel: modelUltra4,
+                                modelSize: '4B (ultra4)',
+                                useGpt5mini: true  // GPT-5-mini 채팅 활성화
+                            ]
+                            break
+                        default: // development
+                            config = [
+                                port: '8002',
+                                containerName: 'yeji-ai-dev',
+                                imageTag: 'dev',
+                                rootPath: '/ai-dev',
+                                vllmBaseUrl: vllmUrlAws,
+                                vllmModel: modelDev,
+                                modelSize: 'GPT-5-mini (chat) + 8B (fortune)',
+                                useGpt5mini: true  // GPT-5-mini 채팅 활성화 (main과 동일)
+                            ]
+                    }
+
+                    // 환경변수로 저장 (post에서 사용)
+                    env.MODEL_SIZE = config.modelSize
+                    env.VLLM_MODEL = config.vllmModel
+
+                    // GPT-5-mini 사용 플래그 기반 환경변수 설정
+                    // USE_GPT5MINI_FOR_CHAT: 채팅에 GPT-5-mini 사용 여부
+                    def gpt5miniEnvVars = config.useGpt5mini ? "-e USE_GPT5MINI_FOR_CHAT=true -e OPENAI_API_KEY=${OPENAI_API_KEY} -e OPENAI_MODEL=gpt-5-mini" : "-e USE_GPT5MINI_FOR_CHAT=false"
+
+                    sh """
+                        # Docker 네트워크 생성 (없으면)
+                        docker network create yeji-net 2>/dev/null || true
+
+                        # Redis 컨테이너 실행 (없으면 생성)
+                        if ! docker ps -q -f name=yeji-redis | grep -q .; then
+                            docker run -d --name yeji-redis \
+                                --network yeji-net \
+                                -p 6379:6379 \
+                                --restart unless-stopped \
+                                redis:7-alpine
+                            echo "Redis container started"
+                        else
+                            # 기존 Redis를 네트워크에 연결 (아직 안 되어있으면)
+                            docker network connect yeji-net yeji-redis 2>/dev/null || true
+                            echo "Redis container already running"
+                        fi
+
+                        # 기존 컨테이너 정리 (해당 환경만)
+                        docker stop ${config.containerName} 2>/dev/null || true
+                        docker rm -f ${config.containerName} 2>/dev/null || true
+
+                        # 환경별 이미지 태그 생성
+                        docker tag yeji-ai:\${BUILD_NUMBER} yeji-ai:${config.imageTag}
+
+                        # 새 컨테이너 실행 (환경변수 주입 + Redis 연결)
+                        docker run -d --name ${config.containerName} \
+                            --network yeji-net \
+                            -p ${config.port}:8000 \
+                            -e VLLM_BASE_URL=${config.vllmBaseUrl} \
+                            -e VLLM_MODEL=${config.vllmModel} \
+                            -e ROOT_PATH=${config.rootPath} \
+                            -e DEPLOY_ENV=${env.DEPLOY_ENV} \
+                            -e GIT_COMMIT=${GIT_COMMIT} \
+                            -e APP_VERSION=${APP_VERSION} \
+                            -e REDIS_URL=redis://yeji-redis:6379 \
+                            ${gpt5miniEnvVars} \
+                            --restart unless-stopped \
+                            yeji-ai:${config.imageTag}
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                def envEmoji = env.DEPLOY_ENV == 'production' ? '🚀' : (env.DEPLOY_ENV == 'ultra4' ? '⚡' : '🔧')
+                def envLabel = env.DEPLOY_ENV == 'ultra4' ? "ultra4 (${env.MODEL_SIZE})" : env.DEPLOY_ENV
+                def message = """░░▒▒▓▓██ ★  SUCCESS ★ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**VERSION:** ${env.APP_VERSION}
+**ENV:** ${envEmoji} ${envLabel}
+**MODEL:** ${env.VLLM_MODEL}
+
+【 AI SERVICE DEPLOYED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 AI Quest",
+                    attachments: [[
+                        color: "#28A745",
+                        text: message,
+                        footer: "YEJI AI CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        failure {
+            script {
+                def envLabel = env.DEPLOY_ENV == 'ultra4' ? "ultra4 (${env.MODEL_SIZE})" : env.DEPLOY_ENV
+                def message = """░░▒▒▓▓██ ✕  FAILED  ✕ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**ENV:** ${envLabel}
+
+【 AI BUILD FAILED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 AI Quest",
+                    attachments: [[
+                        color: "#CB2431",
+                        text: message,
+                        footer: "YEJI AI CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

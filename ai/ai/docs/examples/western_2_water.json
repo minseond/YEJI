@@ -1,0 +1,93 @@
+{
+  "category": "water",
+  "chart": {
+    "summary": "생명력과 감수성이 풍부한 당신에게는 직관과 감성이 강점입니다. 창의적이고 통찰력이 뛰어나며, 감정을 다루는 일이나 예술·상담 분야에서 두각을 나타낼 수 있습니다.",
+    "sun": {
+      "sign_code": "SCORPIO",
+      "house_number": 10,
+      "summary": "생명력과 집중력이 강합니다. 내면의 불꽃이 타오르며 목표를 향해 꾸준히 나아갑니다."
+    },
+    "moon": {
+      "sign_code": "PISCES",
+      "house_number": 7,
+      "summary": "감수성이 풍부하고 상황에 대한 공감 능력이 뛰어납니다. 직관과 창의성이 돋보입니다."
+    },
+    "rising": {
+      "sign_code": "CANCER",
+      "house_number": 1,
+      "summary": "보호자적 성향과 책임감이 강합니다. 주변을 챙기고 안전을 중시하는 면모가 있습니다."
+    },
+    "planets": [
+      {
+        "planet_code": "NEPTUNE",
+        "sign_code": "SCORPIO",
+        "house_number": 10,
+        "degree": 15,
+        "minute": 30,
+        "is_retrograde": false
+      }
+    ]
+  },
+  "stats": {
+    "elements": {
+      "summary": "물의 기운이 강해 감정과 직관이 주를 이룹니다. 물의 흐름이 활발해 창의력과 통찰력이 뛰어납니다.",
+      "distribution": [
+        {
+          "code": "WATER",
+          "label": "물",
+          "value": 4,
+          "percent": 40
+        }
+      ],
+      "dominant": "WATER"
+    },
+    "modality": {
+      "summary": "지속성과 변화의 조화가 보입니다. 물의 흐름처럼 상황에 유연하게 대처하면서도 깊이 있는 성찰을 할 수 있습니다.",
+      "distribution": [
+        {
+          "code": "FIXED",
+          "label": "고정",
+          "value": 4,
+          "percent": 40
+        }
+      ],
+      "dominant": "FIXED"
+    },
+    "aspects": {
+      "summary": "상대적으로 외부의 간섭보다는 내면의 성찰과 통찰에 집중하는 구성입니다.",
+      "major_aspects": [
+        {
+          "planet1": "NEPTUNE",
+          "planet2": "SCORPIO",
+          "aspect_code": "CONJUNCTION",
+          "nature": "HARMONIOUS",
+          "orb": 2
+        }
+      ]
+    }
+  },
+  "summary": "생명력과 감수성이 결합된 강력한 에너지를 가진 분입니다. 내면의 직관과 창의성을 활용해 깊이 있는 성과를 얻을 수 있습니다.",
+  "message": "직관을 믿고 꾸준히 나아가세요. 감정을 다스리면 더 큰 통찰과 성취를 이룰 수 있습니다.",
+  "ui_hints": {
+    "badges": [
+      "WATER_DOMINANT",
+      "NEPTUNE_STRONG"
+    ],
+    "recommend_chart": "WHEEL",
+    "highlight": {
+      "sun_sign": "SCORPIO",
+      "moon_sign": "PISCES",
+      "rising_sign": "CANCER",
+      "dominant_planet": "NEPTUNE"
+    }
+  },
+  "lucky": {
+    "day": "목요일",
+    "day_code": "THU",
+    "color": "파란색",
+    "color_code": "#0000FF",
+    "number": "8",
+    "stone": "연꽃",
+    "planet": "NEPTUNE"
+  }
+}

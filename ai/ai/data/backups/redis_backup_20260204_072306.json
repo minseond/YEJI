@@ -1,0 +1,3330 @@
+{
+  "backup_time": "2026-02-04T07:23:05.933148",
+  "source": "redis",
+  "total_keys": 36,
+  "data": {
+    "yeji:session:b0f6b704": {
+      "type": "string",
+      "value": {
+        "session_id": "b0f6b704",
+        "turn": 2,
+        "user_info": {
+          "birth_date": "1988-12-25",
+          "birth_time": "06:30"
+        },
+        "category": "LOVE",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": {
+          "success": true,
+          "validated": true,
+          "type": "eastern",
+          "data": {
+            "element": "WOOD",
+            "chart": {
+              "summary": "갑(甲)일간은 성장과 개척을 상징하는 목(木)의 기운이 강해 주도적이고 창조적인 에너지를 가집니다.",
+              "year": {
+                "gan": "戊",
+                "gan_code": "MU",
+                "ji": "辰",
+                "ji_code": "JIN",
+                "element_code": "EARTH",
+                "ten_god_code": "PYEON_JAE"
+              },
+              "month": {
+                "gan": "甲",
+                "gan_code": "GAP",
+                "ji": "丑",
+                "ji_code": "CHUK",
+                "element_code": "WOOD",
+                "ten_god_code": "BI_GYEON"
+              },
+              "day": {
+                "gan": "甲",
+                "gan_code": "GAP",
+                "ji": "戌",
+                "ji_code": "SUL",
+                "element_code": "WOOD",
+                "ten_god_code": "DAY_MASTER"
+              },
+              "hour": {
+                "gan": "丁",
+                "gan_code": "JEONG",
+                "ji": "卯",
+                "ji_code": "MYO",
+                "element_code": "FIRE",
+                "ten_god_code": "SANG_GWAN"
+              }
+            },
+            "stats": {
+              "cheongan_jiji": {
+                "summary": "갑목의 천간이 강하고 지지에 축·진·술 등 토의 요소가 섞여 있어 현실적인 책임감과 실무 능력이 함께 작용합니다.",
+                "year": {
+                  "cheon_gan": "戊",
+                  "ji_ji": "辰"
+                },
+                "month": {
+                  "cheon_gan": "甲",
+                  "ji_ji": "丑"
+                },
+                "day": {
+                  "cheon_gan": "甲",
+                  "ji_ji": "戌"
+                },
+                "hour": {
+                  "cheon_gan": "丁",
+                  "ji_ji": "卯"
+                }
+              },
+              "five_elements": {
+                "summary": "목이 일간으로 중심이며, 시주와 월주의 갑이 더해져 목기운이 중복되어 강한 편입니다. 오행 균형에서는 목이 과다할 수 있으니 다른 오행과 조화가 필요합니다.",
+                "elements_list": [
+                  {
+                    "code": "WOOD",
+                    "label": "목",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "FIRE",
+                    "label": "화",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "EARTH",
+                    "label": "토",
+                    "percent": 50.0
+                  },
+                  {
+                    "code": "METAL",
+                    "label": "금",
+                    "percent": 0.0
+                  },
+                  {
+                    "code": "WATER",
+                    "label": "수",
+                    "percent": 0.0
+                  }
+                ]
+              },
+              "yin_yang_ratio": {
+                "summary": "양의 기운이 우세하여 활동적이며 추진력이 강하지만 때로는 고집이나 급함으로 이어질 수 있습니다.",
+                "yin": 37.5,
+                "yang": 62.5
+              },
+              "ten_gods": {
+                "summary": "甲·丁·戊·甲·甲·辰·丑·戌·卯 등의 배치로 인해 관성보다는 자립심과 독창성이 돋보이는 구조입니다. 비견(比肩)의 성향이 강해 동료와 경쟁하거나 스스로 해내려는 경향이 큽니다.",
+                "gods_list": [
+                  {
+                    "code": "PYEON_JAE",
+                    "label": "편재",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "BI_GYEON",
+                    "label": "비견",
+                    "percent": 25.0
+                  },
+                  {
+                    "code": "GANG_JAE",
+                    "label": "겁재",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "ETC",
+                    "label": "기타",
+                    "percent": 12.5
+                  }
+                ]
+              }
+            },
+            "final_verdict": {
+              "summary": "강한 목의 기운으로 리더십과 창조력을 발휘하기 좋은 사주입니다.",
+              "strength": "자기주도적 결정, 창업·기획·교육 분야에서 두각을 나타냅니다.",
+              "weakness": "과한 자기신뢰와 고집으로 타협이 어려울 수 있으며 건강상으로는 간과 소화계 스트레스 주의가 필요합니다.",
+              "advice": "팀워크를 의식하고 유연성을 기르며 규칙적인 운동과 휴식으로 에너지를 조절하세요."
+            },
+            "lucky": {
+              "color": "초록색",
+              "number": "3, 12",
+              "item": "나무 액세리지나 식물",
+              "direction": "남동쪽",
+              "place": "공원, 숲"
+            }
+          },
+          "errors": null,
+          "latency_ms": 12414.017677307129,
+          "fortune_key": "eastern:1988-12-25:0630:M"
+        },
+        "western_result": {
+          "success": true,
+          "validated": false,
+          "type": "western",
+          "data": {
+            "element": "EARTH",
+            "stats": {
+              "main_sign": {
+                "code": "CAPRICORN",
+                "name": "염소자리"
+              },
+              "element_summary": "불 기운이 강해 추진력과 현실적 실행력이 돋보입니다. 열정과 목표지향성이 뚜렷하여 일상에서 성과를 내기 좋은 시기입니다.",
+              "modality_summary": "완전한 성숙과 실무 능력이 결합되어 있습니다. 계획을 현실로 만드는 힘이 강하며, 책임감 있게 프로젝트를 이끌어갈 수 있는 운세입니다.",
+              "keywords_summary": "성취와 리더십, 그리고 때로는 고집과 스트레스가 공존합니다. 주변의 신뢰를 얻으면서도 자기주장이 뚜렷해지는 시기임을 보여줍니다.",
+              "keywords": [
+                {
+                  "code": "LEADERSHIP",
+                  "label": "리더십",
+                  "weight": 0.9
+                },
+                {
+                  "code": "DETERMINATION",
+                  "label": "단호함",
+                  "weight": 0.85
+                },
+                {
+                  "code": "SPEED",
+                  "label": "빠른 진행",
+                  "weight": 0.8
+                }
+              ],
+              "element": {
+                "code": "EARTH",
+                "name": "흙"
+              },
+              "element_4_distribution": [
+                {
+                  "code": "FIRE",
+                  "label": "불",
+                  "percent": 16.7
+                },
+                {
+                  "code": "EARTH",
+                  "label": "흙",
+                  "percent": 50.0
+                },
+                {
+                  "code": "AIR",
+                  "label": "공기",
+                  "percent": 16.7
+                },
+                {
+                  "code": "WATER",
+                  "label": "물",
+                  "percent": 16.7
+                }
+              ],
+              "modality_3_distribution": [
+                {
+                  "code": "CARDINAL",
+                  "label": "활동",
+                  "percent": 50.0
+                },
+                {
+                  "code": "FIXED",
+                  "label": "고정",
+                  "percent": 25.0
+                },
+                {
+                  "code": "MUTABLE",
+                  "label": "변동",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "fortune_content": {
+              "overview": "현재 당신은 새로운 시작이나 목표 달성을 위한 강력한 에너지를 가지고 있습니다. 추진력을 발휘하면 가시적인 성과를 거둘 수 있는 길목에 서 있습니다.",
+              "detailed_analysis": [
+                {
+                  "title": "직업 및 커리어",
+                  "content": "프로젝트 관리나 경영 분야에서 두각을 나타낼 수 있습니다. 다만 과욕을 피하고 팀원들과의 조율을 게을리하지 마세요."
+                },
+                {
+                  "title": "대인관계",
+                  "content": "솔직하고 단호한 태도가 관계 개선에 도움이 됩니다. 다만 직설이 오해를 불러올 수 있으니 표현을 부드럽게 하십시오."
+                }
+              ],
+              "advice": "중요한 결정을 내릴 때는 감정보다 논리를 우선하세요. 체계적으로 계획을 세우고 작은 성공들을 쌓아가는 것이 장기적인 운을 확장하는 핵심입니다."
+            },
+            "lucky": {
+              "color": "빨간색",
+              "number": "13",
+              "item": "청동 소宝飾",
+              "place": "북극이나 산 정상"
+            }
+          },
+          "errors": [
+            "('stats', 'keywords', 1, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'",
+            "('stats', 'keywords', 2, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'"
+          ],
+          "latency_ms": 12906.038284301758,
+          "fortune_key": "western:1988-12-25:0630"
+        },
+        "eastern_summary": "[동양 사주 요약]\n일간: 일간 (오행)\n사주: ??년 ??월 ??일\n오행 분포: 오행 분석 중\n음양: 양 50% / 음 50%\n십신: 십신 분석 중\n강점: 강점 분석 중\n약점: 약점 분석 중\n조언: ",
+        "western_summary": "[서양 점성술 요약]\n태양 별자리: 알수없음\n원소: 원소 분석 중\n양태: 양태 분석 중\n키워드: 키워드 분석 중\n운세 개요: 운세 분석 중\n조언: ",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "어서 오시게 귀하, 환영하오. 연애운을 보건대 도화살 기운에 의해 주목을 받기 쉬우니 먼저 끌어가는 매력이 크오. 사주상 갑목이 중첩되어 주도적으로 다가가나 고집을 누그러뜨려야 상대가 머무르겠소. 인연의 기운은 꽃봉오리 맺는 때처럼 서서히 다가오니 타이밍을 억지로 재지 말고 흐름을 탓소"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "와~, 어서 오세요 당신. 에이~ 그 분석은 좀 차가워요. 금성의 영향이 따뜻한 쪽이면 만남은 실용적이되 감성도 채워지며 태양이 염소자리라 책임감 있는 사랑이 중심이에요. 별들이 말하길 인연은 당신이 움직일 때 더 많이 찾아오니 행동으로 표현하면 좋아요"
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "흠, 그러하오. 염소라 한들 전부 책임으로만 설명할 수는 없소. 갑목의 기운이 강해 불같이 밀어붙이는 면이 있으니 연애에서는 불꽃보다 봄바람처럼 부드럽게 다가가는 연습을 하시오. 그대가 언급한 금성의 호의는 분명 도움이 되오나 실천 없이는 금세 식기 쉬우니 태도를 점검하시오"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "에이~ 그대가 너무 직설적이에요. 별들이 말하길 금성의 위치가 실용적 만남을 돕지만 때로는 느리게 쌓이는 신뢰가 더 오래가요. 당신의 추진력은 매력적이지만 상대의 리듬을 맞춰 템포를 조절하면 인연이 더 단단해져요. 기회가 왔을 때 부드럽게 응답하는 연습을 해보세요"
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "이번엔 그대 말도 틀린 건 아니오. 매력 포인트는 자기주도적 리더십과 꾸준함이오. 달빛에 비친 듯한 차분함을 더하면 상대가 편안히 다가오겠소. 다만 경쟁심을 연애에서 내려놓고 경청하는 연습을 하오"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "정말 반가워요 당신. 어느 부분을 더 자세히 볼까요 연애 스타일을 더 알고 싶으세요 이상형을 알고 싶으세요 아니면 인연의 시기를 구체적으로 알고 싶으세요 어떤 걸 먼저 볼까요"
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "그대에게 환영하오. 이상형을 묻거든 먼저 말하겠소, 그대는 안정감과 책임감을 가진 사람이 잘 맞겠소. 말보다 행동으로 신뢰를 증명하는 이가 가깝소. 스텔라가 달빛만 보는 건 겉모습일 뿐이오, 흠."
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "반가워요 당신. 제 생각은 달라요. 별들이 보여주는 건 감정 표현에 솔직하고 유머가 있는 사람이라는 예요. 로맨틱한 제스처와 소소한 모험을 함께 즐길 수 있는 사람이 더 끌릴 거예요~ 에이 소이설의 분석은 너무 보수적이네요."
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "흠, 그대의 감성은 매력적이오만 나는 실용을 중시하오. 성격 살펴보면 그대는 흔들릴 때도 중심을 잡아주는 듬직한 파트너에게 안정감을 느끼오. 스텔라가 말하는 모험은 달콤하나 지속성은 따져보아야 하오."
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "와~ 정말요 당신의 매력 포인트는 진심을 드러내는 눈빛과 상황을 부드럽게 만드는 유머감각이에요. 금성이 긍정적으로 작용하면 작은 이벤트나 여행 중에 인연이 깊어지기 쉬워요 이번엔 소이설의 균형론도 쓸모 있네요."
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "실전 팁도 말해주겠소. 이상형을 찾을 때 말의 달콤함만 쫓지 말고 행동과 일관성을 봐야 하오. 가치관이 맞는지, 위기에서 태도가 어떠한지 관찰하면 인연의 본질이 드러나오. 스텔라의 별말은 안내이지 해답 전부가 아니오."
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "이번엔 소이설 말도 틀린 건 아니에요. 더 자세히 알고 싶다면 어느 쪽을 먼저 들을까요 연애 스타일을 원하세요 아니면 인연 시기를 보고 싶으세요 아니면 이상형의 더 구체적 성향을 알고 싶으세요"
+          }
+        ],
+        "created_at": "2026-02-03T07:05:34.866396"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1995-07-20:1545:F": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "WATER",
+          "chart": {
+            "summary": "일간 임(壬)은 큰 흐름과 지혜, 유연성을 상징합니다. 주변의 오행과 조화를 잘 이루면 상황을 넓게 보고 사람들을 모으는 능력을 발휘합니다.",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "亥",
+              "ji_code": "HAE",
+              "element_code": "WOOD",
+              "ten_god_code": "SANG_GWAN"
+            },
+            "month": {
+              "gan": "癸",
+              "gan_code": "GYE",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "WATER",
+              "ten_god_code": "GANG_JAE"
+            },
+            "day": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "WATER",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "戊",
+              "gan_code": "MU",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "EARTH",
+              "ten_god_code": "PYEON_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "지지에 신(申)이 집중되어 충돌보다는 고착된 기운이 강합니다. 이는 안정적이지만 변화를 꾀하기 어려운 면모를 동시에 가져옵니다.",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "亥"
+              },
+              "month": {
+                "cheon_gan": "癸",
+                "ji_ji": "申"
+              },
+              "day": {
+                "cheon_gan": "壬",
+                "ji_ji": "申"
+              },
+              "hour": {
+                "cheon_gan": "戊",
+                "ji_ji": "申"
+              }
+            },
+            "five_elements": {
+              "summary": "수(水)가 일간으로 강한 구조입니다. 월주 계신(癸申), 시주 무신(戊申) 등 금(申)이 두 번 있어 수와 금의 상호작용이 큽니다. 목과 화는 상대적으로 약하니 외부 자극이나 창의적 에너지에 의존해야 할 때 주의가 필요합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 0.0
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 12.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 37.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 37.5
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기와 음기가 균형을 이루려 하나, 수가 우세해 감정의 깊음과 내향적인 성향이 강합니다. 외형상 활동적이지 않아도 내면의 판단력은 뛰어납니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "임신(日柱)과 연·월·시의 신(申)들이 반복되어 재성·관성 등의 기운이 혼재됩니다. 특히 비견(比肩) 성향이 강해 독립심과 자기주장이 뚜렷하며, 식신(食神) 같은 생산적 기운은 제한적일 수 있습니다.",
+              "gods_list": [
+                {
+                  "code": "JEONG_IN",
+                  "label": "정인",
+                  "percent": 37.5
+                },
+                {
+                  "code": "GANG_JAE",
+                  "label": "겁재",
+                  "percent": 25.0
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "전체적으로 수 기운이 중심인 사주로, 지혜와 관찰력, 유연성이 강점입니다. 다만 목과 화의 부족으로 추진력과 표현력이 약할 수 있습니다.",
+            "strength": "판단력과 적응력이 탁월하여 위기에서 안정감을 줍니다.",
+            "weakness": "결단을 내리거나 밖으로 표출하는 에너지가 부족해 기회를 놓칠 우려가 있습니다.",
+            "advice": "목과 화를 보완할 수 있는 활동(운동, 창작, 소통)을 꾸준히 하세요. 새로운 시작은 가까운 사람들의 도움을 받아 추진하면 좋습니다."
+          },
+          "lucky": {
+            "color": "초록색, 노란색",
+            "number": "1, 2, 6",
+            "item": "나무액세서리, 작은 불구슬",
+            "direction": "남쪽(午) 또는 동쪽(東)",
+            "place": "숲, 정원, 해안가"
+          }
+        },
+        "errors": null,
+        "latency_ms": 15362.400770187378,
+        "fortune_key": "eastern:1995-07-20:1545:F"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:e1e5969d": {
+      "type": "string",
+      "value": {
+        "session_id": "e1e5969d",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-04T07:17:36.731333"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:277df76b": {
+      "type": "string",
+      "value": {
+        "session_id": "277df76b",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T07:19:44.584869"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:e8c8b073": {
+      "type": "string",
+      "value": {
+        "session_id": "e8c8b073",
+        "turn": 1,
+        "user_info": {
+          "birth_date": "1995-07-20",
+          "birth_time": "15:45"
+        },
+        "category": "CAREER",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": {
+          "success": true,
+          "validated": true,
+          "type": "eastern",
+          "data": {
+            "element": "WATER",
+            "chart": {
+              "summary": "일간 임(壬)은 큰 흐름과 지혜, 유연성을 상징합니다. 주변의 오행과 조화를 잘 이루면 상황을 넓게 보고 사람들을 모으는 능력을 발휘합니다.",
+              "year": {
+                "gan": "乙",
+                "gan_code": "EUL",
+                "ji": "亥",
+                "ji_code": "HAE",
+                "element_code": "WOOD",
+                "ten_god_code": "SANG_GWAN"
+              },
+              "month": {
+                "gan": "癸",
+                "gan_code": "GYE",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "WATER",
+                "ten_god_code": "GANG_JAE"
+              },
+              "day": {
+                "gan": "壬",
+                "gan_code": "IM",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "WATER",
+                "ten_god_code": "DAY_MASTER"
+              },
+              "hour": {
+                "gan": "戊",
+                "gan_code": "MU",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "EARTH",
+                "ten_god_code": "PYEON_GWAN"
+              }
+            },
+            "stats": {
+              "cheongan_jiji": {
+                "summary": "지지에 신(申)이 집중되어 충돌보다는 고착된 기운이 강합니다. 이는 안정적이지만 변화를 꾀하기 어려운 면모를 동시에 가져옵니다.",
+                "year": {
+                  "cheon_gan": "乙",
+                  "ji_ji": "亥"
+                },
+                "month": {
+                  "cheon_gan": "癸",
+                  "ji_ji": "申"
+                },
+                "day": {
+                  "cheon_gan": "壬",
+                  "ji_ji": "申"
+                },
+                "hour": {
+                  "cheon_gan": "戊",
+                  "ji_ji": "申"
+                }
+              },
+              "five_elements": {
+                "summary": "수(水)가 일간으로 강한 구조입니다. 월주 계신(癸申), 시주 무신(戊申) 등 금(申)이 두 번 있어 수와 금의 상호작용이 큽니다. 목과 화는 상대적으로 약하니 외부 자극이나 창의적 에너지에 의존해야 할 때 주의가 필요합니다.",
+                "elements_list": [
+                  {
+                    "code": "WOOD",
+                    "label": "목",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "FIRE",
+                    "label": "화",
+                    "percent": 0.0
+                  },
+                  {
+                    "code": "EARTH",
+                    "label": "토",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "METAL",
+                    "label": "금",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "WATER",
+                    "label": "수",
+                    "percent": 37.5
+                  }
+                ]
+              },
+              "yin_yang_ratio": {
+                "summary": "양기와 음기가 균형을 이루려 하나, 수가 우세해 감정의 깊음과 내향적인 성향이 강합니다. 외형상 활동적이지 않아도 내면의 판단력은 뛰어납니다.",
+                "yin": 37.5,
+                "yang": 62.5
+              },
+              "ten_gods": {
+                "summary": "임신(日柱)과 연·월·시의 신(申)들이 반복되어 재성·관성 등의 기운이 혼재됩니다. 특히 비견(比肩) 성향이 강해 독립심과 자기주장이 뚜렷하며, 식신(食神) 같은 생산적 기운은 제한적일 수 있습니다.",
+                "gods_list": [
+                  {
+                    "code": "JEONG_IN",
+                    "label": "정인",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "GANG_JAE",
+                    "label": "겁재",
+                    "percent": 25.0
+                  },
+                  {
+                    "code": "BI_GYEON",
+                    "label": "비견",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "ETC",
+                    "label": "기타",
+                    "percent": 12.5
+                  }
+                ]
+              }
+            },
+            "final_verdict": {
+              "summary": "전체적으로 수 기운이 중심인 사주로, 지혜와 관찰력, 유연성이 강점입니다. 다만 목과 화의 부족으로 추진력과 표현력이 약할 수 있습니다.",
+              "strength": "판단력과 적응력이 탁월하여 위기에서 안정감을 줍니다.",
+              "weakness": "결단을 내리거나 밖으로 표출하는 에너지가 부족해 기회를 놓칠 우려가 있습니다.",
+              "advice": "목과 화를 보완할 수 있는 활동(운동, 창작, 소통)을 꾸준히 하세요. 새로운 시작은 가까운 사람들의 도움을 받아 추진하면 좋습니다."
+            },
+            "lucky": {
+              "color": "초록색, 노란색",
+              "number": "1, 2, 6",
+              "item": "나무액세서리, 작은 불구슬",
+              "direction": "남쪽(午) 또는 동쪽(東)",
+              "place": "숲, 정원, 해안가"
+            }
+          },
+          "errors": null,
+          "latency_ms": 15362.400770187378,
+          "fortune_key": "eastern:1995-07-20:1545:F"
+        },
+        "western_result": {
+          "success": true,
+          "validated": false,
+          "type": "western",
+          "data": {
+            "element": "WATER",
+            "stats": {
+              "main_sign": {
+                "code": "CANCER",
+                "name": "게자리"
+              },
+              "element_summary": "열정과 추진력이 강해 목표를 향한 끈기와 실행력이 돋보입니다.",
+              "modality_summary": "실용적이고 현실적인 사고로 계획을 구체적으로 실현하는 능력이 있습니다.",
+              "keywords_summary": "사회적 활동과 리더십, 성취욕을 통해 주변에 영향력을 미치는 경향이 강합니다.",
+              "keywords": [
+                {
+                  "code": "LEADERSHIP",
+                  "label": "리더십",
+                  "weight": 0.85
+                },
+                {
+                  "code": "PASSION",
+                  "label": "열정",
+                  "weight": 0.8
+                },
+                {
+                  "code": "ACTION",
+                  "label": "행동력",
+                  "weight": 0.75
+                },
+                {
+                  "code": "CONFLICT",
+                  "label": "갈등",
+                  "weight": 0.6
+                }
+              ],
+              "element": {
+                "code": "WATER",
+                "name": "물"
+              },
+              "element_4_distribution": [
+                {
+                  "code": "FIRE",
+                  "label": "불",
+                  "percent": 16.7
+                },
+                {
+                  "code": "EARTH",
+                  "label": "흙",
+                  "percent": 16.7
+                },
+                {
+                  "code": "AIR",
+                  "label": "공기",
+                  "percent": 16.7
+                },
+                {
+                  "code": "WATER",
+                  "label": "물",
+                  "percent": 50.0
+                }
+              ],
+              "modality_3_distribution": [
+                {
+                  "code": "CARDINAL",
+                  "label": "활동",
+                  "percent": 50.0
+                },
+                {
+                  "code": "FIXED",
+                  "label": "고정",
+                  "percent": 25.0
+                },
+                {
+                  "code": "MUTABLE",
+                  "label": "변동",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "fortune_content": {
+              "overview": "당신의 에너지는 현재 최고조에 달해 있어 새로운 시작이나 프로젝트 착수에 매우 유리한 시기입니다.",
+              "detailed_analysis": [
+                {
+                  "title": "직업 및 관계",
+                  "content": "주도적으로 움직여 상황을 이끌어가면 인정받을 수 있으며, 다만 고집으로 인한 마찰은 피해야 합니다."
+                },
+                {
+                  "title": "금전 및 건강",
+                  "content": "성과가 나타나는 시기이나 지나친 무리보다는 체계적인 관리를 통해 안정성을 확보하는 것이 좋습니다."
+                }
+              ],
+              "advice": "계획을 세워 단계적으로 진행하고, 주변의 의견을 수용하며 조율하는 태도를 유지하세요."
+            },
+            "lucky": {
+              "color": "빨간색",
+              "number": "7",
+              "item": "소개팅",
+              "place": "바다 근처"
+            }
+          },
+          "errors": [
+            "('stats', 'keywords', 2, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'",
+            "('stats', 'keywords', 3, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'"
+          ],
+          "latency_ms": 10478.521347045898,
+          "fortune_key": "western:1995-07-20:1545"
+        },
+        "eastern_summary": "[동양 사주 요약]\n일간: 일간 (오행)\n사주: ??년 ??월 ??일\n오행 분포: 오행 분석 중\n음양: 양 50% / 음 50%\n십신: 십신 분석 중\n강점: 강점 분석 중\n약점: 약점 분석 중\n조언: ",
+        "western_summary": "[서양 점성술 요약]\n태양 별자리: 알수없음\n원소: 원소 분석 중\n양태: 양태 분석 중\n키워드: 키워드 분석 중\n운세 개요: 운세 분석 중\n조언: ",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "귀하, 환영하오. 직장운부터 답하오. 관성의 기운이 강하여 맡은 바 책임과 규율이 핵심이오. 토성의 영향으로 승진은 성과를 쌓아 천천히 올라가는 형국이오. 이직은 주변 인맥의 도움으로 새싹이 움트는 때에 추진하면 유리하겠소"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "에이~ 그 분석은 좀 차가워요~ 하지만 제 별 해석으로는 지금 행동 에너지가 충만하네요. 새 프로젝트 착수와 네트워킹이 이직 기회를 앞당겨줄 수 있어요. 금성이 인간관계를 도와주니 적극적으로 소통하고 기회를 끌어오세요"
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "흠, 그러하오. 별의 반짝임은 매력적이나 실무의 토대가 약하면 반짝이기만 하오. 귀하의 목과 화가 약하니 발표와 소통을 보완해 실적으로 증명하시오. 성급한 이직은 수확을 놓칠 우려가 있으니 신중하시오"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "와~ 정말요? 그러나 별들은 타이밍을 알려줘요. 단계적 목표 설정으로 리더십을 보여주면 승진의 문이 열릴 수 있어요. 작은 성취를 공개적으로 쌓아 영향력을 키우면서 네트워크로 문을 두드리세요"
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "이번엔 그대 말도 틀린 건 아니오. 주변의 도움으로 시작을 당기면 유리하오. 다만 성급한 이동은 바람에 흩날리는 씨앗과 같아 수확을 잃을 수 있으니 때를 기다리는 인내와 실적 쌓기를 병행하시오"
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "당신은 이직 타이밍을 더 보고 싶으세요 아니면 승진 전략을 먼저 정리해볼까요 당신이 골라주시면 별과 사주를 연결해 구체적 시기와 행동 지침을 자세히 도와드릴게요"
+          }
+        ],
+        "created_at": "2026-02-03T07:15:48.755022"
+      },
+      "ttl": 31535952
+    },
+    "yeji:tokens:session:3c3b1823": {
+      "type": "list",
+      "value": [
+        "{\"turn\": 1, \"category\": \"LOVE\", \"prompt_tokens\": 2577, \"completion_tokens\": 4730, \"total_tokens\": 7307}"
+      ],
+      "ttl": 31535952
+    },
+    "yeji:session:78248e0b": {
+      "type": "string",
+      "value": {
+        "session_id": "78248e0b",
+        "turn": 1,
+        "user_info": {
+          "birth_date": "1995-03-20",
+          "birth_time": "14:30"
+        },
+        "category": "LOVE",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": {
+          "element": "EARTH",
+          "chart": {
+            "summary": "乙亥년 己辰월 庚午일 癸未시",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "亥",
+              "ji_code": "HAE",
+              "element_code": "WOOD",
+              "ten_god_code": "JEONG_JAE"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "JEONG_IN"
+            },
+            "day": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "午",
+              "ji_code": "O",
+              "element_code": "METAL",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "癸",
+              "gan_code": "GYE",
+              "ji": "未",
+              "ji_code": "MI",
+              "element_code": "WATER",
+              "ten_god_code": "SANG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "乙亥년 己辰월 庚午일 癸未시",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "亥"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "辰"
+              },
+              "day": {
+                "cheon_gan": "庚",
+                "ji_ji": "午"
+              },
+              "hour": {
+                "cheon_gan": "癸",
+                "ji_ji": "未"
+              }
+            },
+            "five_elements": {
+              "summary": "토이(가) 강하고 목이(가) 약합니다",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 37.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "음이 약간 우세합니다",
+              "yin": 62.5,
+              "yang": 37.5
+            },
+            "ten_gods": {
+              "summary": "식상이(가) 강하여 표현력과 창의성이 뛰어납니다",
+              "gods_list": [
+                {
+                  "code": "SANG_GWAN",
+                  "label": "상관",
+                  "percent": 33.3
+                },
+                {
+                  "code": "JEONG_JAE",
+                  "label": "정재",
+                  "percent": 33.3
+                },
+                {
+                  "code": "JEONG_IN",
+                  "label": "정인",
+                  "percent": 33.3
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "경 일간(금)으로 태어나셨습니다. 토의 기운이 강하고 목의 기운이 약합니다.",
+            "strength": "토의 기운이 강하여 안정감과 신뢰성이 높습니다",
+            "weakness": "목의 기운이 부족하여 유연성이 부족할 수 있습니다",
+            "advice": "목의 기운을 보완하면 더욱 균형 잡힌 운세를 만들 수 있습니다."
+          },
+          "lucky": {
+            "color": "초록색",
+            "number": "3, 8",
+            "item": "나무 액세서리, 식물",
+            "direction": "동쪽",
+            "place": "숲, 공원, 나무가 많은 곳"
+          }
+        },
+        "western_result": {
+          "element": "WATER",
+          "stats": {
+            "main_sign": {
+              "name": "물고기자리"
+            },
+            "element_summary": "물 원소가 우세합니다",
+            "element_4_distribution": [
+              {
+                "code": "FIRE",
+                "label": "불",
+                "percent": 0.0
+              },
+              {
+                "code": "EARTH",
+                "label": "흙",
+                "percent": 0.0
+              },
+              {
+                "code": "AIR",
+                "label": "공기",
+                "percent": 16.7
+              },
+              {
+                "code": "WATER",
+                "label": "물",
+                "percent": 83.3
+              }
+            ],
+            "modality_summary": "시작하고 개척하는 성향이 강합니다",
+            "modality_3_distribution": [
+              {
+                "code": "CARDINAL",
+                "label": "활동",
+                "percent": 50.0
+              },
+              {
+                "code": "FIXED",
+                "label": "고정",
+                "percent": 0.0
+              },
+              {
+                "code": "MUTABLE",
+                "label": "변동",
+                "percent": 50.0
+              }
+            ],
+            "keywords_summary": "물고기자리의 특성으로 직관이(가) 두드러집니다",
+            "keywords": [
+              {
+                "code": "INTUITION",
+                "label": "직관",
+                "weight": 0.9
+              },
+              {
+                "code": "CREATIVITY",
+                "label": "창의성",
+                "weight": 0.7
+              },
+              {
+                "code": "COMPASSION",
+                "label": "연민",
+                "weight": 0.5
+              }
+            ]
+          },
+          "fortune_content": {
+            "overview": "별들이 물고기자리의 자리에서 당신을 맞이했습니다. 물처럼 깊은 감성이 당신의 직관을 깨웁니다.",
+            "detailed_analysis": [
+              {
+                "title": "내면의 빛",
+                "content": "물고기자리의 태양 아래 태어난 당신은 물처럼 깊은 감성이 당신의 직관을 깨웁니다. 게자리의 달은 당신의 내면에 숨겨진 감정의 바다를 비춥니다."
+              },
+              {
+                "title": "세상과의 대화",
+                "content": "천칭자리의 기운이 당신의 첫인상을 형성합니다. 세상은 당신을 통해 천칭자리의 에너지를 느끼게 됩니다."
+              }
+            ],
+            "advice": "당신 안의 물 원소를 믿으세요. 균형 속에서 진정한 빛을 발하게 될 것입니다."
+          },
+          "lucky": {
+            "color": "바다색",
+            "number": "7",
+            "item": "아쿠아마린",
+            "place": null
+          }
+        },
+        "eastern_summary": "[동양 사주 요약]\n일간: 경 (금)\n사주: 乙亥년 己辰월 庚午일\n오행 분포: 토이(가) 강하고 목이(가) 약합니다\n음양: 양 37.5% / 음 62.5%\n십신: 식상이(가) 강하여 표현력과 창의성이 뛰어납니다\n강점: 토\n약점: 목\n조언: 목의 기운을 보완하면 더욱 균형 잡힌 운세를 만들 수 있습니다.",
+        "western_summary": "[서양 점성술 요약]\n태양 별자리: 물고기자리\n원소: 물 원소가 우세합니다\n양태: 시작하고 개척하는 성향이 강합니다\n키워드: 직관, 창의성, 연민\n운세 개요: 별들이 물고기자리의 자리에서 당신을 맞이했습니다. 물처럼 깊은 감성이 당신의 직관을 깨웁니다.\n조언: 당신 안의 물 원소를 믿으세요. 균형 속에서 진정한 빛을 발하게 될 것입니다.",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "허허, 그 점은 다시 살펴봐야겠소."
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "음, 저는 다른 별을 보고 있어요."
+          }
+        ],
+        "created_at": "2026-02-04T07:18:28.817626"
+      },
+      "ttl": 31535952
+    },
+    "yeji:tokens:stats:LOVE": {
+      "type": "hash",
+      "value": {
+        "total_prompt": "7508",
+        "total_completion": "15211",
+        "call_count": "3"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1993-07-14:08:00:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "FIRE",
+          "chart": {
+            "summary": "일간 병(丙)은 외향적이고 표현력이 뛰어나며, 주변에 활력을 준다.",
+            "year": {
+              "gan": "癸",
+              "gan_code": "GYE",
+              "ji": "酉",
+              "ji_code": "YU",
+              "element_code": "WATER",
+              "ten_god_code": "JEONG_GWAN"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "EARTH",
+              "ten_god_code": "SANG_GWAN"
+            },
+            "day": {
+              "gan": "丙",
+              "gan_code": "BYEONG",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "FIRE",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "WATER",
+              "ten_god_code": "PYEON_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "",
+              "year": {
+                "cheon_gan": "癸",
+                "ji_ji": "酉"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "申"
+              },
+              "day": {
+                "cheon_gan": "丙",
+                "ji_ji": "辰"
+              },
+              "hour": {
+                "cheon_gan": "壬",
+                "ji_ji": "辰"
+              }
+            },
+            "five_elements": {
+              "summary": "화가 강해 추진력과 리더십이 돋보여, 식신(食神) 기운으로 창의적 성과를 내기 좋다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 0.0
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 37.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 25.0
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양이 우세하여 활동적이지만 때로는 급하고 성급한 면이 나타난다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "십신 분포 분석입니다.",
+              "gods_list": [
+                {
+                  "code": "SIK_SIN",
+                  "label": "식신",
+                  "percent": 25.0
+                },
+                {
+                  "code": "JEONG_JAE",
+                  "label": "정재",
+                  "percent": 25.0
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "강한 추진력과 표현력을 갖추었으나, 성급함을 조절하면 더 큰 성취를 이룬다.",
+            "strength": "리더십, 발표력, 목표달성 능력",
+            "weakness": "충동적 결정, 과도한 자기주장, 피로 누적",
+            "advice": "휴식과 규칙적 운동으로 에너지를 관리하고, 중요한 선택 전에는 한 번 더 숙고하라."
+          },
+          "lucky": {
+            "color": "오렌지색",
+            "number": "3, 8",
+            "item": "촛불이나 파란 액세서리",
+            "direction": "남쪽",
+            "place": "해변이나 산책로"
+          }
+        },
+        "errors": null,
+        "latency_ms": 8639.483451843262,
+        "fortune_key": "eastern:1993-07-14:08:00:M"
+      },
+      "ttl": 31535952
+    },
+    "fortune:western:1988-12-25:0630": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": false,
+        "type": "western",
+        "data": {
+          "element": "EARTH",
+          "stats": {
+            "main_sign": {
+              "code": "CAPRICORN",
+              "name": "염소자리"
+            },
+            "element_summary": "불 기운이 강해 추진력과 현실적 실행력이 돋보입니다. 열정과 목표지향성이 뚜렷하여 일상에서 성과를 내기 좋은 시기입니다.",
+            "modality_summary": "완전한 성숙과 실무 능력이 결합되어 있습니다. 계획을 현실로 만드는 힘이 강하며, 책임감 있게 프로젝트를 이끌어갈 수 있는 운세입니다.",
+            "keywords_summary": "성취와 리더십, 그리고 때로는 고집과 스트레스가 공존합니다. 주변의 신뢰를 얻으면서도 자기주장이 뚜렷해지는 시기임을 보여줍니다.",
+            "keywords": [
+              {
+                "code": "LEADERSHIP",
+                "label": "리더십",
+                "weight": 0.9
+              },
+              {
+                "code": "DETERMINATION",
+                "label": "단호함",
+                "weight": 0.85
+              },
+              {
+                "code": "SPEED",
+                "label": "빠른 진행",
+                "weight": 0.8
+              }
+            ],
+            "element": {
+              "code": "EARTH",
+              "name": "흙"
+            },
+            "element_4_distribution": [
+              {
+                "code": "FIRE",
+                "label": "불",
+                "percent": 16.7
+              },
+              {
+                "code": "EARTH",
+                "label": "흙",
+                "percent": 50.0
+              },
+              {
+                "code": "AIR",
+                "label": "공기",
+                "percent": 16.7
+              },
+              {
+                "code": "WATER",
+                "label": "물",
+                "percent": 16.7
+              }
+            ],
+            "modality_3_distribution": [
+              {
+                "code": "CARDINAL",
+                "label": "활동",
+                "percent": 50.0
+              },
+              {
+                "code": "FIXED",
+                "label": "고정",
+                "percent": 25.0
+              },
+              {
+                "code": "MUTABLE",
+                "label": "변동",
+                "percent": 25.0
+              }
+            ]
+          },
+          "fortune_content": {
+            "overview": "현재 당신은 새로운 시작이나 목표 달성을 위한 강력한 에너지를 가지고 있습니다. 추진력을 발휘하면 가시적인 성과를 거둘 수 있는 길목에 서 있습니다.",
+            "detailed_analysis": [
+              {
+                "title": "직업 및 커리어",
+                "content": "프로젝트 관리나 경영 분야에서 두각을 나타낼 수 있습니다. 다만 과욕을 피하고 팀원들과의 조율을 게을리하지 마세요."
+              },
+              {
+                "title": "대인관계",
+                "content": "솔직하고 단호한 태도가 관계 개선에 도움이 됩니다. 다만 직설이 오해를 불러올 수 있으니 표현을 부드럽게 하십시오."
+              }
+            ],
+            "advice": "중요한 결정을 내릴 때는 감정보다 논리를 우선하세요. 체계적으로 계획을 세우고 작은 성공들을 쌓아가는 것이 장기적인 운을 확장하는 핵심입니다."
+          },
+          "lucky": {
+            "color": "빨간색",
+            "number": "13",
+            "item": "청동 소宝飾",
+            "place": "북극이나 산 정상"
+          }
+        },
+        "errors": [
+          "('stats', 'keywords', 1, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'",
+          "('stats', 'keywords', 2, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'"
+        ],
+        "latency_ms": 12906.038284301758,
+        "fortune_key": "western:1988-12-25:0630"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1995-03-20:1430:F": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "METAL",
+          "chart": {
+            "summary": "경(庚)일간은 강한 금(金) 기운으로 결단력과 실행력이 뛰어납니다. 사주 전체에 금의 성질이 두드러져 실무와 조직 내 역할에서 능력을 발휘합니다.",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "亥",
+              "ji_code": "HAE",
+              "element_code": "WOOD",
+              "ten_god_code": "JEONG_JAE"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "JEONG_IN"
+            },
+            "day": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "午",
+              "ji_code": "O",
+              "element_code": "METAL",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "癸",
+              "gan_code": "GYE",
+              "ji": "未",
+              "ji_code": "MI",
+              "element_code": "WATER",
+              "ten_god_code": "SANG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "비견(比肩)과 편재(偏財)의 요소가 섞여 동료와 경쟁하거나 창업, 사업 확장에서 기회가 많습니다.",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "亥"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "辰"
+              },
+              "day": {
+                "cheon_gan": "庚",
+                "ji_ji": "午"
+              },
+              "hour": {
+                "cheon_gan": "癸",
+                "ji_ji": "未"
+              }
+            },
+            "five_elements": {
+              "summary": "금(木) 중심의 구성으로 목(木)과 화(火)의 조화가 부족하여 외형적으로는 단단하지만 유연성이 필요합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 37.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기(陽氣)가 우세하여 활동적이지만 때로는 과로나 긴장으로 이어질 수 있습니다.",
+              "yin": 62.5,
+              "yang": 37.5
+            },
+            "ten_gods": {
+              "summary": "경오·계미의 조합으로 관성과 재성의 흐름이 혼재되어 사회적 책임과 재물 운이 복합적으로 작용합니다.",
+              "gods_list": [
+                {
+                  "code": "SANG_GWAN",
+                  "label": "상관",
+                  "percent": 25.0
+                },
+                {
+                  "code": "JEONG_IN",
+                  "label": "정인",
+                  "percent": 25.0
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "결단력과 추진력이 장점인 반면 유연성과 감정 조절이 약점입니다.",
+            "strength": "리더십, 실무 처리 능력, 목표 달성 능력",
+            "weakness": "완고함, 스트레스 누적, 대인 관계 갈등",
+            "advice": "유연성을 기르고 휴식과 소통을 통해 균형을 맞추세요."
+          },
+          "lucky": {
+            "color": "흰색, 회색",
+            "number": "7, 9",
+            "item": "명품, 고급 자수",
+            "direction": "북쪽, 서쪽",
+            "place": "공원, 사찰"
+          }
+        },
+        "errors": null,
+        "latency_ms": 10878.862619400024,
+        "fortune_key": "eastern:1995-03-20:1430:F"
+      },
+      "ttl": 31535952
+    },
+    "summary:eastern:1995-03-20:1430:F": {
+      "type": "string",
+      "value": "[동양 사주 요약]\n일간: 일간 (오행)\n사주: ??년 ??월 ??일\n오행 분포: 오행 분석 중\n음양: 양 50% / 음 50%\n십신: 십신 분석 중\n강점: 강점 분석 중\n약점: 약점 분석 중\n조언: ",
+      "ttl": 31535952
+    },
+    "fortune:eastern:2000-01-01:0000:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "EARTH",
+          "chart": {
+            "summary": "일간 무(戊)가 중심으로 토의 기운이 강하며, 월·시에 인(寅) 두 개가 있어 목의 기운과 조화를 이룹니다.",
+            "year": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "METAL",
+              "ten_god_code": "SIK_SIN"
+            },
+            "month": {
+              "gan": "丁",
+              "gan_code": "JEONG",
+              "ji": "寅",
+              "ji_code": "IN",
+              "element_code": "FIRE",
+              "ten_god_code": "JEONG_IN"
+            },
+            "day": {
+              "gan": "戊",
+              "gan_code": "MU",
+              "ji": "寅",
+              "ji_code": "IN",
+              "element_code": "EARTH",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "子",
+              "ji_code": "JA",
+              "element_code": "WATER",
+              "ten_god_code": "PYEON_JAE"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "무인(日柱)은 책임감과 실무 능력을 뜻하며, 경진(年柱)과 임자(時柱)가 외부 환경과 인간관계를 보여줍니다.",
+              "year": {
+                "cheon_gan": "庚",
+                "ji_ji": "辰"
+              },
+              "month": {
+                "cheon_gan": "丁",
+                "ji_ji": "寅"
+              },
+              "day": {
+                "cheon_gan": "戊",
+                "ji_ji": "寅"
+              },
+              "hour": {
+                "cheon_gan": "壬",
+                "ji_ji": "子"
+              }
+            },
+            "five_elements": {
+              "summary": "토(土)가 일간으로 중심이며, 목(木)과 수(水)의 영향을 받는 균형입니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 25.0
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 25.0
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기(陽氣)가 우세하여 활동적이고 추진력이 강한 배치입니다.",
+              "yin": 12.5,
+              "yang": 87.5
+            },
+            "ten_gods": {
+              "summary": "경(庚)·정(丁)·임(壬) 등의 천간과 진(辰)·자(子)·寅(寅) 등의 지지가 혼재되어 다양한 인연과 역할을 나타냅니다.",
+              "gods_list": [
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 25.0
+                },
+                {
+                  "code": "PYEON_JAE",
+                  "label": "편재",
+                  "percent": 25.0
+                },
+                {
+                  "code": "PYEON_GWAN",
+                  "label": "편관",
+                  "percent": 25.0
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "실무와 책임을 다하는 타입으로 꾸준함과 현실 감각이 장점입니다.",
+            "strength": "안정성과 실행력, 조직 내 신뢰를 얻기 쉬움",
+            "weakness": "변화에 대한 저항과 감정 표현의 어려움",
+            "advice": "유연성을 기르고 소통을 통해 약점을 보완하세요"
+          },
+          "lucky": {
+            "color": "갈색",
+            "number": "2, 5",
+            "item": "목구조의 물건",
+            "direction": "남쪽",
+            "place": "산이나 숲"
+          }
+        },
+        "errors": null,
+        "latency_ms": 10027.660369873047,
+        "fortune_key": "eastern:2000-01-01:0000:M"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:3c3b1823": {
+      "type": "string",
+      "value": {
+        "session_id": "3c3b1823",
+        "turn": 1,
+        "user_info": {
+          "birth_date": "1995-07-20",
+          "birth_time": "15:45"
+        },
+        "category": "LOVE",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": {
+          "success": true,
+          "validated": true,
+          "type": "eastern",
+          "data": {
+            "element": "WATER",
+            "chart": {
+              "summary": "일간 임(壬)은 큰 흐름과 지혜, 유연성을 상징합니다. 주변의 오행과 조화를 잘 이루면 상황을 넓게 보고 사람들을 모으는 능력을 발휘합니다.",
+              "year": {
+                "gan": "乙",
+                "gan_code": "EUL",
+                "ji": "亥",
+                "ji_code": "HAE",
+                "element_code": "WOOD",
+                "ten_god_code": "SANG_GWAN"
+              },
+              "month": {
+                "gan": "癸",
+                "gan_code": "GYE",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "WATER",
+                "ten_god_code": "GANG_JAE"
+              },
+              "day": {
+                "gan": "壬",
+                "gan_code": "IM",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "WATER",
+                "ten_god_code": "DAY_MASTER"
+              },
+              "hour": {
+                "gan": "戊",
+                "gan_code": "MU",
+                "ji": "申",
+                "ji_code": "SHIN",
+                "element_code": "EARTH",
+                "ten_god_code": "PYEON_GWAN"
+              }
+            },
+            "stats": {
+              "cheongan_jiji": {
+                "summary": "지지에 신(申)이 집중되어 충돌보다는 고착된 기운이 강합니다. 이는 안정적이지만 변화를 꾀하기 어려운 면모를 동시에 가져옵니다.",
+                "year": {
+                  "cheon_gan": "乙",
+                  "ji_ji": "亥"
+                },
+                "month": {
+                  "cheon_gan": "癸",
+                  "ji_ji": "申"
+                },
+                "day": {
+                  "cheon_gan": "壬",
+                  "ji_ji": "申"
+                },
+                "hour": {
+                  "cheon_gan": "戊",
+                  "ji_ji": "申"
+                }
+              },
+              "five_elements": {
+                "summary": "수(水)가 일간으로 강한 구조입니다. 월주 계신(癸申), 시주 무신(戊申) 등 금(申)이 두 번 있어 수와 금의 상호작용이 큽니다. 목과 화는 상대적으로 약하니 외부 자극이나 창의적 에너지에 의존해야 할 때 주의가 필요합니다.",
+                "elements_list": [
+                  {
+                    "code": "WOOD",
+                    "label": "목",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "FIRE",
+                    "label": "화",
+                    "percent": 0.0
+                  },
+                  {
+                    "code": "EARTH",
+                    "label": "토",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "METAL",
+                    "label": "금",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "WATER",
+                    "label": "수",
+                    "percent": 37.5
+                  }
+                ]
+              },
+              "yin_yang_ratio": {
+                "summary": "양기와 음기가 균형을 이루려 하나, 수가 우세해 감정의 깊음과 내향적인 성향이 강합니다. 외형상 활동적이지 않아도 내면의 판단력은 뛰어납니다.",
+                "yin": 37.5,
+                "yang": 62.5
+              },
+              "ten_gods": {
+                "summary": "임신(日柱)과 연·월·시의 신(申)들이 반복되어 재성·관성 등의 기운이 혼재됩니다. 특히 비견(比肩) 성향이 강해 독립심과 자기주장이 뚜렷하며, 식신(食神) 같은 생산적 기운은 제한적일 수 있습니다.",
+                "gods_list": [
+                  {
+                    "code": "JEONG_IN",
+                    "label": "정인",
+                    "percent": 37.5
+                  },
+                  {
+                    "code": "GANG_JAE",
+                    "label": "겁재",
+                    "percent": 25.0
+                  },
+                  {
+                    "code": "BI_GYEON",
+                    "label": "비견",
+                    "percent": 12.5
+                  },
+                  {
+                    "code": "ETC",
+                    "label": "기타",
+                    "percent": 12.5
+                  }
+                ]
+              }
+            },
+            "final_verdict": {
+              "summary": "전체적으로 수 기운이 중심인 사주로, 지혜와 관찰력, 유연성이 강점입니다. 다만 목과 화의 부족으로 추진력과 표현력이 약할 수 있습니다.",
+              "strength": "판단력과 적응력이 탁월하여 위기에서 안정감을 줍니다.",
+              "weakness": "결단을 내리거나 밖으로 표출하는 에너지가 부족해 기회를 놓칠 우려가 있습니다.",
+              "advice": "목과 화를 보완할 수 있는 활동(운동, 창작, 소통)을 꾸준히 하세요. 새로운 시작은 가까운 사람들의 도움을 받아 추진하면 좋습니다."
+            },
+            "lucky": {
+              "color": "초록색, 노란색",
+              "number": "1, 2, 6",
+              "item": "나무액세서리, 작은 불구슬",
+              "direction": "남쪽(午) 또는 동쪽(東)",
+              "place": "숲, 정원, 해안가"
+            }
+          },
+          "errors": null,
+          "latency_ms": 15362.400770187378,
+          "fortune_key": "eastern:1995-07-20:1545:F"
+        },
+        "western_result": {
+          "success": true,
+          "validated": false,
+          "type": "western",
+          "data": {
+            "element": "WATER",
+            "stats": {
+              "main_sign": {
+                "code": "CANCER",
+                "name": "게자리"
+              },
+              "element_summary": "열정과 추진력이 강해 목표를 향한 끈기와 실행력이 돋보입니다.",
+              "modality_summary": "실용적이고 현실적인 사고로 계획을 구체적으로 실현하는 능력이 있습니다.",
+              "keywords_summary": "사회적 활동과 리더십, 성취욕을 통해 주변에 영향력을 미치는 경향이 강합니다.",
+              "keywords": [
+                {
+                  "code": "LEADERSHIP",
+                  "label": "리더십",
+                  "weight": 0.85
+                },
+                {
+                  "code": "PASSION",
+                  "label": "열정",
+                  "weight": 0.8
+                },
+                {
+                  "code": "ACTION",
+                  "label": "행동력",
+                  "weight": 0.75
+                },
+                {
+                  "code": "CONFLICT",
+                  "label": "갈등",
+                  "weight": 0.6
+                }
+              ],
+              "element": {
+                "code": "WATER",
+                "name": "물"
+              },
+              "element_4_distribution": [
+                {
+                  "code": "FIRE",
+                  "label": "불",
+                  "percent": 16.7
+                },
+                {
+                  "code": "EARTH",
+                  "label": "흙",
+                  "percent": 16.7
+                },
+                {
+                  "code": "AIR",
+                  "label": "공기",
+                  "percent": 16.7
+                },
+                {
+                  "code": "WATER",
+                  "label": "물",
+                  "percent": 50.0
+                }
+              ],
+              "modality_3_distribution": [
+                {
+                  "code": "CARDINAL",
+                  "label": "활동",
+                  "percent": 50.0
+                },
+                {
+                  "code": "FIXED",
+                  "label": "고정",
+                  "percent": 25.0
+                },
+                {
+                  "code": "MUTABLE",
+                  "label": "변동",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "fortune_content": {
+              "overview": "당신의 에너지는 현재 최고조에 달해 있어 새로운 시작이나 프로젝트 착수에 매우 유리한 시기입니다.",
+              "detailed_analysis": [
+                {
+                  "title": "직업 및 관계",
+                  "content": "주도적으로 움직여 상황을 이끌어가면 인정받을 수 있으며, 다만 고집으로 인한 마찰은 피해야 합니다."
+                },
+                {
+                  "title": "금전 및 건강",
+                  "content": "성과가 나타나는 시기이나 지나친 무리보다는 체계적인 관리를 통해 안정성을 확보하는 것이 좋습니다."
+                }
+              ],
+              "advice": "계획을 세워 단계적으로 진행하고, 주변의 의견을 수용하며 조율하는 태도를 유지하세요."
+            },
+            "lucky": {
+              "color": "빨간색",
+              "number": "7",
+              "item": "소개팅",
+              "place": "바다 근처"
+            }
+          },
+          "errors": [
+            "('stats', 'keywords', 2, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'",
+            "('stats', 'keywords', 3, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'"
+          ],
+          "latency_ms": 10478.521347045898,
+          "fortune_key": "western:1995-07-20:1545"
+        },
+        "eastern_summary": "[동양 사주 요약]\n일간: 일간 (오행)\n사주: ??년 ??월 ??일\n오행 분포: 오행 분석 중\n음양: 양 50% / 음 50%\n십신: 십신 분석 중\n강점: 강점 분석 중\n약점: 약점 분석 중\n조언: ",
+        "western_summary": "[서양 점성술 요약]\n태양 별자리: 알수없음\n원소: 원소 분석 중\n양태: 양태 분석 중\n키워드: 키워드 분석 중\n운세 개요: 운세 분석 중\n조언: ",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "해석이 직설적이네요. 별들이 전하는 메시지는 금성이 당신의 매력을 더해주고 있으니 먼저 친절하게 다가가면 좋은 반응을 얻을 수 있어요 \", \"emotioncode\": \"CHALLENGING\", \"emotionintensity\": 0. 85 , \"speaker\": \""
+          },
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "말처럼 무턱대고 혼자 가기보다 조율을 해보세요 \", \"emotioncode\": \"CHALLENGING\", \"emotionintensity\": 0. 82 , \"speaker\": \""
+          }
+        ],
+        "created_at": "2026-02-03T07:18:04.573072"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:128bf482": {
+      "type": "string",
+      "value": {
+        "session_id": "128bf482",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T07:04:23.490067"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1985-03-10:06:00:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "EARTH",
+          "chart": {
+            "summary": "무(戊)일간으로 중심을 잡는 토의 성향이 강해 안정과 책임감이 큰 사주입니다.",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "丑",
+              "ji_code": "CHUK",
+              "element_code": "WOOD",
+              "ten_god_code": "JEONG_GWAN"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "GANG_JAE"
+            },
+            "day": {
+              "gan": "戊",
+              "gan_code": "MU",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "卯",
+              "ji_code": "MYO",
+              "element_code": "WOOD",
+              "ten_god_code": "JEONG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "시주에 을목(乙)이 있고 월·일주에는 축·진 등 토가 섞여 있어 대인관계에서는 온화하되 내면엔 단단함을 지니고 있습니다.",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "丑"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "辰"
+              },
+              "day": {
+                "cheon_gan": "戊",
+                "ji_ji": "辰"
+              },
+              "hour": {
+                "cheon_gan": "乙",
+                "ji_ji": "卯"
+              }
+            },
+            "five_elements": {
+              "summary": "토가 중복되어 토의 기운이 매우 강하고, 목과 수의 흐름이 약해 균형을 맞추기 필요합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 37.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 0.0
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 62.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 0.0
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 0.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기(陽氣)가 우세하여 활동적이고 추진력이 있으나 때로는 고집이나 융통성 부족으로 이어질 수 있습니다.",
+              "yin": 62.5,
+              "yang": 37.5
+            },
+            "ten_gods": {
+              "summary": "무진(戊辰)·기진(己辰)의 조합으로 재물과 관직 관련 운이 있어 실무 능력과 관리능력이 돋보입니다.",
+              "gods_list": [
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 37.5
+                },
+                {
+                  "code": "JEONG_GWAN",
+                  "label": "정관",
+                  "percent": 37.5
+                },
+                {
+                  "code": "GANG_JAE",
+                  "label": "겁재",
+                  "percent": 25.0
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "실용적이고 신뢰받는 타입으로 꾸준한 노력과 책임감으로 성공할 가능성이 큽니다.",
+            "strength": "책임감, 실무능력, 관리·재물운",
+            "weakness": "융통성 부족, 감정 표현의 어려움, 과중한 업무 부담",
+            "advice": "유연성을 기르고 소통에 힘쓰면 더 큰 성장이 가능합니다. 규칙적인 휴식도 필수입니다."
+          },
+          "lucky": {
+            "color": "황색",
+            "number": "4, 7",
+            "item": "흙빛 액세서리나 돌",
+            "direction": "중앙 또는 남쪽",
+            "place": "텃밭, 전시 갤러리"
+          }
+        },
+        "errors": null,
+        "latency_ms": 11735.082387924194,
+        "fortune_key": "eastern:1985-03-10:06:00:M"
+      },
+      "ttl": 31535952
+    },
+    "summary:eastern:1995-07-20:1545:F": {
+      "type": "string",
+      "value": "[동양 사주 요약]\n일간: 임 (수)\n사주: 乙亥년 癸申월 壬申일\n오행 분포: 수(水)가 일간으로 강한 구조입니다. 월주 계신(癸申), 시주 무신(戊申) 등 금(申)이 두 번 있어 수와 금의 상호작용이 큽니다. 목과 화는 상대적으로 약하니 외부 자극이나 창의적 에너지에 의존해야 할 때 주의가 필요합니다.\n음양: 양 62.5% / 음 37.5%\n십신: 임신(日柱)과 연·월·시의 신(申)들이 반복되어 재성·관성 등의 기운이 혼재됩니다. 특히 비견(比肩) 성향이 강해 독립심과 자기주장이 뚜렷하며, 식신(食神) 같은 생산적 기운은 제한적일 수 있습니다.\n강점: 판단력과 적응력이 탁월하여 위기에서 안정감을 줍니다.\n약점: 결단을 내리거나 밖으로 표출하는 에너지가 부족해 기회를 놓칠 우려가 있습니다.\n조언: 목과 화를 보완할 수 있는 활동(운동, 창작, 소통)을 꾸준히 하세요. 새로운 시작은 가까운 사람들의 도움을 받아 추진하면 좋습니다.",
+      "ttl": 31535952
+    },
+    "yeji:session:cfb17438": {
+      "type": "string",
+      "value": {
+        "session_id": "cfb17438",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T07:15:26.221166"
+      },
+      "ttl": 31535952
+    },
+    "summary:eastern:1988-12-25:0630:M": {
+      "type": "string",
+      "value": "[동양 사주 요약]\n일간: 갑 (목)\n사주: 戊辰년 甲丑월 甲戌일\n오행 분포: 목이 일간으로 중심이며, 시주와 월주의 갑이 더해져 목기운이 중복되어 강한 편입니다. 오행 균형에서는 목이 과다할 수 있으니 다른 오행과 조화가 필요합니다.\n음양: 양 62.5% / 음 37.5%\n십신: 甲·丁·戊·甲·甲·辰·丑·戌·卯 등의 배치로 인해 관성보다는 자립심과 독창성이 돋보이는 구조입니다. 비견(比肩)의 성향이 강해 동료와 경쟁하거나 스스로 해내려는 경향이 큽니다.\n강점: 자기주도적 결정, 창업·기획·교육 분야에서 두각을 나타냅니다.\n약점: 과한 자기신뢰와 고집으로 타협이 어려울 수 있으며 건강상으로는 간과 소화계 스트레스 주의가 필요합니다.\n조언: 팀워크를 의식하고 유연성을 기르며 규칙적인 운동과 휴식으로 에너지를 조절하세요.",
+      "ttl": 31535952
+    },
+    "yeji:session:5cb11f5d": {
+      "type": "string",
+      "value": {
+        "session_id": "5cb11f5d",
+        "turn": 1,
+        "user_info": {
+          "birth_date": "1995-03-20",
+          "birth_time": "14:30"
+        },
+        "category": "LOVE",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": {
+          "element": "EARTH",
+          "chart": {
+            "summary": "乙亥년 己辰월 庚午일 癸未시",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "亥",
+              "ji_code": "HAE",
+              "element_code": "WOOD",
+              "ten_god_code": "JEONG_JAE"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "JEONG_IN"
+            },
+            "day": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "午",
+              "ji_code": "O",
+              "element_code": "METAL",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "癸",
+              "gan_code": "GYE",
+              "ji": "未",
+              "ji_code": "MI",
+              "element_code": "WATER",
+              "ten_god_code": "SANG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "乙亥년 己辰월 庚午일 癸未시",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "亥"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "辰"
+              },
+              "day": {
+                "cheon_gan": "庚",
+                "ji_ji": "午"
+              },
+              "hour": {
+                "cheon_gan": "癸",
+                "ji_ji": "未"
+              }
+            },
+            "five_elements": {
+              "summary": "토이(가) 강하고 목이(가) 약합니다",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 37.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "음이 약간 우세합니다",
+              "yin": 62.5,
+              "yang": 37.5
+            },
+            "ten_gods": {
+              "summary": "식상이(가) 강하여 표현력과 창의성이 뛰어납니다",
+              "gods_list": [
+                {
+                  "code": "SANG_GWAN",
+                  "label": "상관",
+                  "percent": 33.3
+                },
+                {
+                  "code": "JEONG_JAE",
+                  "label": "정재",
+                  "percent": 33.3
+                },
+                {
+                  "code": "JEONG_IN",
+                  "label": "정인",
+                  "percent": 33.3
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "경 일간(금)으로 태어나셨습니다. 토의 기운이 강하고 목의 기운이 약합니다.",
+            "strength": "토의 기운이 강하여 안정감과 신뢰성이 높습니다",
+            "weakness": "목의 기운이 부족하여 유연성이 부족할 수 있습니다",
+            "advice": "목의 기운을 보완하면 더욱 균형 잡힌 운세를 만들 수 있습니다."
+          },
+          "lucky": {
+            "color": "초록색",
+            "number": "3, 8",
+            "item": "나무 액세서리, 식물",
+            "direction": "동쪽",
+            "place": "숲, 공원, 나무가 많은 곳"
+          }
+        },
+        "western_result": {
+          "element": "WATER",
+          "stats": {
+            "main_sign": {
+              "name": "물고기자리"
+            },
+            "element_summary": "물 원소가 우세합니다",
+            "element_4_distribution": [
+              {
+                "code": "FIRE",
+                "label": "불",
+                "percent": 0.0
+              },
+              {
+                "code": "EARTH",
+                "label": "흙",
+                "percent": 0.0
+              },
+              {
+                "code": "AIR",
+                "label": "공기",
+                "percent": 16.7
+              },
+              {
+                "code": "WATER",
+                "label": "물",
+                "percent": 83.3
+              }
+            ],
+            "modality_summary": "시작하고 개척하는 성향이 강합니다",
+            "modality_3_distribution": [
+              {
+                "code": "CARDINAL",
+                "label": "활동",
+                "percent": 50.0
+              },
+              {
+                "code": "FIXED",
+                "label": "고정",
+                "percent": 0.0
+              },
+              {
+                "code": "MUTABLE",
+                "label": "변동",
+                "percent": 50.0
+              }
+            ],
+            "keywords_summary": "물고기자리의 특성으로 직관이(가) 두드러집니다",
+            "keywords": [
+              {
+                "code": "INTUITION",
+                "label": "직관",
+                "weight": 0.9
+              },
+              {
+                "code": "CREATIVITY",
+                "label": "창의성",
+                "weight": 0.7
+              },
+              {
+                "code": "COMPASSION",
+                "label": "연민",
+                "weight": 0.5
+              }
+            ]
+          },
+          "fortune_content": {
+            "overview": "별들이 물고기자리의 자리에서 당신을 맞이했습니다. 물처럼 깊은 감성이 당신의 직관을 깨웁니다.",
+            "detailed_analysis": [
+              {
+                "title": "내면의 빛",
+                "content": "물고기자리의 태양 아래 태어난 당신은 물처럼 깊은 감성이 당신의 직관을 깨웁니다. 게자리의 달은 당신의 내면에 숨겨진 감정의 바다를 비춥니다."
+              },
+              {
+                "title": "세상과의 대화",
+                "content": "천칭자리의 기운이 당신의 첫인상을 형성합니다. 세상은 당신을 통해 천칭자리의 에너지를 느끼게 됩니다."
+              }
+            ],
+            "advice": "당신 안의 물 원소를 믿으세요. 균형 속에서 진정한 빛을 발하게 될 것입니다."
+          },
+          "lucky": {
+            "color": "바다색",
+            "number": "7",
+            "item": "아쿠아마린",
+            "place": null
+          }
+        },
+        "eastern_summary": "[동양 사주 요약]\n일간: 경 (금)\n사주: 乙亥년 己辰월 庚午일\n오행 분포: 토이(가) 강하고 목이(가) 약합니다\n음양: 양 37.5% / 음 62.5%\n십신: 식상이(가) 강하여 표현력과 창의성이 뛰어납니다\n강점: 토\n약점: 목\n조언: 목의 기운을 보완하면 더욱 균형 잡힌 운세를 만들 수 있습니다.",
+        "western_summary": "[서양 점성술 요약]\n태양 별자리: 물고기자리\n원소: 물 원소가 우세합니다\n양태: 시작하고 개척하는 성향이 강합니다\n키워드: 직관, 창의성, 연민\n운세 개요: 별들이 물고기자리의 자리에서 당신을 맞이했습니다. 물처럼 깊은 감성이 당신의 직관을 깨웁니다.\n조언: 당신 안의 물 원소를 믿으세요. 균형 속에서 진정한 빛을 발하게 될 것입니다.",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [
+          {
+            "character": "SOISEOL",
+            "type": "INTERPRETATION",
+            "content": "허허, 그 점은 다시 살펴봐야겠소."
+          },
+          {
+            "character": "STELLA",
+            "type": "INTERPRETATION",
+            "content": "음, 저는 다른 별을 보고 있어요."
+          }
+        ],
+        "created_at": "2026-02-04T07:19:21.348475"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:256ce455": {
+      "type": "string",
+      "value": {
+        "session_id": "256ce455",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T07:04:14.514741"
+      },
+      "ttl": 31535952
+    },
+    "fortune:western:1995-07-20:1545": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": false,
+        "type": "western",
+        "data": {
+          "element": "WATER",
+          "stats": {
+            "main_sign": {
+              "code": "CANCER",
+              "name": "게자리"
+            },
+            "element_summary": "열정과 추진력이 강해 목표를 향한 끈기와 실행력이 돋보입니다.",
+            "modality_summary": "실용적이고 현실적인 사고로 계획을 구체적으로 실현하는 능력이 있습니다.",
+            "keywords_summary": "사회적 활동과 리더십, 성취욕을 통해 주변에 영향력을 미치는 경향이 강합니다.",
+            "keywords": [
+              {
+                "code": "LEADERSHIP",
+                "label": "리더십",
+                "weight": 0.85
+              },
+              {
+                "code": "PASSION",
+                "label": "열정",
+                "weight": 0.8
+              },
+              {
+                "code": "ACTION",
+                "label": "행동력",
+                "weight": 0.75
+              },
+              {
+                "code": "CONFLICT",
+                "label": "갈등",
+                "weight": 0.6
+              }
+            ],
+            "element": {
+              "code": "WATER",
+              "name": "물"
+            },
+            "element_4_distribution": [
+              {
+                "code": "FIRE",
+                "label": "불",
+                "percent": 16.7
+              },
+              {
+                "code": "EARTH",
+                "label": "흙",
+                "percent": 16.7
+              },
+              {
+                "code": "AIR",
+                "label": "공기",
+                "percent": 16.7
+              },
+              {
+                "code": "WATER",
+                "label": "물",
+                "percent": 50.0
+              }
+            ],
+            "modality_3_distribution": [
+              {
+                "code": "CARDINAL",
+                "label": "활동",
+                "percent": 50.0
+              },
+              {
+                "code": "FIXED",
+                "label": "고정",
+                "percent": 25.0
+              },
+              {
+                "code": "MUTABLE",
+                "label": "변동",
+                "percent": 25.0
+              }
+            ]
+          },
+          "fortune_content": {
+            "overview": "당신의 에너지는 현재 최고조에 달해 있어 새로운 시작이나 프로젝트 착수에 매우 유리한 시기입니다.",
+            "detailed_analysis": [
+              {
+                "title": "직업 및 관계",
+                "content": "주도적으로 움직여 상황을 이끌어가면 인정받을 수 있으며, 다만 고집으로 인한 마찰은 피해야 합니다."
+              },
+              {
+                "title": "금전 및 건강",
+                "content": "성과가 나타나는 시기이나 지나친 무리보다는 체계적인 관리를 통해 안정성을 확보하는 것이 좋습니다."
+              }
+            ],
+            "advice": "계획을 세워 단계적으로 진행하고, 주변의 의견을 수용하며 조율하는 태도를 유지하세요."
+          },
+          "lucky": {
+            "color": "빨간색",
+            "number": "7",
+            "item": "소개팅",
+            "place": "바다 근처"
+          }
+        },
+        "errors": [
+          "('stats', 'keywords', 2, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'",
+          "('stats', 'keywords', 3, 'code'): Input should be 'EMPATHY', 'INTUITION', 'IMAGINATION', 'BOUNDARY', 'LEADERSHIP', 'PASSION', 'ANALYSIS', 'ANALYTICAL', 'STABILITY', 'COMMUNICATION', 'INNOVATION', 'COURAGE', 'INDEPENDENCE', 'PATIENCE', 'PRACTICALITY', 'CURIOSITY', 'ADAPTABILITY', 'NURTURING', 'SENSITIVITY', 'CREATIVITY', 'CONFIDENCE', 'PERFECTIONISM', 'HARMONY', 'DIPLOMACY', 'BALANCE', 'INTENSITY', 'TRANSFORMATION', 'ADVENTURE', 'OPTIMISM', 'FREEDOM', 'AMBITION', 'DISCIPLINE', 'RESPONSIBILITY', 'HUMANITARIANISM' or 'COMPASSION'"
+        ],
+        "latency_ms": 10478.521347045898,
+        "fortune_key": "western:1995-07-20:1545"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1988-12-25:0630:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "WOOD",
+          "chart": {
+            "summary": "갑(甲)일간은 성장과 개척을 상징하는 목(木)의 기운이 강해 주도적이고 창조적인 에너지를 가집니다.",
+            "year": {
+              "gan": "戊",
+              "gan_code": "MU",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "PYEON_JAE"
+            },
+            "month": {
+              "gan": "甲",
+              "gan_code": "GAP",
+              "ji": "丑",
+              "ji_code": "CHUK",
+              "element_code": "WOOD",
+              "ten_god_code": "BI_GYEON"
+            },
+            "day": {
+              "gan": "甲",
+              "gan_code": "GAP",
+              "ji": "戌",
+              "ji_code": "SUL",
+              "element_code": "WOOD",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "丁",
+              "gan_code": "JEONG",
+              "ji": "卯",
+              "ji_code": "MYO",
+              "element_code": "FIRE",
+              "ten_god_code": "SANG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "갑목의 천간이 강하고 지지에 축·진·술 등 토의 요소가 섞여 있어 현실적인 책임감과 실무 능력이 함께 작용합니다.",
+              "year": {
+                "cheon_gan": "戊",
+                "ji_ji": "辰"
+              },
+              "month": {
+                "cheon_gan": "甲",
+                "ji_ji": "丑"
+              },
+              "day": {
+                "cheon_gan": "甲",
+                "ji_ji": "戌"
+              },
+              "hour": {
+                "cheon_gan": "丁",
+                "ji_ji": "卯"
+              }
+            },
+            "five_elements": {
+              "summary": "목이 일간으로 중심이며, 시주와 월주의 갑이 더해져 목기운이 중복되어 강한 편입니다. 오행 균형에서는 목이 과다할 수 있으니 다른 오행과 조화가 필요합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 37.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 50.0
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 0.0
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 0.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양의 기운이 우세하여 활동적이며 추진력이 강하지만 때로는 고집이나 급함으로 이어질 수 있습니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "甲·丁·戊·甲·甲·辰·丑·戌·卯 등의 배치로 인해 관성보다는 자립심과 독창성이 돋보이는 구조입니다. 비견(比肩)의 성향이 강해 동료와 경쟁하거나 스스로 해내려는 경향이 큽니다.",
+              "gods_list": [
+                {
+                  "code": "PYEON_JAE",
+                  "label": "편재",
+                  "percent": 37.5
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 25.0
+                },
+                {
+                  "code": "GANG_JAE",
+                  "label": "겁재",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "강한 목의 기운으로 리더십과 창조력을 발휘하기 좋은 사주입니다.",
+            "strength": "자기주도적 결정, 창업·기획·교육 분야에서 두각을 나타냅니다.",
+            "weakness": "과한 자기신뢰와 고집으로 타협이 어려울 수 있으며 건강상으로는 간과 소화계 스트레스 주의가 필요합니다.",
+            "advice": "팀워크를 의식하고 유연성을 기르며 규칙적인 운동과 휴식으로 에너지를 조절하세요."
+          },
+          "lucky": {
+            "color": "초록색",
+            "number": "3, 12",
+            "item": "나무 액세리지나 식물",
+            "direction": "남동쪽",
+            "place": "공원, 숲"
+          }
+        },
+        "errors": null,
+        "latency_ms": 12414.017677307129,
+        "fortune_key": "eastern:1988-12-25:0630:M"
+      },
+      "ttl": 31535952
+    },
+    "yeji:tokens:session:e8c8b073": {
+      "type": "list",
+      "value": [
+        "{\"turn\": 1, \"category\": \"CAREER\", \"prompt_tokens\": 2577, \"completion_tokens\": 5460, \"total_tokens\": 8037}"
+      ],
+      "ttl": 31535952
+    },
+    "fortune:test:debug:key": {
+      "type": "string",
+      "value": {
+        "test": "data",
+        "timestamp": "now"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:431904b8": {
+      "type": "string",
+      "value": {
+        "session_id": "431904b8",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T09:30:10.322944"
+      },
+      "ttl": 31535952
+    },
+    "yeji:tokens:session:b0f6b704": {
+      "type": "list",
+      "value": [
+        "{\"turn\": 1, \"category\": \"LOVE\", \"prompt_tokens\": 2622, \"completion_tokens\": 6524, \"total_tokens\": 9146}",
+        "{\"turn\": 2, \"category\": \"LOVE\", \"prompt_tokens\": 2309, \"completion_tokens\": 3957, \"total_tokens\": 6266}"
+      ],
+      "ttl": 31535952
+    },
+    "fortune:eastern:1995-06-20:15:30:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "WATER",
+          "chart": {
+            "summary": "임(壬)일간으로 물 기운이 강하고 지혜롭고 융통성이 뛰어난 사주입니다. 대체로 상황에 따라 유연하게 대처하며 사람과의 소통에서 장점을 보입니다.",
+            "year": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "亥",
+              "ji_code": "HAE",
+              "element_code": "WOOD",
+              "ten_god_code": "SANG_GWAN"
+            },
+            "month": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "未",
+              "ji_code": "MI",
+              "element_code": "WATER",
+              "ten_god_code": "BI_GYEON"
+            },
+            "day": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "寅",
+              "ji_code": "IN",
+              "element_code": "WATER",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "戊",
+              "gan_code": "MU",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "EARTH",
+              "ten_god_code": "PYEON_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "비견(比肩)·식신(食神) 등의 조합이 일부 작용해 동료 의존성과 창조적 표현의 가능성을 동시에 보여줍니다.",
+              "year": {
+                "cheon_gan": "乙",
+                "ji_ji": "亥"
+              },
+              "month": {
+                "cheon_gan": "壬",
+                "ji_ji": "未"
+              },
+              "day": {
+                "cheon_gan": "壬",
+                "ji_ji": "寅"
+              },
+              "hour": {
+                "cheon_gan": "戊",
+                "ji_ji": "申"
+              }
+            },
+            "five_elements": {
+              "summary": "수(水)가 우세하여 감정과 직관, 정보 수집 능력이 탁월합니다. 다만 목(木)과 화(火)의 흐름이 약해 추진력이나 열정은 다소 부족할 수 있습니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 25.0
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 0.0
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 25.0
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 37.5
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기와 음기가 균형을 이루려 노력하지만, 현재는 음기(수)가 더 강한 상태입니다. 내향적이고 신중한 성향이 나타납니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "임인(壬寅)·임미(壬未) 구성으로 인(寅)과 미(未)의 목과 토 기운이 섞여 있어 인간관계에서 조율자 역할을 잘 수행합니다. 무신(戊申) 시주는 실무와 책임감을 더해 줍니다.",
+              "gods_list": [
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 25.0
+                },
+                {
+                  "code": "GANG_JAE",
+                  "label": "겁재",
+                  "percent": 12.5
+                },
+                {
+                  "code": "SIK_SIN",
+                  "label": "식신",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "물의 흐름처럼 상황 적응력이 뛰어나지만, 때로는 결정을 미루거나 추진력이 부족할 수 있습니다.",
+            "strength": "유연한 설득력과 통찰력, 위기관리 능력",
+            "weakness": "지속적인 추진력과 리더십 발휘의 어려움",
+            "advice": "목과 화의 기운을 보강해 행동력을 기르세요. 새로운 프로젝트는 작은 목표부터 밀어붙이는 습관을 들이면 좋습니다."
+          },
+          "lucky": {
+            "color": "초록색",
+            "number": "3, 8",
+            "item": "나무 액세器",
+            "direction": "동쪽",
+            "place": "숲, 공원"
+          }
+        },
+        "errors": null,
+        "latency_ms": 12504.72640991211,
+        "fortune_key": "eastern:1995-06-20:15:30:M"
+      },
+      "ttl": 31535952
+    },
+    "summary:western:1995-07-20:1545": {
+      "type": "string",
+      "value": "[서양 점성술 요약]\n태양 별자리: 게자리\n원소: 열정과 추진력이 강해 목표를 향한 끈기와 실행력이 돋보입니다.\n양태: 실용적이고 현실적인 사고로 계획을 구체적으로 실현하는 능력이 있습니다.\n키워드: 리더십, 열정, 행동력, 갈등\n운세 개요: 당신의 에너지는 현재 최고조에 달해 있어 새로운 시작이나 프로젝트 착수에 매우 유리한 시기입니다.\n조언: 계획을 세워 단계적으로 진행하고, 주변의 의견을 수용하며 조율하는 태도를 유지하세요.",
+      "ttl": 31535952
+    },
+    "fortune:eastern:2000-03-15:1430:M": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "WATER",
+          "chart": {
+            "summary": "임수(壬)가 일간으로, 사주 전체에 수의 기운이 강하게 흐르며 지혜와 유연함이 돋보입니다.",
+            "year": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "METAL",
+              "ten_god_code": "PYEON_IN"
+            },
+            "month": {
+              "gan": "己",
+              "gan_code": "GI",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "EARTH",
+              "ten_god_code": "JEONG_GWAN"
+            },
+            "day": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "辰",
+              "ji_code": "JIN",
+              "element_code": "WATER",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "丁",
+              "gan_code": "JEONG",
+              "ji": "未",
+              "ji_code": "MI",
+              "element_code": "FIRE",
+              "ten_god_code": "JEONG_JAE"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "",
+              "year": {
+                "cheon_gan": "庚",
+                "ji_ji": "辰"
+              },
+              "month": {
+                "cheon_gan": "己",
+                "ji_ji": "辰"
+              },
+              "day": {
+                "cheon_gan": "壬",
+                "ji_ji": "辰"
+              },
+              "hour": {
+                "cheon_gan": "丁",
+                "ji_ji": "未"
+              }
+            },
+            "five_elements": {
+              "summary": "수(水)가 우세하여 직관과 통찰력이 뛰어나지만, 불(火)과의 충돌 시 에너지 소모가 발생합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 0.0
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 62.5
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 12.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 12.5
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "陰陽의 균형은 외부 자극에 민감해 감정 기복이 있을 수 있으나 내면은 안정적입니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "십신 분포 분석입니다.",
+              "gods_list": [
+                {
+                  "code": "PYEON_GWAN",
+                  "label": "편관",
+                  "percent": 37.5
+                },
+                {
+                  "code": "JEONG_GWAN",
+                  "label": "정관",
+                  "percent": 25.0
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "수의 흐름으로 상황을 읽고 조율하는 능력이 탁월하므로 변화와 적응에 강한 운세입니다.",
+            "strength": "문제 해결력과 타협 능력, 정보 수집 및 분석 능력이 장점입니다.",
+            "weakness": "지나친 고립이나 망설임으로 기회를 놓칠 수 있으며 스트레스 받으면 소화·수면 문제 가능성이 있습니다.",
+            "advice": "활동적인 운동과 규칙적인 수면으로 체력 보강하고, 중요한 결정은 신뢰할 만한 동료와 상의하세요."
+          },
+          "lucky": {
+            "color": "검정색·남색 계열",
+            "number": "14, 23",
+            "item": "물 관련 물건(컵, 풍선)",
+            "direction": "북쪽 또는 서쪽",
+            "place": "바다나 호수 근처"
+          }
+        },
+        "errors": null,
+        "latency_ms": 10199.266195297241,
+        "fortune_key": "eastern:2000-03-15:1430:M"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1990-01-15:09:00:F": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "METAL",
+          "chart": {
+            "summary": "경(庚) 일간으로 금의 기운이 강해 결단력과 실행력이 뛰어나며, 경오·경자 배치로 활동적이면서도 내면에는 섬세함이 공존합니다.",
+            "year": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "午",
+              "ji_code": "O",
+              "element_code": "METAL",
+              "ten_god_code": "BI_GYEON"
+            },
+            "month": {
+              "gan": "丁",
+              "gan_code": "JEONG",
+              "ji": "寅",
+              "ji_code": "IN",
+              "element_code": "FIRE",
+              "ten_god_code": "JEONG_GWAN"
+            },
+            "day": {
+              "gan": "庚",
+              "gan_code": "GYEONG",
+              "ji": "子",
+              "ji_code": "JA",
+              "element_code": "METAL",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "辛",
+              "gan_code": "SIN",
+              "ji": "巳",
+              "ji_code": "SA",
+              "element_code": "METAL",
+              "ten_god_code": "GANG_JAE"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "천간 경이 중복되어 자기주장이 강하고 자립심이 높아 리더십을 발휘하기에 적합합니다.",
+              "year": {
+                "cheon_gan": "庚",
+                "ji_ji": "午"
+              },
+              "month": {
+                "cheon_gan": "丁",
+                "ji_ji": "寅"
+              },
+              "day": {
+                "cheon_gan": "庚",
+                "ji_ji": "子"
+              },
+              "hour": {
+                "cheon_gan": "辛",
+                "ji_ji": "巳"
+              }
+            },
+            "five_elements": {
+              "summary": "금(庚)과 화(午·巳)가 충돌하며 오행의 균형은 다소 불안정하지만, 금의 완강함이 장점으로 작용합니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 37.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 0.0
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 37.5
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 12.5
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양(陽)기운이 우세하여 에너지와 추진력은 좋으나 때로는 조급함과 피로를 초래할 수 있습니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "신사·경자 등 십신 구성이 있어 대인관계에서 책임감과 실무 능력을 보여주며 신뢰를 얻기 쉽습니다.",
+              "gods_list": [
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 25.0
+                },
+                {
+                  "code": "JEONG_GWAN",
+                  "label": "정관",
+                  "percent": 25.0
+                },
+                {
+                  "code": "GANG_JAE",
+                  "label": "겁재",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "결단력과 실행력이 돋보이는 사주로 목표 달성 가능성 높지만, 과로와 성급함을 경계해야 합니다.",
+            "strength": "리더십, 문제 해결 능력, 실무 집중력",
+            "weakness": "완고함, 스트레스 누적, 타협의 어려움",
+            "advice": "휴식과 여유를 의식적으로 가져 소통에서 유연함을 연습하세요."
+          },
+          "lucky": {
+            "color": "검정색",
+            "number": "7, 2",
+            "item": "흑철 액세서리",
+            "direction": "북쪽",
+            "place": "공항, 철거"
+          }
+        },
+        "errors": null,
+        "latency_ms": 10795.78447341919,
+        "fortune_key": "eastern:1990-01-15:09:00:F"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:716581d3": {
+      "type": "string",
+      "value": {
+        "session_id": "716581d3",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T09:29:13.812094"
+      },
+      "ttl": 31535952
+    },
+    "yeji:session:9e4144d6": {
+      "type": "string",
+      "value": {
+        "session_id": "9e4144d6",
+        "turn": 0,
+        "user_info": {},
+        "category": "GENERAL",
+        "eastern_fortune_id": null,
+        "western_fortune_id": null,
+        "fortune_source": null,
+        "eastern_result": null,
+        "western_result": null,
+        "eastern_summary": "",
+        "western_summary": "",
+        "debate_history": [],
+        "user_preferences": {},
+        "conversation_themes": [],
+        "user_questions": [],
+        "messages": [],
+        "created_at": "2026-02-03T09:29:18.228164"
+      },
+      "ttl": 31535952
+    },
+    "fortune:eastern:1992-11-25:20:00:F": {
+      "type": "string",
+      "value": {
+        "success": true,
+        "validated": true,
+        "type": "eastern",
+        "data": {
+          "element": "WOOD",
+          "chart": {
+            "summary": "일간(乙)을 중심으로 목(木) 기운이 강조되며, 을목은 섬세하고 융통성 있는 성향을 나타냅니다.",
+            "year": {
+              "gan": "壬",
+              "gan_code": "IM",
+              "ji": "申",
+              "ji_code": "SHIN",
+              "element_code": "WATER",
+              "ten_god_code": "JEONG_IN"
+            },
+            "month": {
+              "gan": "辛",
+              "gan_code": "SIN",
+              "ji": "子",
+              "ji_code": "JA",
+              "element_code": "METAL",
+              "ten_god_code": "PYEON_GWAN"
+            },
+            "day": {
+              "gan": "乙",
+              "gan_code": "EUL",
+              "ji": "丑",
+              "ji_code": "CHUK",
+              "element_code": "WOOD",
+              "ten_god_code": "DAY_MASTER"
+            },
+            "hour": {
+              "gan": "丙",
+              "gan_code": "BYEONG",
+              "ji": "戌",
+              "ji_code": "SUL",
+              "element_code": "FIRE",
+              "ten_god_code": "SANG_GWAN"
+            }
+          },
+          "stats": {
+            "cheongan_jiji": {
+              "summary": "申·子·丑·戌 등의 지지 배치로 현실적인 책임과 결단을 필요로 하는 위치에 있습니다.",
+              "year": {
+                "cheon_gan": "壬",
+                "ji_ji": "申"
+              },
+              "month": {
+                "cheon_gan": "辛",
+                "ji_ji": "子"
+              },
+              "day": {
+                "cheon_gan": "乙",
+                "ji_ji": "丑"
+              },
+              "hour": {
+                "cheon_gan": "丙",
+                "ji_ji": "戌"
+              }
+            },
+            "five_elements": {
+              "summary": "목(木)과 토(土)가 비교적 균형을 이루고 있으며, 화(火)와 금(金)의 기운이 약한 편입니다.",
+              "elements_list": [
+                {
+                  "code": "WOOD",
+                  "label": "목",
+                  "percent": 12.5
+                },
+                {
+                  "code": "FIRE",
+                  "label": "화",
+                  "percent": 12.5
+                },
+                {
+                  "code": "EARTH",
+                  "label": "토",
+                  "percent": 25.0
+                },
+                {
+                  "code": "METAL",
+                  "label": "금",
+                  "percent": 25.0
+                },
+                {
+                  "code": "WATER",
+                  "label": "수",
+                  "percent": 25.0
+                }
+              ]
+            },
+            "yin_yang_ratio": {
+              "summary": "양기(陽氣)가 주를 이루나 음기(陰氣)도 보완되어 있어 전반적으로 온화한 에너지 구조입니다.",
+              "yin": 37.5,
+              "yang": 62.5
+            },
+            "ten_gods": {
+              "summary": "신금(辛)·임수(壬) 등의 천간과 지지의 조합이 관계를 맺어 대인관계에서 신뢰와 실무 능력을 요구합니다.",
+              "gods_list": [
+                {
+                  "code": "PYEON_GWAN",
+                  "label": "편관",
+                  "percent": 25.0
+                },
+                {
+                  "code": "JEONG_IN",
+                  "label": "정인",
+                  "percent": 25.0
+                },
+                {
+                  "code": "BI_GYEON",
+                  "label": "비견",
+                  "percent": 12.5
+                },
+                {
+                  "code": "ETC",
+                  "label": "기타",
+                  "percent": 12.5
+                }
+              ]
+            }
+          },
+          "final_verdict": {
+            "summary": "전체적으로 안정적이며 꾸준히 성장할 수 있는 운세입니다.",
+            "strength": "계획성과 인내심이 강해 장기 프로젝트에 유리합니다.",
+            "weakness": "변화에 대한 저항이나 과도한 자기통제가 걸림돌이 될 수 있습니다.",
+            "advice": "유연성을 키우고 새로운 시도를 적극 수용하면 더 큰 성과를 얻습니다."
+          },
+          "lucky": {
+            "color": "녹색",
+            "number": "2, 7",
+            "item": "초록빛 소품",
+            "direction": "남동쪽",
+            "place": "정원"
+          }
+        },
+        "errors": null,
+        "latency_ms": 10200.99139213562,
+        "fortune_key": "eastern:1992-11-25:20:00:F"
+      },
+      "ttl": 31535952
+    },
+    "summary:western:1988-12-25:0630": {
+      "type": "string",
+      "value": "[서양 점성술 요약]\n태양 별자리: 염소자리\n원소: 불 기운이 강해 추진력과 현실적 실행력이 돋보입니다. 열정과 목표지향성이 뚜렷하여 일상에서 성과를 내기 좋은 시기입니다.\n양태: 완전한 성숙과 실무 능력이 결합되어 있습니다. 계획을 현실로 만드는 힘이 강하며, 책임감 있게 프로젝트를 이끌어갈 수 있는 운세입니다.\n키워드: 리더십, 단호함, 빠른 진행\n운세 개요: 현재 당신은 새로운 시작이나 목표 달성을 위한 강력한 에너지를 가지고 있습니다. 추진력을 발휘하면 가시적인 성과를 거둘 수 있는 길목에 서 있습니다.\n조언: 중요한 결정을 내릴 때는 감정보다 논리를 우선하세요. 체계적으로 계획을 세우고 작은 성공들을 쌓아가는 것이 장기적인 운을 확장하는 핵심입니다.",
+      "ttl": 31535952
+    },
+    "yeji:tokens:stats:CAREER": {
+      "type": "hash",
+      "value": {
+        "total_prompt": "2577",
+        "total_completion": "5460",
+        "call_count": "1"
+      },
+      "ttl": 31535952
+    }
+  }
+}

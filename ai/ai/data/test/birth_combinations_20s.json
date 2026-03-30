@@ -1,0 +1,1732 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-03T23:55:28.424185",
+    "total_combinations": 10,
+    "description": "20대 남녀 출생 조합 테스트 데이터 (1995-2005년생)"
+  },
+  "validation": {
+    "total_count": 10,
+    "success_count": 10,
+    "failure_count": 0,
+    "eastern": {
+      "element_distribution": {
+        "목": 4,
+        "금": 3,
+        "수": 1,
+        "토": 2
+      },
+      "day_master_distribution": {
+        "병": 2,
+        "임": 1,
+        "정": 1,
+        "경": 1,
+        "갑": 1,
+        "기": 2,
+        "무": 1,
+        "을": 1
+      },
+      "element_balance_stats": {
+        "wood": {
+          "min": 0,
+          "max": 37,
+          "avg": 19.7
+        },
+        "fire": {
+          "min": 0,
+          "max": 25,
+          "avg": 13.5
+        },
+        "earth": {
+          "min": 0,
+          "max": 50,
+          "avg": 21.1
+        },
+        "metal": {
+          "min": 12,
+          "max": 50,
+          "avg": 24.7
+        },
+        "water": {
+          "min": 0,
+          "max": 37,
+          "avg": 19.8
+        }
+      }
+    },
+    "western": {
+      "fortune_key_sample": [
+        "western:1995-05-15:13:00",
+        "western:1998-10-22:22:00",
+        "western:2000-03-10:04:00"
+      ],
+      "sun_sign_distribution": {
+        "TAURUS": 2,
+        "LIBRA": 2,
+        "PISCES": 1,
+        "CAPRICORN": 2,
+        "LEO": 1,
+        "CANCER": 2
+      },
+      "element_distribution": {
+        "EARTH": 3,
+        "WATER": 3,
+        "AIR": 2,
+        "FIRE": 2
+      },
+      "modality_distribution": {
+        "FIXED": 3,
+        "CARDINAL": 6,
+        "MUTABLE": 1
+      },
+      "has_element_summary": true,
+      "has_keywords": true,
+      "has_fortune_content": true
+    },
+    "gender_distribution": {
+      "male": 5,
+      "female": 5
+    }
+  },
+  "combinations": [
+    {
+      "name": "남성_1995년생",
+      "gender": "male",
+      "birth_year": 1995,
+      "birth_month": 5,
+      "birth_day": 15,
+      "birth_hour": 13,
+      "birth_date": "1995-05-15",
+      "birth_time": "13:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "을해",
+          "month": "경진",
+          "day": "병인",
+          "hour": "을미"
+        },
+        "day_master": "병",
+        "element_balance": {
+          "wood": 37,
+          "fire": 12,
+          "earth": 25,
+          "metal": 12,
+          "water": 12
+        },
+        "dominant_element": "목",
+        "weak_element": "화"
+      },
+      "western": {
+        "fortune_key": "western:1995-05-15:13:00",
+        "element": "EARTH",
+        "stats": {
+          "main_sign": {
+            "code": "TAURUS",
+            "name": "황소자리"
+          },
+          "element_summary": "흙 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 10.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 10.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 10.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 70.0
+            }
+          ],
+          "modality_summary": "고정궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 30.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 40.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 30.0
+            }
+          ],
+          "keywords_summary": "흙 원소 기반의 고정궁 성향",
+          "keywords": [
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.8
+            },
+            {
+              "code": "PRACTICALITY",
+              "label": "실용성",
+              "weight": 0.7
+            },
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "황소자리 태양과 함께 흙 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "흙 원소의 영향으로 안정성 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "고정궁 양태로 인해 안정성 특성이 두드러집니다."
+            }
+          ],
+          "advice": "황소자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "초록",
+          "number": "0",
+          "item": "목걸이",
+          "place": "산"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "TAURUS",
+            "label": "황소자리",
+            "start": [
+              4,
+              20
+            ],
+            "end": [
+              5,
+              20
+            ],
+            "element": "EARTH",
+            "modality": "FIXED"
+          },
+          "moon_sign": {
+            "code": "VIRGO",
+            "label": "처녀자리",
+            "start": [
+              8,
+              23
+            ],
+            "end": [
+              9,
+              22
+            ],
+            "element": "EARTH",
+            "modality": "MUTABLE"
+          },
+          "rising_sign": {
+            "code": "CANCER",
+            "label": "게자리",
+            "start": [
+              6,
+              21
+            ],
+            "end": [
+              7,
+              22
+            ],
+            "element": "WATER",
+            "modality": "CARDINAL"
+          },
+          "dominant_element": "EARTH",
+          "dominant_modality": "FIXED"
+        }
+      }
+    },
+    {
+      "name": "남성_1998년생",
+      "gender": "male",
+      "birth_year": 1998,
+      "birth_month": 10,
+      "birth_day": 22,
+      "birth_hour": 22,
+      "birth_date": "1998-10-22",
+      "birth_time": "22:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "무인",
+          "month": "신유",
+          "day": "임술",
+          "hour": "신해"
+        },
+        "day_master": "임",
+        "element_balance": {
+          "wood": 12,
+          "fire": 0,
+          "earth": 25,
+          "metal": 37,
+          "water": 25
+        },
+        "dominant_element": "금",
+        "weak_element": "화"
+      },
+      "western": {
+        "fortune_key": "western:1998-10-22:22:00",
+        "element": "EARTH",
+        "stats": {
+          "main_sign": {
+            "code": "LIBRA",
+            "name": "천칭자리"
+          },
+          "element_summary": "흙 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 10.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 10.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 30.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 50.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 60.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 20.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 20.0
+            }
+          ],
+          "keywords_summary": "흙 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.8
+            },
+            {
+              "code": "PRACTICALITY",
+              "label": "실용성",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "천칭자리 태양과 함께 흙 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "흙 원소의 영향으로 안정성 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "천칭자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "초록",
+          "number": "2",
+          "item": "목걸이",
+          "place": "산"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "LIBRA",
+            "label": "천칭자리",
+            "start": [
+              9,
+              23
+            ],
+            "end": [
+              10,
+              22
+            ],
+            "element": "AIR",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "CAPRICORN",
+            "label": "염소자리",
+            "start": [
+              1,
+              1
+            ],
+            "end": [
+              1,
+              19
+            ],
+            "element": "EARTH",
+            "modality": "CARDINAL"
+          },
+          "rising_sign": {
+            "code": "SAGITTARIUS",
+            "label": "사수자리",
+            "start": [
+              11,
+              22
+            ],
+            "end": [
+              12,
+              21
+            ],
+            "element": "FIRE",
+            "modality": "MUTABLE"
+          },
+          "dominant_element": "EARTH",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    },
+    {
+      "name": "남성_2000년생",
+      "gender": "male",
+      "birth_year": 2000,
+      "birth_month": 3,
+      "birth_day": 10,
+      "birth_hour": 4,
+      "birth_date": "2000-03-10",
+      "birth_time": "04:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "경진",
+          "month": "무인",
+          "day": "정해",
+          "hour": "임인"
+        },
+        "day_master": "정",
+        "element_balance": {
+          "wood": 25,
+          "fire": 12,
+          "earth": 25,
+          "metal": 12,
+          "water": 25
+        },
+        "dominant_element": "목",
+        "weak_element": "화"
+      },
+      "western": {
+        "fortune_key": "western:2000-03-10:04:00",
+        "element": "WATER",
+        "stats": {
+          "main_sign": {
+            "code": "PISCES",
+            "name": "물고기자리"
+          },
+          "element_summary": "물 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 10.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 50.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 40.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 0.0
+            }
+          ],
+          "modality_summary": "변통궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 10.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 20.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 70.0
+            }
+          ],
+          "keywords_summary": "물 원소 기반의 변통궁 성향",
+          "keywords": [
+            {
+              "code": "EMPATHY",
+              "label": "공감",
+              "weight": 0.8
+            },
+            {
+              "code": "INTUITION",
+              "label": "직관",
+              "weight": 0.7
+            },
+            {
+              "code": "ADAPTABILITY",
+              "label": "적응력",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "물고기자리 태양과 함께 물 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "물 원소의 영향으로 공감 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "변통궁 양태로 인해 적응력 특성이 두드러집니다."
+            }
+          ],
+          "advice": "물고기자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "파랑",
+          "number": "3",
+          "item": "목걸이",
+          "place": "바다"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "PISCES",
+            "label": "물고기자리",
+            "start": [
+              2,
+              19
+            ],
+            "end": [
+              3,
+              20
+            ],
+            "element": "WATER",
+            "modality": "MUTABLE"
+          },
+          "moon_sign": {
+            "code": "GEMINI",
+            "label": "쌍둥이자리",
+            "start": [
+              5,
+              21
+            ],
+            "end": [
+              6,
+              20
+            ],
+            "element": "AIR",
+            "modality": "MUTABLE"
+          },
+          "rising_sign": {
+            "code": "PISCES",
+            "label": "물고기자리",
+            "start": [
+              2,
+              19
+            ],
+            "end": [
+              3,
+              20
+            ],
+            "element": "WATER",
+            "modality": "MUTABLE"
+          },
+          "dominant_element": "WATER",
+          "dominant_modality": "MUTABLE"
+        }
+      }
+    },
+    {
+      "name": "남성_2002년생",
+      "gender": "male",
+      "birth_year": 2002,
+      "birth_month": 12,
+      "birth_day": 28,
+      "birth_hour": 21,
+      "birth_date": "2002-12-28",
+      "birth_time": "21:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "임오",
+          "month": "신해",
+          "day": "경인",
+          "hour": "정해"
+        },
+        "day_master": "경",
+        "element_balance": {
+          "wood": 12,
+          "fire": 25,
+          "earth": 0,
+          "metal": 25,
+          "water": 37
+        },
+        "dominant_element": "수",
+        "weak_element": "토"
+      },
+      "western": {
+        "fortune_key": "western:2002-12-28:21:00",
+        "element": "AIR",
+        "stats": {
+          "main_sign": {
+            "code": "CAPRICORN",
+            "name": "염소자리"
+          },
+          "element_summary": "공기 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 20.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 20.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 30.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 30.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 50.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 40.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 10.0
+            }
+          ],
+          "keywords_summary": "공기 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "COMMUNICATION",
+              "label": "소통",
+              "weight": 0.8
+            },
+            {
+              "code": "CURIOSITY",
+              "label": "호기심",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "염소자리 태양과 함께 공기 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "공기 원소의 영향으로 소통 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "염소자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "노랑",
+          "number": "0",
+          "item": "목걸이",
+          "place": "도시"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "CAPRICORN",
+            "label": "염소자리",
+            "start": [
+              12,
+              22
+            ],
+            "end": [
+              12,
+              31
+            ],
+            "element": "EARTH",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "AQUARIUS",
+            "label": "물병자리",
+            "start": [
+              1,
+              20
+            ],
+            "end": [
+              2,
+              18
+            ],
+            "element": "AIR",
+            "modality": "FIXED"
+          },
+          "rising_sign": {
+            "code": "SCORPIO",
+            "label": "전갈자리",
+            "start": [
+              10,
+              23
+            ],
+            "end": [
+              11,
+              21
+            ],
+            "element": "WATER",
+            "modality": "FIXED"
+          },
+          "dominant_element": "AIR",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    },
+    {
+      "name": "남성_2005년생",
+      "gender": "male",
+      "birth_year": 2005,
+      "birth_month": 8,
+      "birth_day": 8,
+      "birth_hour": 15,
+      "birth_date": "2005-08-08",
+      "birth_time": "15:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "을유",
+          "month": "계미",
+          "day": "갑신",
+          "hour": "임신"
+        },
+        "day_master": "갑",
+        "element_balance": {
+          "wood": 25,
+          "fire": 0,
+          "earth": 12,
+          "metal": 37,
+          "water": 25
+        },
+        "dominant_element": "금",
+        "weak_element": "화"
+      },
+      "western": {
+        "fortune_key": "western:2005-08-08:15:00",
+        "element": "FIRE",
+        "stats": {
+          "main_sign": {
+            "code": "LEO",
+            "name": "사자자리"
+          },
+          "element_summary": "불 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 40.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 0.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 30.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 30.0
+            }
+          ],
+          "modality_summary": "고정궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 10.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 50.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 40.0
+            }
+          ],
+          "keywords_summary": "불 원소 기반의 고정궁 성향",
+          "keywords": [
+            {
+              "code": "PASSION",
+              "label": "열정",
+              "weight": 0.8
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.7
+            },
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "사자자리 태양과 함께 불 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "불 원소의 영향으로 열정 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "고정궁 양태로 인해 안정성 특성이 두드러집니다."
+            }
+          ],
+          "advice": "사자자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "빨강",
+          "number": "6",
+          "item": "반지",
+          "place": "도시"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "LEO",
+            "label": "사자자리",
+            "start": [
+              7,
+              23
+            ],
+            "end": [
+              8,
+              22
+            ],
+            "element": "FIRE",
+            "modality": "FIXED"
+          },
+          "moon_sign": {
+            "code": "VIRGO",
+            "label": "처녀자리",
+            "start": [
+              8,
+              23
+            ],
+            "end": [
+              9,
+              22
+            ],
+            "element": "EARTH",
+            "modality": "MUTABLE"
+          },
+          "rising_sign": {
+            "code": "LEO",
+            "label": "사자자리",
+            "start": [
+              7,
+              23
+            ],
+            "end": [
+              8,
+              22
+            ],
+            "element": "FIRE",
+            "modality": "FIXED"
+          },
+          "dominant_element": "FIRE",
+          "dominant_modality": "FIXED"
+        }
+      }
+    },
+    {
+      "name": "여성_1995년생",
+      "gender": "female",
+      "birth_year": 1995,
+      "birth_month": 5,
+      "birth_day": 18,
+      "birth_hour": 15,
+      "birth_date": "1995-05-18",
+      "birth_time": "15:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "을해",
+          "month": "경진",
+          "day": "기사",
+          "hour": "임신"
+        },
+        "day_master": "기",
+        "element_balance": {
+          "wood": 12,
+          "fire": 12,
+          "earth": 25,
+          "metal": 25,
+          "water": 25
+        },
+        "dominant_element": "토",
+        "weak_element": "목"
+      },
+      "western": {
+        "fortune_key": "western:1995-05-18:15:00",
+        "element": "FIRE",
+        "stats": {
+          "main_sign": {
+            "code": "TAURUS",
+            "name": "황소자리"
+          },
+          "element_summary": "불 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 50.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 10.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 10.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 30.0
+            }
+          ],
+          "modality_summary": "고정궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 10.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 80.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 10.0
+            }
+          ],
+          "keywords_summary": "불 원소 기반의 고정궁 성향",
+          "keywords": [
+            {
+              "code": "PASSION",
+              "label": "열정",
+              "weight": 0.8
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.7
+            },
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "황소자리 태양과 함께 불 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "불 원소의 영향으로 열정 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "고정궁 양태로 인해 안정성 특성이 두드러집니다."
+            }
+          ],
+          "advice": "황소자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "빨강",
+          "number": "3",
+          "item": "반지",
+          "place": "도시"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "TAURUS",
+            "label": "황소자리",
+            "start": [
+              4,
+              20
+            ],
+            "end": [
+              5,
+              20
+            ],
+            "element": "EARTH",
+            "modality": "FIXED"
+          },
+          "moon_sign": {
+            "code": "LEO",
+            "label": "사자자리",
+            "start": [
+              7,
+              23
+            ],
+            "end": [
+              8,
+              22
+            ],
+            "element": "FIRE",
+            "modality": "FIXED"
+          },
+          "rising_sign": {
+            "code": "LEO",
+            "label": "사자자리",
+            "start": [
+              7,
+              23
+            ],
+            "end": [
+              8,
+              22
+            ],
+            "element": "FIRE",
+            "modality": "FIXED"
+          },
+          "dominant_element": "FIRE",
+          "dominant_modality": "FIXED"
+        }
+      }
+    },
+    {
+      "name": "여성_1998년생",
+      "gender": "female",
+      "birth_year": 1998,
+      "birth_month": 10,
+      "birth_day": 18,
+      "birth_hour": 18,
+      "birth_date": "1998-10-18",
+      "birth_time": "18:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "무인",
+          "month": "신유",
+          "day": "무오",
+          "hour": "신유"
+        },
+        "day_master": "무",
+        "element_balance": {
+          "wood": 12,
+          "fire": 12,
+          "earth": 25,
+          "metal": 50,
+          "water": 0
+        },
+        "dominant_element": "금",
+        "weak_element": "수"
+      },
+      "western": {
+        "fortune_key": "western:1998-10-18:18:00",
+        "element": "AIR",
+        "stats": {
+          "main_sign": {
+            "code": "LIBRA",
+            "name": "천칭자리"
+          },
+          "element_summary": "공기 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 0.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 10.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 60.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 30.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 60.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 30.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 10.0
+            }
+          ],
+          "keywords_summary": "공기 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "COMMUNICATION",
+              "label": "소통",
+              "weight": 0.8
+            },
+            {
+              "code": "CURIOSITY",
+              "label": "호기심",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "천칭자리 태양과 함께 공기 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "공기 원소의 영향으로 소통 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "천칭자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "노랑",
+          "number": "8",
+          "item": "목걸이",
+          "place": "도시"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "LIBRA",
+            "label": "천칭자리",
+            "start": [
+              9,
+              23
+            ],
+            "end": [
+              10,
+              22
+            ],
+            "element": "AIR",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "CAPRICORN",
+            "label": "염소자리",
+            "start": [
+              1,
+              1
+            ],
+            "end": [
+              1,
+              19
+            ],
+            "element": "EARTH",
+            "modality": "CARDINAL"
+          },
+          "rising_sign": {
+            "code": "LIBRA",
+            "label": "천칭자리",
+            "start": [
+              9,
+              23
+            ],
+            "end": [
+              10,
+              22
+            ],
+            "element": "AIR",
+            "modality": "CARDINAL"
+          },
+          "dominant_element": "AIR",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    },
+    {
+      "name": "여성_2000년생",
+      "gender": "female",
+      "birth_year": 2000,
+      "birth_month": 7,
+      "birth_day": 7,
+      "birth_hour": 20,
+      "birth_date": "2000-07-07",
+      "birth_time": "20:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "경진",
+          "month": "임오",
+          "day": "병술",
+          "hour": "무술"
+        },
+        "day_master": "병",
+        "element_balance": {
+          "wood": 0,
+          "fire": 25,
+          "earth": 50,
+          "metal": 12,
+          "water": 12
+        },
+        "dominant_element": "토",
+        "weak_element": "목"
+      },
+      "western": {
+        "fortune_key": "western:2000-07-07:20:00",
+        "element": "WATER",
+        "stats": {
+          "main_sign": {
+            "code": "CANCER",
+            "name": "게자리"
+          },
+          "element_summary": "물 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 0.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 60.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 20.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 20.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 40.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 40.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 20.0
+            }
+          ],
+          "keywords_summary": "물 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "EMPATHY",
+              "label": "공감",
+              "weight": 0.8
+            },
+            {
+              "code": "INTUITION",
+              "label": "직관",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "게자리 태양과 함께 물 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "물 원소의 영향으로 공감 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "게자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "파랑",
+          "number": "4",
+          "item": "목걸이",
+          "place": "바다"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "CANCER",
+            "label": "게자리",
+            "start": [
+              6,
+              21
+            ],
+            "end": [
+              7,
+              22
+            ],
+            "element": "WATER",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "SCORPIO",
+            "label": "전갈자리",
+            "start": [
+              10,
+              23
+            ],
+            "end": [
+              11,
+              21
+            ],
+            "element": "WATER",
+            "modality": "FIXED"
+          },
+          "rising_sign": {
+            "code": "SCORPIO",
+            "label": "전갈자리",
+            "start": [
+              10,
+              23
+            ],
+            "end": [
+              11,
+              21
+            ],
+            "element": "WATER",
+            "modality": "FIXED"
+          },
+          "dominant_element": "WATER",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    },
+    {
+      "name": "여성_2002년생",
+      "gender": "female",
+      "birth_year": 2002,
+      "birth_month": 6,
+      "birth_day": 26,
+      "birth_hour": 6,
+      "birth_date": "2002-06-26",
+      "birth_time": "06:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "임오",
+          "month": "을사",
+          "day": "을유",
+          "hour": "기묘"
+        },
+        "day_master": "을",
+        "element_balance": {
+          "wood": 37,
+          "fire": 25,
+          "earth": 12,
+          "metal": 12,
+          "water": 12
+        },
+        "dominant_element": "목",
+        "weak_element": "토"
+      },
+      "western": {
+        "fortune_key": "western:2002-06-26:06:00",
+        "element": "WATER",
+        "stats": {
+          "main_sign": {
+            "code": "CANCER",
+            "name": "게자리"
+          },
+          "element_summary": "물 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 10.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 40.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 30.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 20.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 60.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 30.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 10.0
+            }
+          ],
+          "keywords_summary": "물 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "EMPATHY",
+              "label": "공감",
+              "weight": 0.8
+            },
+            {
+              "code": "INTUITION",
+              "label": "직관",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "게자리 태양과 함께 물 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "물 원소의 영향으로 공감 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "게자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "파랑",
+          "number": "2",
+          "item": "목걸이",
+          "place": "바다"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "CANCER",
+            "label": "게자리",
+            "start": [
+              6,
+              21
+            ],
+            "end": [
+              7,
+              22
+            ],
+            "element": "WATER",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "LIBRA",
+            "label": "천칭자리",
+            "start": [
+              9,
+              23
+            ],
+            "end": [
+              10,
+              22
+            ],
+            "element": "AIR",
+            "modality": "CARDINAL"
+          },
+          "rising_sign": {
+            "code": "ARIES",
+            "label": "양자리",
+            "start": [
+              3,
+              21
+            ],
+            "end": [
+              4,
+              19
+            ],
+            "element": "FIRE",
+            "modality": "CARDINAL"
+          },
+          "dominant_element": "WATER",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    },
+    {
+      "name": "여성_2005년생",
+      "gender": "female",
+      "birth_year": 2005,
+      "birth_month": 1,
+      "birth_day": 5,
+      "birth_hour": 21,
+      "birth_date": "2005-01-05",
+      "birth_time": "21:00",
+      "saju_success": true,
+      "eastern": {
+        "four_pillars": {
+          "year": "을유",
+          "month": "병자",
+          "day": "기유",
+          "hour": "을해"
+        },
+        "day_master": "기",
+        "element_balance": {
+          "wood": 25,
+          "fire": 12,
+          "earth": 12,
+          "metal": 25,
+          "water": 25
+        },
+        "dominant_element": "목",
+        "weak_element": "화"
+      },
+      "western": {
+        "fortune_key": "western:2005-01-05:21:00",
+        "element": "EARTH",
+        "stats": {
+          "main_sign": {
+            "code": "CAPRICORN",
+            "name": "염소자리"
+          },
+          "element_summary": "흙 원소가 강합니다",
+          "element_4_distribution": [
+            {
+              "code": "FIRE",
+              "label": "불",
+              "percent": 30.0
+            },
+            {
+              "code": "WATER",
+              "label": "물",
+              "percent": 30.0
+            },
+            {
+              "code": "AIR",
+              "label": "공기",
+              "percent": 0.0
+            },
+            {
+              "code": "EARTH",
+              "label": "흙",
+              "percent": 40.0
+            }
+          ],
+          "modality_summary": "활동궁이 우세합니다",
+          "modality_3_distribution": [
+            {
+              "code": "CARDINAL",
+              "label": "활동궁",
+              "percent": 40.0
+            },
+            {
+              "code": "FIXED",
+              "label": "고정궁",
+              "percent": 20.0
+            },
+            {
+              "code": "MUTABLE",
+              "label": "변통궁",
+              "percent": 40.0
+            }
+          ],
+          "keywords_summary": "흙 원소 기반의 활동궁 성향",
+          "keywords": [
+            {
+              "code": "STABILITY",
+              "label": "안정성",
+              "weight": 0.8
+            },
+            {
+              "code": "PRACTICALITY",
+              "label": "실용성",
+              "weight": 0.7
+            },
+            {
+              "code": "LEADERSHIP",
+              "label": "리더십",
+              "weight": 0.6
+            }
+          ]
+        },
+        "fortune_content": {
+          "overview": "염소자리 태양과 함께 흙 원소가 지배하는 운세입니다.",
+          "detailed_analysis": [
+            {
+              "title": "성격 분석",
+              "content": "흙 원소의 영향으로 안정성 성향이 강합니다."
+            },
+            {
+              "title": "운세 해석",
+              "content": "활동궁 양태로 인해 리더십 특성이 두드러집니다."
+            }
+          ],
+          "advice": "염소자리의 강점을 활용하세요."
+        },
+        "lucky": {
+          "color": "초록",
+          "number": "6",
+          "item": "목걸이",
+          "place": "산"
+        },
+        "_legacy": {
+          "sun_sign": {
+            "code": "CAPRICORN",
+            "label": "염소자리",
+            "start": [
+              1,
+              1
+            ],
+            "end": [
+              1,
+              19
+            ],
+            "element": "EARTH",
+            "modality": "CARDINAL"
+          },
+          "moon_sign": {
+            "code": "PISCES",
+            "label": "물고기자리",
+            "start": [
+              2,
+              19
+            ],
+            "end": [
+              3,
+              20
+            ],
+            "element": "WATER",
+            "modality": "MUTABLE"
+          },
+          "rising_sign": {
+            "code": "SCORPIO",
+            "label": "전갈자리",
+            "start": [
+              10,
+              23
+            ],
+            "end": [
+              11,
+              21
+            ],
+            "element": "WATER",
+            "modality": "FIXED"
+          },
+          "dominant_element": "EARTH",
+          "dominant_modality": "CARDINAL"
+        }
+      }
+    }
+  ]
+}

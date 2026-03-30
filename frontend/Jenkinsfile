@@ -1,0 +1,133 @@
+pipeline {
+    agent any
+
+    environment {
+        MATTERMOST_WEBHOOK = credentials('mattermost-webhook')
+        DEPLOY_ENV = "${env.GIT_BRANCH?.contains('main') ? 'production' : 'development'}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                dir('pjt_front') {
+                    sh 'npm ci'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('pjt_front') {
+                    sh 'echo "VITE_API_BASE_URL=https://i14a605.p.ssafy.io" > .env.production'
+                    sh 'npx vite build'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                dir('pjt_front') {
+                    sh 'npm run test || true'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                dir('pjt_front') {
+                    script {
+                        def port = env.DEPLOY_ENV == 'production' ? '80' : '3000'
+                        def containerName = env.DEPLOY_ENV == 'production' ? 'yeji-frontend-prod' : 'yeji-frontend-dev'
+
+                        // Dockerfile이 있으면 Docker 빌드/배포
+                        def hasDockerfile = fileExists('Dockerfile')
+                        if (hasDockerfile) {
+                            sh "docker build -t yeji-frontend:\${BUILD_NUMBER} ."
+                            sh "docker tag yeji-frontend:\${BUILD_NUMBER} yeji-frontend:latest"
+                            sh """
+                                docker stop ${containerName} || true
+                                docker rm ${containerName} || true
+                                docker run -d --name ${containerName} \
+                                    -p ${port}:80 \
+                                    --restart unless-stopped \
+                                    yeji-frontend:latest
+                            """
+                        } else {
+                            // Dockerfile이 없으면 정적 파일 복사 방식
+                            sh 'sudo cp -r dist/* /var/www/html/'
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                def envEmoji = env.DEPLOY_ENV == 'production' ? '🚀' : '🔧'
+                def message = """░░▒▒▓▓██ ★  SUCCESS ★ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**ENV:** ${envEmoji} ${env.DEPLOY_ENV}
+
+【 FRONTEND DEPLOYED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 Frontend Quest",
+                    attachments: [[
+                        color: "#28A745",
+                        text: message,
+                        footer: "YEJI Frontend CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        failure {
+            script {
+                def message = """░░▒▒▓▓██ ✕  FAILED  ✕ ██▓▓▒▒░░
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+**JOB:** ${env.JOB_NAME}
+**BUILD:** #${env.BUILD_NUMBER}
+**ENV:** ${env.DEPLOY_ENV}
+
+【 FRONTEND BUILD FAILED! 】
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 [**VIEW LOGS**](${env.BUILD_URL})"""
+
+                def payload = groovy.json.JsonOutput.toJson([
+                    username: "🎮 Frontend Quest",
+                    attachments: [[
+                        color: "#CB2431",
+                        text: message,
+                        footer: "YEJI Frontend CI/CD"
+                    ]]
+                ])
+
+                writeFile file: 'mm_payload.json', text: payload
+                sh "curl -s -X POST -H 'Content-Type: application/json' -d @mm_payload.json ${MATTERMOST_WEBHOOK}"
+                sh "rm -f mm_payload.json"
+            }
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+  "$comment": "Turn 1 샘플 01: 동-서-동 순서 (대결 케이스 - 서로 다른 해석으로 티키타카)",
+  "session_id": "sess_sample_001",
+  "turn_id": 1,
+  "bubbles": [
+    {
+      "bubble_id": "b001",
+      "speaker": "EAST",
+      "text": "귀하의 사주를 살펴보았소. 병화(丙火) 일간이시구려. 동양의 지혜로 보건대, 불처럼 뜨거운 열정이 있으나 쉬이 타오르고 쉬이 사그라드는 기운이오.",
+      "emotion": {
+        "code": "THOUGHTFUL",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T10:30:00Z"
+    },
+    {
+      "bubble_id": "b002",
+      "speaker": "WEST",
+      "text": "잠깐요, 소이설! 양자리 태양으로 보면 오히려 그 열정이 리더십으로 빛나는 거예요. 쉽게 사그라든다뇨? 별들은 오히려 끊임없이 타오르는 에너지를 보여주는데요!",
+      "emotion": {
+        "code": "PLAYFUL",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T10:30:05Z"
+    },
+    {
+      "bubble_id": "b003",
+      "speaker": "EAST",
+      "text": "허, 그 점성술이란 것은 표면만 보는 게 아니오? 사주는 깊은 내면의 기운을 읽는 것이라오. 하지만... 스텔라 말대로 에너지가 강한 것은 틀림없구려.",
+      "emotion": {
+        "code": "CONFIDENT",
+        "intensity": 0.6
+      },
+      "timestamp": "2026-01-30T10:30:10Z"
+    }
+  ],
+  "turn_end": {
+    "type": "await_user_input",
+    "user_prompt": {
+      "prompt_id": "p001",
+      "text": "누구의 해석이 더 마음에 드시오? 아니면 더 궁금한 주제를 골라보시오.",
+      "input_schema": {
+        "type": "choice",
+        "options": [
+          { "value": "east_win", "label": "소이설 해석이 맞는 것 같아요" },
+          { "value": "west_win", "label": "스텔라 해석이 더 와닿아요" },
+          { "value": "love", "label": "연애운이 궁금해요" },
+          { "value": "wealth", "label": "금전운이 궁금해요" }
+        ]
+      }
+    }
+  },
+  "meta": {
+    "current_turn": 1,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "total"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "$comment": "Turn 3 완료 샘플 01: 대결 마무리 + 업그레이드 훅 활성화 (Free 사용자)",
+  "session_id": "sess_sample_001",
+  "turn_id": 3,
+  "bubbles": [
+    {
+      "bubble_id": "b007",
+      "speaker": "WEST",
+      "text": "오늘 소이설이랑 많이 다투었지만... 당신의 연애운, 저는 믿어요! 별들이 응원하고 있으니까 자신감 가지세요!",
+      "emotion": {
+        "code": "WARM",
+        "intensity": 0.8
+      },
+      "user_input_ref": "p004",
+      "timestamp": "2026-01-30T10:32:00Z"
+    },
+    {
+      "bubble_id": "b008",
+      "speaker": "EAST",
+      "text": "흥, 스텔라와 의견이 달랐지만 결국 귀하의 앞날을 바라는 마음은 같소. 동양의 지혜를 기억하시오. 때를 기다리되, 준비는 게을리 하지 마시오.",
+      "emotion": {
+        "code": "ENCOURAGING",
+        "intensity": 0.7
+      },
+      "timestamp": "2026-01-30T10:32:05Z"
+    }
+  ],
+  "turn_end": {
+    "type": "completed",
+    "closure": {
+      "summary": [
+        {
+          "speaker": "EAST",
+          "key_point": "도화살로 매력이 있으나 신중함 필요, 수성 역행 기간 주의"
+        },
+        {
+          "speaker": "WEST",
+          "key_point": "금성 위치가 좋아 로맨틱한 시기, 새로운 만남 가능성 높음"
+        }
+      ],
+      "next_steps": [
+        "금전운 대결 보기",
+        "오늘의 행운 아이템 확인",
+        "친구에게 공유하기"
+      ],
+      "upgrade_hook": {
+        "enabled": true,
+        "message": "소이설과 스텔라의 더 치열한 대결을 보고 싶으시다면? 프리미엄으로 무제한 토론이 가능해요!",
+        "cta_label": "프리미엄 시작하기",
+        "cta_action": "upgrade_premium"
+      },
+      "end_marker": "END_SESSION"
+    }
+  },
+  "meta": {
+    "current_turn": 3,
+    "base_turns": 3,
+    "max_turns": 10,
+    "is_premium": false,
+    "category": "love"
+  }
+}

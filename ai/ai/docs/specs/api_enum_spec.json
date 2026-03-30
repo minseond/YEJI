@@ -1,0 +1,584 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "updated": "2026-01-27",
+
+  "enums": {
+    "common": {
+      "ElementCode": {
+        "description": "오행 코드 (동양 사주/서양 점성술 공통)",
+        "values": [
+          { "code": "WOOD", "label": "목", "hanja": "木", "description": "성장, 시작, 봄" },
+          { "code": "FIRE", "label": "화", "hanja": "火", "description": "열정, 확장, 여름" },
+          { "code": "EARTH", "label": "토", "hanja": "土", "description": "안정, 중심, 환절기" },
+          { "code": "METAL", "label": "금", "hanja": "金", "description": "결실, 수렴, 가을" },
+          { "code": "WATER", "label": "수", "hanja": "水", "description": "지혜, 저장, 겨울" }
+        ]
+      },
+      "YinYangBalance": {
+        "description": "음양 균형 상태",
+        "values": [
+          { "code": "STRONG_YIN", "label": "음 우세", "condition": "음 > 65%" },
+          { "code": "SLIGHT_YIN", "label": "약간 음", "condition": "음 55-65%" },
+          { "code": "BALANCED", "label": "균형", "condition": "45-55%" },
+          { "code": "SLIGHT_YANG", "label": "약간 양", "condition": "양 55-65%" },
+          { "code": "STRONG_YANG", "label": "양 우세", "condition": "양 > 65%" }
+        ]
+      },
+      "CommonBadge": {
+        "description": "공통 UI 배지",
+        "values": [
+          { "code": "WOOD_STRONG", "label": "목 강함" },
+          { "code": "WOOD_WEAK", "label": "목 약함" },
+          { "code": "FIRE_STRONG", "label": "화 강함" },
+          { "code": "FIRE_WEAK", "label": "화 약함" },
+          { "code": "EARTH_STRONG", "label": "토 강함" },
+          { "code": "EARTH_WEAK", "label": "토 약함" },
+          { "code": "METAL_STRONG", "label": "금 강함" },
+          { "code": "METAL_WEAK", "label": "금 약함" },
+          { "code": "WATER_STRONG", "label": "수 강함" },
+          { "code": "WATER_WEAK", "label": "수 약함" },
+          { "code": "YIN_DOMINANT", "label": "음 우세" },
+          { "code": "YANG_DOMINANT", "label": "양 우세" },
+          { "code": "YIN_YANG_BALANCED", "label": "음양 균형" },
+          { "code": "ACTION_ORIENTED", "label": "행동파" },
+          { "code": "THOUGHT_ORIENTED", "label": "사고파" },
+          { "code": "EMOTION_ORIENTED", "label": "감성파" },
+          { "code": "SOCIAL_ORIENTED", "label": "사회파" },
+          { "code": "CREATIVE_ORIENTED", "label": "창의파" }
+        ]
+      },
+      "ChartType": {
+        "description": "추천 차트 타입",
+        "values": [
+          { "code": "PIE", "label": "원형 차트", "usage": "오행 분포" },
+          { "code": "RADAR", "label": "레이더 차트", "usage": "십신/행성 영향력" },
+          { "code": "BAR", "label": "막대 차트", "usage": "음양 비율" },
+          { "code": "WHEEL", "label": "휠 차트", "usage": "사주 팔자 / 출생 차트" },
+          { "code": "TIMELINE", "label": "타임라인", "usage": "대운/운세 흐름" }
+        ]
+      },
+      "DirectionCode": {
+        "description": "방위 코드",
+        "values": [
+          { "code": "N", "label": "북" },
+          { "code": "NE", "label": "북동" },
+          { "code": "E", "label": "동" },
+          { "code": "SE", "label": "남동" },
+          { "code": "S", "label": "남" },
+          { "code": "SW", "label": "남서" },
+          { "code": "W", "label": "서" },
+          { "code": "NW", "label": "북서" }
+        ]
+      },
+      "DayCode": {
+        "description": "요일 코드",
+        "values": [
+          { "code": "MON", "label": "월요일" },
+          { "code": "TUE", "label": "화요일" },
+          { "code": "WED", "label": "수요일" },
+          { "code": "THU", "label": "목요일" },
+          { "code": "FRI", "label": "금요일" },
+          { "code": "SAT", "label": "토요일" },
+          { "code": "SUN", "label": "일요일" }
+        ]
+      }
+    },
+
+    "eastern": {
+      "CheonGanCode": {
+        "description": "천간 (10개)",
+        "values": [
+          { "code": "GAP", "label": "갑", "hanja": "甲", "element": "WOOD", "yinyang": "YANG" },
+          { "code": "EUL", "label": "을", "hanja": "乙", "element": "WOOD", "yinyang": "YIN" },
+          { "code": "BYEONG", "label": "병", "hanja": "丙", "element": "FIRE", "yinyang": "YANG" },
+          { "code": "JEONG", "label": "정", "hanja": "丁", "element": "FIRE", "yinyang": "YIN" },
+          { "code": "MU", "label": "무", "hanja": "戊", "element": "EARTH", "yinyang": "YANG" },
+          { "code": "GI", "label": "기", "hanja": "己", "element": "EARTH", "yinyang": "YIN" },
+          { "code": "GYEONG", "label": "경", "hanja": "庚", "element": "METAL", "yinyang": "YANG" },
+          { "code": "SIN", "label": "신", "hanja": "辛", "element": "METAL", "yinyang": "YIN" },
+          { "code": "IM", "label": "임", "hanja": "壬", "element": "WATER", "yinyang": "YANG" },
+          { "code": "GYE", "label": "계", "hanja": "癸", "element": "WATER", "yinyang": "YIN" }
+        ]
+      },
+      "JiJiCode": {
+        "description": "지지 (12개)",
+        "values": [
+          { "code": "JA", "label": "자", "hanja": "子", "element": "WATER", "yinyang": "YANG", "zodiac": "쥐" },
+          { "code": "CHUK", "label": "축", "hanja": "丑", "element": "EARTH", "yinyang": "YIN", "zodiac": "소" },
+          { "code": "IN", "label": "인", "hanja": "寅", "element": "WOOD", "yinyang": "YANG", "zodiac": "호랑이" },
+          { "code": "MYO", "label": "묘", "hanja": "卯", "element": "WOOD", "yinyang": "YIN", "zodiac": "토끼" },
+          { "code": "JIN", "label": "진", "hanja": "辰", "element": "EARTH", "yinyang": "YANG", "zodiac": "용" },
+          { "code": "SA", "label": "사", "hanja": "巳", "element": "FIRE", "yinyang": "YIN", "zodiac": "뱀" },
+          { "code": "O", "label": "오", "hanja": "午", "element": "FIRE", "yinyang": "YANG", "zodiac": "말" },
+          { "code": "MI", "label": "미", "hanja": "未", "element": "EARTH", "yinyang": "YIN", "zodiac": "양" },
+          { "code": "SHIN", "label": "신", "hanja": "申", "element": "METAL", "yinyang": "YANG", "zodiac": "원숭이" },
+          { "code": "YU", "label": "유", "hanja": "酉", "element": "METAL", "yinyang": "YIN", "zodiac": "닭" },
+          { "code": "SUL", "label": "술", "hanja": "戌", "element": "EARTH", "yinyang": "YANG", "zodiac": "개" },
+          { "code": "HAE", "label": "해", "hanja": "亥", "element": "WATER", "yinyang": "YIN", "zodiac": "돼지" }
+        ]
+      },
+      "TenGodCode": {
+        "description": "십신 (11개)",
+        "values": [
+          { "code": "DAY_MASTER", "label": "일간 (나)", "hanja": "日干", "group": "BI_GYEOP" },
+          { "code": "BI_GYEON", "label": "비견", "hanja": "比肩", "group": "BI_GYEOP" },
+          { "code": "GANG_JAE", "label": "겁재", "hanja": "劫財", "group": "BI_GYEOP" },
+          { "code": "SIK_SIN", "label": "식신", "hanja": "食神", "group": "SIK_SANG" },
+          { "code": "SANG_GWAN", "label": "상관", "hanja": "傷官", "group": "SIK_SANG" },
+          { "code": "PYEON_JAE", "label": "편재", "hanja": "偏財", "group": "JAE_SEONG" },
+          { "code": "JEONG_JAE", "label": "정재", "hanja": "正財", "group": "JAE_SEONG" },
+          { "code": "PYEON_GWAN", "label": "편관 (칠살)", "hanja": "偏官", "group": "GWAN_SEONG" },
+          { "code": "JEONG_GWAN", "label": "정관", "hanja": "正官", "group": "GWAN_SEONG" },
+          { "code": "PYEON_IN", "label": "편인 (효신)", "hanja": "偏印", "group": "IN_SEONG" },
+          { "code": "JEONG_IN", "label": "정인", "hanja": "正印", "group": "IN_SEONG" }
+        ]
+      },
+      "TenGodGroupCode": {
+        "description": "십신 그룹 (5개)",
+        "values": [
+          { "code": "BI_GYEOP", "label": "비겁", "meaning": "자아, 경쟁, 형제", "gods": ["DAY_MASTER", "BI_GYEON", "GANG_JAE"] },
+          { "code": "SIK_SANG", "label": "식상", "meaning": "표현, 재능, 자녀", "gods": ["SIK_SIN", "SANG_GWAN"] },
+          { "code": "JAE_SEONG", "label": "재성", "meaning": "재물, 현실, 아버지", "gods": ["PYEON_JAE", "JEONG_JAE"] },
+          { "code": "GWAN_SEONG", "label": "관성", "meaning": "명예, 직업, 남편", "gods": ["PYEON_GWAN", "JEONG_GWAN"] },
+          { "code": "IN_SEONG", "label": "인성", "meaning": "학문, 어머니, 인덕", "gods": ["PYEON_IN", "JEONG_IN"] }
+        ]
+      },
+      "PillarKey": {
+        "description": "사주 기둥",
+        "values": [
+          { "code": "year", "label": "연주", "meaning": "조상, 사회적 환경" },
+          { "code": "month", "label": "월주", "meaning": "부모, 성장 환경" },
+          { "code": "day", "label": "일주", "meaning": "본인, 배우자" },
+          { "code": "hour", "label": "시주", "meaning": "자녀, 말년" }
+        ]
+      },
+      "EasternBadge": {
+        "description": "동양 사주 전용 배지",
+        "values": [
+          { "code": "BI_GYEOP_DOMINANT", "label": "비겁 우세" },
+          { "code": "SIK_SANG_DOMINANT", "label": "식상 우세" },
+          { "code": "JAE_SEONG_DOMINANT", "label": "재성 우세" },
+          { "code": "GWAN_SEONG_DOMINANT", "label": "관성 우세" },
+          { "code": "IN_SEONG_DOMINANT", "label": "인성 우세" },
+          { "code": "GWON_MOK", "label": "건록격" },
+          { "code": "YANG_IN", "label": "양인격" },
+          { "code": "SIK_SIN_SAENG_JAE", "label": "식신생재" },
+          { "code": "GWAN_IN_SANG_SAENG", "label": "관인상생" },
+          { "code": "JAE_GWAN_SSANG_MI", "label": "재관쌍미" },
+          { "code": "YEOK_MA", "label": "역마" },
+          { "code": "DO_HWA", "label": "도화" },
+          { "code": "GWAE_GANG", "label": "괴강" }
+        ]
+      }
+    },
+
+    "western": {
+      "ZodiacCode": {
+        "description": "12별자리",
+        "values": [
+          { "code": "ARIES", "label": "양자리", "symbol": "♈", "element": "FIRE", "modality": "CARDINAL", "ruler": "MARS" },
+          { "code": "TAURUS", "label": "황소자리", "symbol": "♉", "element": "EARTH", "modality": "FIXED", "ruler": "VENUS" },
+          { "code": "GEMINI", "label": "쌍둥이자리", "symbol": "♊", "element": "AIR", "modality": "MUTABLE", "ruler": "MERCURY" },
+          { "code": "CANCER", "label": "게자리", "symbol": "♋", "element": "WATER", "modality": "CARDINAL", "ruler": "MOON" },
+          { "code": "LEO", "label": "사자자리", "symbol": "♌", "element": "FIRE", "modality": "FIXED", "ruler": "SUN" },
+          { "code": "VIRGO", "label": "처녀자리", "symbol": "♍", "element": "EARTH", "modality": "MUTABLE", "ruler": "MERCURY" },
+          { "code": "LIBRA", "label": "천칭자리", "symbol": "♎", "element": "AIR", "modality": "CARDINAL", "ruler": "VENUS" },
+          { "code": "SCORPIO", "label": "전갈자리", "symbol": "♏", "element": "WATER", "modality": "FIXED", "ruler": "PLUTO" },
+          { "code": "SAGITTARIUS", "label": "사수자리", "symbol": "♐", "element": "FIRE", "modality": "MUTABLE", "ruler": "JUPITER" },
+          { "code": "CAPRICORN", "label": "염소자리", "symbol": "♑", "element": "EARTH", "modality": "CARDINAL", "ruler": "SATURN" },
+          { "code": "AQUARIUS", "label": "물병자리", "symbol": "♒", "element": "AIR", "modality": "FIXED", "ruler": "URANUS" },
+          { "code": "PISCES", "label": "물고기자리", "symbol": "♓", "element": "WATER", "modality": "MUTABLE", "ruler": "NEPTUNE" }
+        ]
+      },
+      "ZodiacElement": {
+        "description": "4원소",
+        "values": [
+          { "code": "FIRE", "label": "불", "signs": ["ARIES", "LEO", "SAGITTARIUS"] },
+          { "code": "EARTH", "label": "흙", "signs": ["TAURUS", "VIRGO", "CAPRICORN"] },
+          { "code": "AIR", "label": "공기", "signs": ["GEMINI", "LIBRA", "AQUARIUS"] },
+          { "code": "WATER", "label": "물", "signs": ["CANCER", "SCORPIO", "PISCES"] }
+        ]
+      },
+      "ZodiacModality": {
+        "description": "3모드",
+        "values": [
+          { "code": "CARDINAL", "label": "카디널", "meaning": "시작, 개척, 리더십", "signs": ["ARIES", "CANCER", "LIBRA", "CAPRICORN"] },
+          { "code": "FIXED", "label": "고정", "meaning": "유지, 안정, 집중력", "signs": ["TAURUS", "LEO", "SCORPIO", "AQUARIUS"] },
+          { "code": "MUTABLE", "label": "변통", "meaning": "변화, 적응, 유연성", "signs": ["GEMINI", "VIRGO", "SAGITTARIUS", "PISCES"] }
+        ]
+      },
+      "PlanetCode": {
+        "description": "10행성",
+        "values": [
+          { "code": "SUN", "label": "태양", "symbol": "☉", "meaning": "자아, 정체성, 활력", "isPersonal": true },
+          { "code": "MOON", "label": "달", "symbol": "☽", "meaning": "감정, 무의식, 어머니", "isPersonal": true },
+          { "code": "MERCURY", "label": "수성", "symbol": "☿", "meaning": "소통, 지성, 학습", "isPersonal": true },
+          { "code": "VENUS", "label": "금성", "symbol": "♀", "meaning": "사랑, 아름다움, 가치", "isPersonal": true },
+          { "code": "MARS", "label": "화성", "symbol": "♂", "meaning": "행동, 욕망, 에너지", "isPersonal": true },
+          { "code": "JUPITER", "label": "목성", "symbol": "♃", "meaning": "행운, 확장, 철학", "isPersonal": false },
+          { "code": "SATURN", "label": "토성", "symbol": "♄", "meaning": "책임, 제한, 훈련", "isPersonal": false },
+          { "code": "URANUS", "label": "천왕성", "symbol": "♅", "meaning": "혁신, 자유, 변화", "isPersonal": false },
+          { "code": "NEPTUNE", "label": "해왕성", "symbol": "♆", "meaning": "영감, 환상, 직관", "isPersonal": false },
+          { "code": "PLUTO", "label": "명왕성", "symbol": "♇", "meaning": "변혁, 권력, 재생", "isPersonal": false }
+        ]
+      },
+      "HouseCode": {
+        "description": "12하우스",
+        "values": [
+          { "code": "H1_SELF", "number": 1, "label": "자아", "meaning": "외모, 성격, 첫인상" },
+          { "code": "H2_POSSESSIONS", "number": 2, "label": "재물", "meaning": "돈, 소유물, 가치관" },
+          { "code": "H3_COMMUNICATION", "number": 3, "label": "소통", "meaning": "형제, 이웃, 단거리 여행" },
+          { "code": "H4_HOME", "number": 4, "label": "가정", "meaning": "가족, 뿌리, 부동산" },
+          { "code": "H5_CREATIVITY", "number": 5, "label": "창의/연애", "meaning": "연애, 자녀, 취미" },
+          { "code": "H6_HEALTH", "number": 6, "label": "건강/일상", "meaning": "건강, 직장, 일상루틴" },
+          { "code": "H7_PARTNERSHIP", "number": 7, "label": "파트너십", "meaning": "결혼, 계약, 공개적 적" },
+          { "code": "H8_TRANSFORMATION", "number": 8, "label": "변화/유산", "meaning": "성, 죽음, 유산, 타인의 돈" },
+          { "code": "H9_PHILOSOPHY", "number": 9, "label": "철학/여행", "meaning": "고등교육, 해외여행, 종교" },
+          { "code": "H10_CAREER", "number": 10, "label": "커리어", "meaning": "직업, 명성, 사회적 지위" },
+          { "code": "H11_COMMUNITY", "number": 11, "label": "커뮤니티", "meaning": "친구, 희망, 단체활동" },
+          { "code": "H12_SUBCONSCIOUS", "number": 12, "label": "무의식", "meaning": "비밀, 고독, 영성" }
+        ]
+      },
+      "AspectCode": {
+        "description": "애스펙트",
+        "values": [
+          { "code": "CONJUNCTION", "label": "합", "symbol": "☌", "angle": 0, "nature": "NEUTRAL" },
+          { "code": "SEXTILE", "label": "육분위", "symbol": "⚹", "angle": 60, "nature": "HARMONIOUS" },
+          { "code": "SQUARE", "label": "스퀘어", "symbol": "□", "angle": 90, "nature": "CHALLENGING" },
+          { "code": "TRINE", "label": "삼합", "symbol": "△", "angle": 120, "nature": "HARMONIOUS" },
+          { "code": "OPPOSITION", "label": "충", "symbol": "☍", "angle": 180, "nature": "CHALLENGING" }
+        ]
+      },
+      "AspectNature": {
+        "description": "애스펙트 성질",
+        "values": [
+          { "code": "HARMONIOUS", "label": "조화로움" },
+          { "code": "CHALLENGING", "label": "도전적" },
+          { "code": "NEUTRAL", "label": "중립" }
+        ]
+      },
+      "WesternBadge": {
+        "description": "서양 점성술 전용 배지",
+        "values": [
+          { "code": "FIRE_DOMINANT", "label": "불 원소 우세" },
+          { "code": "EARTH_DOMINANT", "label": "흙 원소 우세" },
+          { "code": "AIR_DOMINANT", "label": "공기 원소 우세" },
+          { "code": "WATER_DOMINANT", "label": "물 원소 우세" },
+          { "code": "CARDINAL_DOMINANT", "label": "카디널 우세" },
+          { "code": "FIXED_DOMINANT", "label": "고정 우세" },
+          { "code": "MUTABLE_DOMINANT", "label": "변통 우세" },
+          { "code": "SUN_STRONG", "label": "태양 강조" },
+          { "code": "MOON_STRONG", "label": "달 강조" },
+          { "code": "MERCURY_STRONG", "label": "수성 강조" },
+          { "code": "VENUS_STRONG", "label": "금성 강조" },
+          { "code": "MARS_STRONG", "label": "화성 강조" },
+          { "code": "JUPITER_STRONG", "label": "목성 강조" },
+          { "code": "SATURN_STRONG", "label": "토성 강조" },
+          { "code": "URANUS_STRONG", "label": "천왕성 강조" },
+          { "code": "NEPTUNE_STRONG", "label": "해왕성 강조" },
+          { "code": "PLUTO_STRONG", "label": "명왕성 강조" },
+          { "code": "GRAND_TRINE", "label": "그랜드 트라인" },
+          { "code": "GRAND_CROSS", "label": "그랜드 크로스" },
+          { "code": "T_SQUARE", "label": "T스퀘어" },
+          { "code": "YOD", "label": "요드 (신의 손가락)" },
+          { "code": "STELLIUM", "label": "스텔리움" }
+        ]
+      }
+    },
+
+    "chat": {
+      "CharacterCode": {
+        "description": "캐릭터",
+        "values": [
+          { "code": "SOISEOL", "label": "소이설", "specialty": "동양 사주", "personality": "따뜻한 온미녀" },
+          { "code": "STELLA", "label": "스텔라", "specialty": "서양 점성술", "personality": "쿨한 냉미녀" }
+        ]
+      },
+      "MessageType": {
+        "description": "메시지 타입",
+        "values": [
+          { "code": "GREETING", "label": "인사", "description": "첫 인사 메시지" },
+          { "code": "INFO_REQUEST", "label": "정보 요청", "description": "생년월일 등 요청" },
+          { "code": "INTERPRETATION", "label": "해석", "description": "운세 해석 메시지" },
+          { "code": "DEBATE", "label": "토론", "description": "캐릭터 간 의견 교환" },
+          { "code": "CONSENSUS", "label": "합의", "description": "의견 일치 메시지" },
+          { "code": "QUESTION", "label": "후속 질문", "description": "추가 질문" },
+          { "code": "CHOICE", "label": "선택 요청", "description": "사용자 선택 유도" }
+        ]
+      }
+    }
+  },
+
+  "schemas": {
+    "EasternFortuneResponse": {
+      "type": "object",
+      "properties": {
+        "category": { "const": "eastern" },
+        "chart": {
+          "type": "object",
+          "properties": {
+            "summary": { "type": "string" },
+            "year": { "$ref": "#/schemas/Pillar" },
+            "month": { "$ref": "#/schemas/Pillar" },
+            "day": { "$ref": "#/schemas/Pillar" },
+            "hour": { "$ref": "#/schemas/Pillar", "nullable": true }
+          }
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "five_elements": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "elements": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": { "$ref": "#/enums/common/ElementCode" },
+                      "label": { "type": "string" },
+                      "value": { "type": "integer" },
+                      "percent": { "type": "number" }
+                    }
+                  }
+                },
+                "strong": { "$ref": "#/enums/common/ElementCode" },
+                "weak": { "$ref": "#/enums/common/ElementCode" }
+              }
+            },
+            "yin_yang": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "yin": { "type": "number" },
+                "yang": { "type": "number" },
+                "balance": { "$ref": "#/enums/common/YinYangBalance" }
+              }
+            },
+            "ten_gods": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "gods": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "code": { "$ref": "#/enums/eastern/TenGodCode" },
+                      "label": { "type": "string" },
+                      "group_code": { "$ref": "#/enums/eastern/TenGodGroupCode" },
+                      "value": { "type": "integer" },
+                      "percent": { "type": "number" }
+                    }
+                  }
+                },
+                "dominant": { "$ref": "#/enums/eastern/TenGodGroupCode" }
+              }
+            },
+            "strength": { "type": "string" },
+            "weakness": { "type": "string" }
+          }
+        },
+        "summary": { "type": "string" },
+        "message": { "type": "string" },
+        "ui_hints": {
+          "type": "object",
+          "properties": {
+            "badges": { "type": "array", "items": { "type": "string" } },
+            "recommend_chart": { "$ref": "#/enums/common/ChartType" },
+            "highlight": {
+              "type": "object",
+              "properties": {
+                "day_master": { "$ref": "#/enums/eastern/PillarKey" },
+                "strong_element": { "$ref": "#/enums/common/ElementCode" },
+                "weak_element": { "$ref": "#/enums/common/ElementCode" }
+              }
+            }
+          }
+        },
+        "lucky": {
+          "type": "object",
+          "properties": {
+            "color": { "type": "string" },
+            "color_code": { "type": "string", "nullable": true },
+            "number": { "type": "string" },
+            "item": { "type": "string" },
+            "direction": { "type": "string" },
+            "direction_code": { "$ref": "#/enums/common/DirectionCode", "nullable": true },
+            "place": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "Pillar": {
+      "type": "object",
+      "properties": {
+        "gan": { "type": "string", "description": "한자 (甲)" },
+        "gan_code": { "$ref": "#/enums/eastern/CheonGanCode" },
+        "ji": { "type": "string", "description": "한자 (子)" },
+        "ji_code": { "$ref": "#/enums/eastern/JiJiCode" },
+        "element_code": { "$ref": "#/enums/common/ElementCode" },
+        "ten_god_code": { "$ref": "#/enums/eastern/TenGodCode" }
+      }
+    },
+
+    "WesternFortuneResponse": {
+      "type": "object",
+      "properties": {
+        "category": { "const": "western" },
+        "chart": {
+          "type": "object",
+          "properties": {
+            "summary": { "type": "string" },
+            "sun": { "$ref": "#/schemas/BigThree" },
+            "moon": { "$ref": "#/schemas/BigThree" },
+            "rising": { "$ref": "#/schemas/BigThree" },
+            "planets": { "type": "array", "items": { "$ref": "#/schemas/PlanetPlacement" } },
+            "houses": { "type": "array", "items": { "$ref": "#/schemas/HouseInfo" } }
+          }
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "elements": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "distribution": { "type": "array" },
+                "dominant": { "$ref": "#/enums/western/ZodiacElement" }
+              }
+            },
+            "modality": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "distribution": { "type": "array" },
+                "dominant": { "$ref": "#/enums/western/ZodiacModality" }
+              }
+            },
+            "aspects": {
+              "type": "object",
+              "properties": {
+                "summary": { "type": "string" },
+                "major_aspects": { "type": "array" }
+              }
+            },
+            "strength": { "type": "string" },
+            "weakness": { "type": "string" }
+          }
+        },
+        "summary": { "type": "string" },
+        "message": { "type": "string" },
+        "ui_hints": {
+          "type": "object",
+          "properties": {
+            "badges": { "type": "array", "items": { "type": "string" } },
+            "recommend_chart": { "$ref": "#/enums/common/ChartType" },
+            "highlight": {
+              "type": "object",
+              "properties": {
+                "sun_sign": { "$ref": "#/enums/western/ZodiacCode" },
+                "moon_sign": { "$ref": "#/enums/western/ZodiacCode" },
+                "rising_sign": { "$ref": "#/enums/western/ZodiacCode" },
+                "dominant_planet": { "$ref": "#/enums/western/PlanetCode" }
+              }
+            }
+          }
+        },
+        "lucky": {
+          "type": "object",
+          "properties": {
+            "day": { "type": "string" },
+            "day_code": { "$ref": "#/enums/common/DayCode", "nullable": true },
+            "color": { "type": "string" },
+            "color_code": { "type": "string", "nullable": true },
+            "number": { "type": "string" },
+            "stone": { "type": "string" },
+            "planet": { "$ref": "#/enums/western/PlanetCode" }
+          }
+        }
+      }
+    },
+
+    "BigThree": {
+      "type": "object",
+      "properties": {
+        "sign_code": { "$ref": "#/enums/western/ZodiacCode" },
+        "house_number": { "type": "integer", "nullable": true },
+        "summary": { "type": "string" }
+      }
+    },
+
+    "PlanetPlacement": {
+      "type": "object",
+      "properties": {
+        "planet_code": { "$ref": "#/enums/western/PlanetCode" },
+        "sign_code": { "$ref": "#/enums/western/ZodiacCode" },
+        "house_number": { "type": "integer" },
+        "degree": { "type": "number" },
+        "minute": { "type": "integer" },
+        "is_retrograde": { "type": "boolean" }
+      }
+    },
+
+    "ChatResponse": {
+      "type": "object",
+      "properties": {
+        "session_id": { "type": "string" },
+        "turn": { "type": "integer" },
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "character": { "$ref": "#/enums/chat/CharacterCode" },
+              "type": { "$ref": "#/enums/chat/MessageType" },
+              "content": { "type": "string" },
+              "timestamp": { "type": "string", "format": "date-time" }
+            }
+          }
+        },
+        "debate_status": {
+          "type": "object",
+          "properties": {
+            "is_consensus": { "type": "boolean" },
+            "eastern_opinion": { "type": "string", "nullable": true },
+            "western_opinion": { "type": "string", "nullable": true },
+            "question": { "type": "string", "nullable": true }
+          }
+        },
+        "ui_hints": {
+          "type": "object",
+          "properties": {
+            "show_choice": { "type": "boolean" },
+            "choices": {
+              "type": "array",
+              "nullable": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "value": { "type": "integer", "enum": [1, 2] },
+                  "character": { "$ref": "#/enums/chat/CharacterCode" },
+                  "label": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "endpoints": [
+    { "method": "POST", "path": "/api/v1/fortune/eastern", "description": "동양 사주 분석" },
+    { "method": "GET", "path": "/api/v1/fortune/eastern/enums", "description": "동양 Enum 목록" },
+    { "method": "POST", "path": "/api/v1/fortune/western", "description": "서양 점성술 분석" },
+    { "method": "GET", "path": "/api/v1/fortune/western/enums", "description": "서양 Enum 목록" },
+    { "method": "POST", "path": "/api/v1/fortune/chat", "description": "티키타카 대화" },
+    { "method": "POST", "path": "/api/v1/fortune/chat/stream", "description": "티키타카 SSE 스트리밍" },
+    { "method": "GET", "path": "/api/v1/fortune/chat/characters", "description": "캐릭터 정보" }
+  ]
+}

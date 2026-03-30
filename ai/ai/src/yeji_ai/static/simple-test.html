@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Q&A - YEJI AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #141937;
+            --bg-card: #1a1f3a;
+            --text-primary: #e8eaf6;
+            --text-secondary: #9fa8da;
+            --accent: #7c4dff;
+            --accent-glow: rgba(124, 77, 255, 0.3);
+            --success: #00e676;
+            --warning: #ffd740;
+            --error: #ff5252;
+            --border-color: #283593;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 100px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        textarea::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent), #651fff);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .result.success {
+            display: block;
+            background: rgba(0, 230, 118, 0.1);
+            border: 2px solid var(--success);
+        }
+
+        .result.filtered {
+            display: block;
+            background: rgba(255, 215, 64, 0.1);
+            border: 2px solid var(--warning);
+        }
+
+        .result.error {
+            display: block;
+            background: rgba(255, 82, 82, 0.1);
+            border: 2px solid var(--error);
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-answer {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .result-meta {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-color);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .examples {
+            margin-top: 2rem;
+        }
+
+        .examples h3 {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .example-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .chip {
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chip:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simple Q&A</h1>
+            <p class="subtitle">사주/점성술 관련 질문에 한줄로 답변합니다</p>
+        </header>
+
+        <div class="card">
+            <div class="input-group">
+                <label for="question">질문을 입력하세요</label>
+                <textarea
+                    id="question"
+                    placeholder="예: 오늘 연애운이 어떨까요?"
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <button id="submitBtn" onclick="submitQuestion()">
+                질문하기
+            </button>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>운세를 확인하고 있습니다...</p>
+            </div>
+
+            <div class="result" id="result">
+                <div class="result-label" id="resultLabel">답변</div>
+                <div class="result-answer" id="resultAnswer"></div>
+                <div class="result-meta" id="resultMeta"></div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h3>예시 질문</h3>
+            <div class="example-chips">
+                <span class="chip" onclick="setExample('오늘 연애운이 어떨까요?')">연애운</span>
+                <span class="chip" onclick="setExample('이번 달 금전운이 궁금해요')">금전운</span>
+                <span class="chip" onclick="setExample('이직하면 잘 될까요?')">직장운</span>
+                <span class="chip" onclick="setExample('시험 합격할 수 있을까요?')">시험운</span>
+                <span class="chip" onclick="setExample('건강 주의할 점이 있나요?')">건강운</span>
+                <span class="chip" onclick="setExample('오늘 날씨 어때?')">필터 테스트</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                <a href="/ai/docs" target="_blank">API 문서</a> |
+                <a href="/ai/api-portal" target="_blank">API Portal</a>
+            </p>
+            <p style="margin-top: 0.5rem;">&copy; 2025 SSAFY YEJI Team</p>
+        </footer>
+    </div>
+
+    <script>
+        // API 기본 URL (현재 환경에 맞게 자동 설정)
+        const API_BASE = window.location.pathname.includes('ai-dev')
+            ? '/ai-dev'
+            : '/ai';
+
+        function setExample(text) {
+            document.getElementById('question').value = text;
+        }
+
+        async function submitQuestion() {
+            const question = document.getElementById('question').value.trim();
+            if (!question) {
+                alert('질문을 입력해주세요.');
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+
+            // UI 상태 변경
+            btn.disabled = true;
+            loading.classList.add('show');
+            result.className = 'result';
+
+            try {
+                const response = await fetch(`${API_BASE}/v1/fortune/simple`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question }),
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.detail || '요청 처리 실패');
+                }
+
+                // 결과 표시
+                const resultLabel = document.getElementById('resultLabel');
+                const resultAnswer = document.getElementById('resultAnswer');
+                const resultMeta = document.getElementById('resultMeta');
+
+                if (data.filtered) {
+                    result.className = 'result filtered';
+                    resultLabel.textContent = '오늘의 운세';
+                    resultAnswer.textContent = data.answer;
+                    resultMeta.textContent = `(${data.filter_reason})`;
+                } else {
+                    result.className = 'result success';
+                    resultLabel.textContent = '답변';
+                    resultAnswer.textContent = data.answer;
+                    resultMeta.textContent = '';
+                }
+
+            } catch (error) {
+                result.className = 'result error';
+                document.getElementById('resultLabel').textContent = '오류';
+                document.getElementById('resultAnswer').textContent = error.message;
+                document.getElementById('resultMeta').textContent = '';
+            } finally {
+                btn.disabled = false;
+                loading.classList.remove('show');
+            }
+        }
+
+        // Enter 키로 전송
+        document.getElementById('question').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                submitQuestion();
+            }
+        });
+    </script>
+</body>
+</html>

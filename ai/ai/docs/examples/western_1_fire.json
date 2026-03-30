@@ -1,0 +1,121 @@
+{
+  "category": "western",
+  "chart": {
+    "summary": "강한 리더십과 열정이 돋보이는 에너지 구성입니다. 화성의 화합과 불의 우세로 추진력과 창의성이 극대화됩니다.",
+    "sun": {
+      "sign_code": "ARIES",
+      "house_number": 1,
+      "summary": "자신감과 주도성이 강한 위치에 있어 목표를 향해 직진하는 성향이 강합니다."
+    },
+    "moon": {
+      "sign_code": "LEO",
+      "house_number": 5,
+      "summary": "달의 에너지는 표현과 창조를 돕지만, 화성과의 충돌로 감정 기복이나 과한 자신감을 경계해야 합니다."
+    },
+    "rising": {
+      "signcode": "CANCER",
+      "house_number": 1,
+      "summary": "대인관계에서 신뢰를 주려는 노력이 필요하며, 상황을 관찰하고 조율하는 능력이 있습니다."
+    },
+    "planets": [
+      {
+        "planet_code": "SUN",
+        "sign_code": "ARIES",
+        "house_number": 1,
+        "degree": 15,
+        "minute": 30,
+        "is_retrograde": false
+      }
+    ]
+  },
+  "stats": {
+    "elements": {
+      "summary": "전체적으로 불(FIRE)의 기운이 강해 활동적이고 열정적이지만, 물(WATER)의 부재로 감정 조절에 신경 써야 합니다.",
+      "distribution": [
+        {
+          "code": "FIRE",
+          "label": "불",
+          "value": 4,
+          "percent": 40
+        },
+        {
+          "code": "AIR",
+          "label": "공기",
+          "value": 2,
+          "percent": 20
+        },
+        {
+          "code": "EARTH",
+          "label": "흙",
+          "value": 1,
+          "percent": 10
+        },
+        {
+          "code": "WATER",
+          "label": "물",
+          "value": 0,
+          "percent": 0
+        }
+      ]
+    },
+    "modality": {
+      "summary": "활동성과 시작의 기운이 강해 새로운 프로젝트에 적합하지만, 지속성은 다소 부족할 수 있습니다.",
+      "distribution": [
+        {
+          "code": "CARDINAL",
+          "label": "활동",
+          "value": 4,
+          "percent": 40
+        },
+        {
+          "code": "FIXED",
+          "label": "고정",
+          "value": 3,
+          "percent": 30
+        },
+        {
+          "code": "MUTABLE",
+          "label": "변화",
+          "value": 1,
+          "percent": 10
+        }
+      ]
+    },
+    "aspects": {
+      "summary": "화성과의 합으로 인해 추진력과 경쟁심이 강합니다. 긍정적 기운이 우세하나 주의가 필요합니다.",
+      "major_aspects": [
+        {
+          "planet1": "SUN",
+          "planet2": "MOON",
+          "aspect_code": "CONJUNCTION",
+          "nature": "SYNTHETIC",
+          "orb": 2
+        }
+      ]
+    }
+  },
+  "summary": "이 구성은 강한 추진력과 창의성을 결합한 성격을 만듭니다. 시작과 리더십은 탁월하지만, 지속과 세밀한 관리에는 보완이 필요합니다.",
+  "message": "중요한 결정을 내릴 때는 주변의 의견을 수렴해 과도한 독단을 피하고, 감정 조절과 휴식으로 에너지를 관리하세요.",
+  "ui_hints": {
+    "badges": [
+      "FIRE_DOMINANT",
+      "MARS_STRONG"
+    ],
+    "recommend_chart": "WHEEL",
+    "highlight": {
+      "sun_sign": "ARIES",
+      "moon_sign": "LEO",
+      "rising_sign": "CANCER",
+      "dominant_planet": "MARS"
+    }
+  },
+  "lucky": {
+    "day": "화요일",
+    "day_code": "TUE",
+    "color": "빨간색",
+    "color_code": "#FF0000",
+    "number": "9",
+    "stone": "루비",
+    "planet": "MARS"
+  }
+}

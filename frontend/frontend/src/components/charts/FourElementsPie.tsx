@@ -1,0 +1,119 @@
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+interface ElementData {
+    code: string;
+    label: string;
+    percent: number;
+}
+
+interface FourElementsPieProps {
+    data: ElementData[];
+    isActive?: boolean;
+}
+
+// Western 4 Elements Colors
+const ELEMENT_COLORS: Record<string, string> = {
+    FIRE: '#ff6b6b',      // 불 - 빨강
+    EARTH: '#8b7355',     // 흙 - 갈색
+    AIR: '#87ceeb',       // 공기 - 하늘색
+    WATER: '#4a90e2'      // 물 - 파랑
+};
+
+const FourElementsPie: React.FC<FourElementsPieProps> = ({ data, isActive = true }) => {
+    // Calculate SVG paths for pie slices
+    let cumulativePercent = 0;
+
+    const getCoordinatesForPercent = (percent: number) => {
+        const x = Math.cos(2 * Math.PI * percent);
+        const y = Math.sin(2 * Math.PI * percent);
+        return [x, y];
+    };
+
+    return (
+        <div className="w-full h-full flex flex-col items-center justify-center">
+            <div className="flex-1 w-full relative min-h-0 flex items-center justify-center">
+                <svg viewBox="-1.1 -1.1 2.2 2.2" className="w-full h-full -rotate-90 transform-gpu overflow-visible">
+                    <AnimatePresence>
+                        {isActive && data.map((slice, index) => {
+                            if (slice.percent <= 0) return null;
+
+                            const startPercent = cumulativePercent;
+                            const endPercent = cumulativePercent + (slice.percent / 100);
+                            cumulativePercent = endPercent;
+
+                            const [startX, startY] = getCoordinatesForPercent(startPercent);
+                            const [endX, endY] = getCoordinatesForPercent(endPercent);
+
+                            const largeArcFlag = slice.percent / 100 > 0.5 ? 1 : 0;
+                            const pathData = [
+                                `M ${startX} ${startY}`,
+                                `A 1 1 0 ${largeArcFlag} 1 ${endX} ${endY}`,
+                                `L 0 0`,
+                            ].join(' ');
+
+                            return (
+                                <motion.path
+                                    key={slice.code}
+                                    d={pathData}
+                                    fill={ELEMENT_COLORS[slice.code]}
+                                    initial={{ opacity: 0, scale: 0, rotate: -20 }}
+                                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                                    exit={{ opacity: 0, scale: 0 }}
+                                    transition={{
+                                        delay: index * 0.1,
+                                        duration: 0.8,
+                                        type: "spring",
+                                        stiffness: 80,
+                                        damping: 15
+                                    }}
+                                    className="drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                                    style={{ transformOrigin: 'center' }}
+                                />
+                            );
+                        })}
+                    </AnimatePresence>
+                    {/* Center Hole for Donut Style */}
+                    <circle cx="0" cy="0" r="0.38" fill="#0c0c0c" className="relative z-10" />
+                </svg>
+
+                {/* Labels overlay */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: isActive ? 1 : 0.3, y: isActive ? 0 : 10 }}
+                        className="text-center"
+                    >
+                        <span className="block text-2xl font-bold text-white font-serif drop-shadow-sm">IV</span>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Legend for context - Fixed Order */}
+            <div className="mt-8 flex gap-6 whitespace-nowrap z-30">
+                {['FIRE', 'EARTH', 'AIR', 'WATER'].map(code => {
+                    const d = data.find(item => item.code === code) || { code, label: code, percent: 0 };
+                    // 한글 라벨 매핑 (임시) - 실제로는 데이터에 있거나 매핑 필요
+                    const labelMap: Record<string, string> = { 'FIRE': 'Ignis', 'EARTH': 'Terra', 'AIR': 'Aer', 'WATER': 'Aqua' };
+
+                    return (
+                        <motion.div
+                            key={code}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: isActive ? 1 : 0.4, y: isActive ? 0 : 10 }}
+                            className="flex flex-col items-center gap-2"
+                        >
+                            <div className="w-4 h-4 rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]" style={{ backgroundColor: ELEMENT_COLORS[code] }} />
+                            <div className="flex flex-col items-center leading-none">
+                                <span className="text-lg font-bold text-white mb-1 font-serif">{labelMap[code] || d.label}</span>
+                                <span className="text-sm text-white/60 font-mono font-bold">{Math.round(d.percent)}%</span>
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
+export default FourElementsPie;

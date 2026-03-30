@@ -1,0 +1,56 @@
+{
+  "element": "WOOD",
+  "chart": {
+    "summary": "일간(甲)의 기운이 강하고, 주변에 같은 목기운들이 모여 있어 독창성과 추진력이 두드러집니다.",
+    "year": {"gan": "乙", "ji": "寅", "element_code": "WOOD"},
+    "month": {"gan": "丙", "ji": "午", "element_code": "FIRE"},
+    "day": {"gan": "丁", "ji": "申", "element_code": "METAL"},
+    "hour": {"gan": "戊", "ji": "亥", "element_code": "WATER"}
+  },
+  "stats": {
+    "cheongan_jiji": {
+      "summary": "천간의 자리는 활동적이고 외향적이며 비견(比肩)의 성향을 보입니다. 지지는 변화와 도전을 의미합니다.",
+      "year": {"cheon_gan": "乙", "ji_ji": "寅"},
+      "month": {"cheon_gan": "丙", "ji_ji": "午"},
+      "day": {"cheon_gan": "丁", "ji_ji": "申"},
+      "hour": {"cheon_gan": "戊", "ji_ji": "亥"}
+    },
+    "five_elements": {
+      "summary": "목이 가장 강해 리더십과 창조력이 뛰어나지만 금·수의 부족으로 인한 제약도 존재합니다.",
+      "list": [
+        {"code": "WOOD", "label": "목", "percent": 40},
+        {"code": "FIRE", "label": "화", "percent": 25},
+        {"code": "EARTH", "label": "토", "percent": 15},
+        {"code": "METAL", "label": "금", "percent": 10},
+        {"code": "WATER", "label": "수", "percent": 10}
+      ]
+    },
+    "yin_yang_ratio": {
+      "summary": "양의 기운이 우세하여 활동적이나 때로는 과로나 충동으로 이어질 수 있습니다.",
+      "yin": 40,
+      "yang": 60
+    },
+    "ten_gods": {
+      "summary": "정관과 편관의 영향이 섞여 사회적 책임과 규율을 중시하는 경향이 나타납니다.",
+      "list": [
+        {"code": "JEONG_GWAN", "label": "정관", "percent": 30},
+        {"code": "PYEON_JAE", "label": "편관", "percent": 20},
+        {"code": "SIK_SIN", "label": "식신", "percent": 15},
+        {"code": "ETC", "label": "기타", "percent": 35}
+      ]
+    }
+  },
+  "final_verdict": {
+    "summary": "강한 목기운으로 개척자 기질이 강하나 균형을 위해 금과 물의 에너지를 보완해야 합니다.",
+    "strength": "주도적 결단력과 창의력",
+    "weakness": "완급 조절 실패와 피로 누적",
+    "advice": "규칙적인 휴식과 명상으로 내면 균형을 맞추고, 실무에서는 세밀함을 요구되는 금의 성향을 의식적으로 키우세요."
+  },
+  "lucky": {
+    "color": "검정",
+    "number": "8, 9",
+    "item": "구슬 링",
+    "direction": "북동쪽",
+    "place": "공원"
+  }
+}
