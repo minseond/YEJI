@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=YEJI%20AI%20Server&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=FastAPI%20%2B%20vLLM%20%7C%20Fortune%20%26%20Saju%20Generation&descSize=16&descAlignY=56&v=2" width="100%"/>
 
 <br/>
 
-<img src="./assets/yeji-logo.png" width="80" alt="yeji"/>
 
 <br/>
 
